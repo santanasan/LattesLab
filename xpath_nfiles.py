@@ -40,10 +40,18 @@ for file in fileslist:
         fileslist.remove(file)
 
 nresearchers = len(fileslist)
+count = 0
+
 for filename in fileslist:
     
-    archive = zipfile.ZipFile((folder + filename), 'r')    
-    cvfile = archive.open('curriculo.xml', 'r')
+    count += 1
+    
+    archive = zipfile.ZipFile((folder + filename), 'r')
+    if (archive.namelist()[0][-3:]=='xml')|(archive.namelist()[0][-3:]=='XML'):
+        cvfile = archive.open(archive.namelist()[0], 'r')
+    else:
+        print('Error: file ' + archive.namelist()[0] + 'is not a xml file.')
+        break
 
 
     tree = ET.parse(cvfile)
@@ -72,7 +80,7 @@ for filename in fileslist:
 #Dados de formacao academica
 
     ngrad = nmaster = nphd = nposdoc = 0
-    ano1grad = ano1master = ano1phd = ano1postdoc = 9999
+    ano1grad = ano1master = ano1phd = ano1postdoc = 0
 
     x = root.findall('.//FORMACAO-ACADEMICA-TITULACAO')
 	
@@ -83,6 +91,12 @@ for filename in fileslist:
             if (x[0][i].attrib["ANO-DE-CONCLUSAO"]!="")| \
             (x[0][i].attrib["ANO-DE-INICIO"]!=""):
                 ngrad = ngrad + 1
+                if ngrad==1:
+                    if x[0][i].attrib["ANO-DE-CONCLUSAO"]=="":
+                        x[0][i].attrib["ANO-DE-CONCLUSAO"] = \
+                        str(int(x[0][i].attrib["ANO-DE-INICIO"]) + 4)
+                    ano1grad=int(x[0][i].attrib["ANO-DE-CONCLUSAO"])
+                    
 #Se terminou o curso
                 if x[0][i].attrib["ANO-DE-CONCLUSAO"]=="":
                     x[0][i].attrib["ANO-DE-CONCLUSAO"] = \
@@ -96,6 +110,12 @@ for filename in fileslist:
             if (x[0][i].attrib["ANO-DE-CONCLUSAO"]!="")| \
             (x[0][i].attrib["ANO-DE-INICIO"]!=""):
                 nmaster = nmaster + 1
+                if nmaster==1:
+                    if x[0][i].attrib["ANO-DE-CONCLUSAO"]=="":
+                        x[0][i].attrib["ANO-DE-CONCLUSAO"] = \
+                        str(int(x[0][i].attrib["ANO-DE-INICIO"]) + 2)    
+                    ano1master = int(x[0][i].attrib["ANO-DE-CONCLUSAO"])
+                
                 if x[0][i].attrib["ANO-DE-CONCLUSAO"]=="":
                     x[0][i].attrib["ANO-DE-CONCLUSAO"] = \
                     str(int(x[0][i].attrib["ANO-DE-INICIO"]) + 2)    
@@ -106,6 +126,11 @@ for filename in fileslist:
             if (x[0][i].attrib["ANO-DE-CONCLUSAO"]!="")| \
             (x[0][i].attrib["ANO-DE-INICIO"]!=""):
                 nphd = nphd + 1
+                if nphd==1:
+                    if x[0][i].attrib["ANO-DE-CONCLUSAO"]=="":
+                        x[0][i].attrib["ANO-DE-CONCLUSAO"] = \
+                        str(int(x[0][i].attrib["ANO-DE-INICIO"]) + 4)
+                    ano1phd=int(x[0][i].attrib["ANO-DE-CONCLUSAO"])
 #Se terminou o curso
                 if x[0][i].attrib["ANO-DE-CONCLUSAO"]=="":
                     x[0][i].attrib["ANO-DE-CONCLUSAO"] = \
@@ -118,6 +143,11 @@ for filename in fileslist:
             if (x[0][i].attrib["ANO-DE-CONCLUSAO"]!="")| \
             (x[0][i].attrib["ANO-DE-INICIO"]!=""):
                 nposdoc = nposdoc + 1
+                if nposdoc==1:
+                    if x[0][i].attrib["ANO-DE-CONCLUSAO"]=="":
+                        x[0][i].attrib["ANO-DE-CONCLUSAO"] = \
+                        str(int(x[0][i].attrib["ANO-DE-INICIO"]) + 2)
+                    ano1postdoc=int(x[0][i].attrib["ANO-DE-CONCLUSAO"])
 #Se terminou o curso
                 if x[0][i].attrib["ANO-DE-CONCLUSAO"]=="":
                     x[0][i].attrib["ANO-DE-CONCLUSAO"] = \
@@ -177,7 +207,11 @@ for filename in fileslist:
     x = root.findall('.//*[@NATUREZA="PESQUISA"]')
 
     qtdeanos = 0
-    ano1PIBIC = 9999
+    if not x:
+        ano1PIBIC = 0
+    else:
+        ano1PIBIC = int(x[0].attrib["ANO-INICIO"]) #era 9999
+    
     for elem in x:
         if (elem.attrib["ANO-FIM"]==""): # & \
 #            (elem.attrib["SITUACAO"]=="EM_ANDAMENTO"):
@@ -190,8 +224,12 @@ for filename in fileslist:
 					   		     (float(elem.attrib["MES-FIM"]) - 
 						   	     float(elem.attrib["MES-INICIO"]))/12)
         else:
-            qtdeanos += (float(elem.attrib["ANO-FIM"]) - 
-        						 float(elem.attrib["ANO-INICIO"]))
+#As vezes o projeto comeca e termina no mesmo ano. Corrigir o delta anos.            
+            if elem.attrib["ANO-FIM"] == elem.attrib["ANO-INICIO"]:
+                qtdeanos += 1
+            else:
+                qtdeanos += (float(elem.attrib["ANO-FIM"]) -
+                             float(elem.attrib["ANO-INICIO"]))
         if ano1PIBIC > int(elem.attrib["ANO-INICIO"]):
             ano1PIBIC = int(elem.attrib["ANO-INICIO"])
 
@@ -203,7 +241,9 @@ for filename in fileslist:
     
     dummie = pd.DataFrame(data=[x], columns=columns)
          
-    lattesframe = lattesframe.append(dummie)   
+    lattesframe = lattesframe.append(dummie)
+    
+    print(str(100*count/len(fileslist)) + '%%')
 
 
 
