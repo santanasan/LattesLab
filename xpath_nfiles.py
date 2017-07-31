@@ -22,7 +22,7 @@ columns = ['Nome',
            'anoPrimeiroM',
            'quantosD',
            'anoPrimeiroD',
-           'quantosPosDoc',
+           'quantosPD',
            'anoPrimeiroPosDoc'] + \
            ["works" + str(2017 - i) for i in range(0, 20)] + \
            ["papers" + str(2017 - i) for i in range(0, 20)]
@@ -33,11 +33,16 @@ lattesframe = pd.DataFrame(columns=columns)
 folder= "D:\\thiag\\Documents\\INPE\\Research\\Datasets\\" +  \
         "DoutoresEngenharias\\Eng1\\"
         
+folder = "C:\\Users\\thiag\\Desktop\\1\\"
+        
 fileslist = os.listdir(folder)
 
-for file in fileslist:
-    if not file.endswith('.zip'):
-        fileslist.remove(file)
+for filename in fileslist:
+    if not filename.endswith('.zip'):
+        fileslist.remove(filename)
+
+#criar uma lista dos arquivos com erro
+#fazer um teste com um lattes vazio
 
 nresearchers = len(fileslist)
 count = 0
@@ -73,8 +78,8 @@ for filename in fileslist:
 
 
 #Dados gerais
-    readid = root.attrib["NUMERO-IDENTIFICADOR"]
-    lastupd = root.attrib["DATA-ATUALIZACAO"]
+    readid = str(root.attrib["NUMERO-IDENTIFICADOR"])
+    lastupd = str(root.attrib["DATA-ATUALIZACAO"])
     name = root[0].attrib["NOME-COMPLETO"]
 
 #Dados de formacao academica
@@ -204,7 +209,12 @@ for filename in fileslist:
     
 #Procurando pela quantidade de iniciações cientificas
 #    root[0][4][0].tag #estava usando esse, mudei para o debaixo
-    x = root.findall('.//*[@NATUREZA="PESQUISA"]')
+    x = root.findall('.//*[@OUTRO-VINCULO-INFORMADO="Iniciação Cientifica"]') + \
+    root.findall('.//*[@OUTRO-VINCULO-INFORMADO="Iniciação Científica"]') + \
+    root.findall('.//*[@OUTRO-ENQUADRAMENTO-FUNCIONAL-INFORMADO=' +  \
+                       '"Aluno de Iniciação Cientifica"]') + \
+    root.findall('.//*[@OUTRO-ENQUADRAMENTO-FUNCIONAL-INFORMADO=' +  \
+                       '"Aluno de Iniciação Científica"]')
 
     qtdeanos = 0
     if not x:
@@ -218,18 +228,18 @@ for filename in fileslist:
 
             elem.attrib["ANO-FIM"] = "2017"
         if elem.tag == "VINCULOS":
-            if ((elem.attrib["MES-FIM"]!="")&(elem.attrib["MES-FIM"]!="")):
+            if ((elem.attrib["MES-INICIO"]!="")&(elem.attrib["MES-FIM"]!="")):
                 qtdeanos += (float(elem.attrib["ANO-FIM"]) - 
     				   			  float(elem.attrib["ANO-INICIO"]) +
 					   		     (float(elem.attrib["MES-FIM"]) - 
 						   	     float(elem.attrib["MES-INICIO"]))/12)
-        else:
-#As vezes o projeto comeca e termina no mesmo ano. Corrigir o delta anos.            
-            if elem.attrib["ANO-FIM"] == elem.attrib["ANO-INICIO"]:
-                qtdeanos += 1
             else:
-                qtdeanos += (float(elem.attrib["ANO-FIM"]) -
-                             float(elem.attrib["ANO-INICIO"]))
+#As vezes o projeto comeca e termina no mesmo ano. Corrigir o delta anos.            
+                if elem.attrib["ANO-FIM"] == elem.attrib["ANO-INICIO"]:
+                    qtdeanos += 1
+                else:
+                    qtdeanos += (float(elem.attrib["ANO-FIM"]) -
+                                 float(elem.attrib["ANO-INICIO"]))
         if ano1PIBIC > int(elem.attrib["ANO-INICIO"]):
             ano1PIBIC = int(elem.attrib["ANO-INICIO"])
 
@@ -247,4 +257,4 @@ for filename in fileslist:
 
 
 
-lattesframe.to_csv(folder + 'dataframe.csv')
+lattesframe.to_csv(folder + 'dataframe.csv', index=False)
