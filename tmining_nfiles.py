@@ -4,15 +4,62 @@ Created on Fri Sep  1 19:35:49 2017
 
 @author: thiag
 """
-from sklearn.feature_extraction.text import TfidfVectorizer
-import matplotlib.pyplot as plt
-from wordcloud import WordCloud
-from datetime import datetime
 
 from pylab import rcParams
 rcParams['figure.figsize'] = 8, 6
 rcParams['figure.dpi'] = 200
 rcParams['font.size'] = 22
+
+
+def word_list_to_cloud(topwords):
+    
+    from wordcloud import WordCloud
+    from datetime import datetime
+    import matplotlib.pyplot as plt
+    
+    x = ' '.join(topwords)
+    wordcloud = WordCloud().generate(x)
+    plt.axis('off')
+    plt.imshow(wordcloud, interpolation='bilinear')
+    plt.savefig(folder + 'wordcloud'+ datetime.now().strftime('%Y%m%d%H%M%S') + 
+                '.png')
+    plt.show()
+
+def summary_list_top_words(nwords = 50):
+
+    from sklearn.feature_extraction.text import TfidfVectorizer
+#initialize the tf idf matrix
+
+    tf = TfidfVectorizer(analyzer='word', ngram_range=(1,1),
+                         min_df = 0, stop_words = ['quot'])
+
+#fit and transform the list of lattes cv summaries to tf idf matrix
+
+    tfidf_matrix =  tf.fit_transform(summarylist)
+    feature_names = tf.get_feature_names() 
+
+    dense = tfidf_matrix.todense()
+
+    lattessummary = dense[0].tolist()[0]
+
+#if the score of the word is >0, add the word and its score to the wordscores
+#list
+
+    wordscores = [pair for pair in zip(range(0, len(lattessummary)), 
+                                       lattessummary) if pair[1] > 0]
+
+#sort the score list by the score (second term)
+
+    sorted_wordscores = sorted(wordscores, key=lambda t: t[1] * -1)
+
+    topwords = []
+
+    for word, score in [(feature_names[word_id], score) for (word_id, score) 
+                        in sorted_wordscores][:50]:
+        print('{0: <40} {1}'.format(word, score))
+        topwords.append(word)
+        
+    return(topwords)
 
 def getlattesdesc_folder(folder):
     import zipfile
@@ -73,43 +120,6 @@ folder="D:\\thiag\\Documents\\INPE\\Research\\Datasets\\" + \
 
 summarylist = getlattesdesc_folder(folder)
 
-#initialize the tf idf matrix
+topwords = summary_list_top_words(50)
 
-tf = TfidfVectorizer(analyzer='word', ngram_range=(1,1),
-                     min_df = 0, stop_words = ['quot'])
-
-#fit and transform the list of lattes cv summaries to tf idf matrix
-
-tfidf_matrix =  tf.fit_transform(summarylist)
-feature_names = tf.get_feature_names() 
-
-len(feature_names)
-
-dense = tfidf_matrix.todense()
-
-lattessummary = dense[0].tolist()[0]
-
-#if the score of the word is >0, add the word and its score to the wordscores
-#list
-
-wordscores = [pair for pair in zip(range(0, len(lattessummary)), lattessummary)
-              if pair[1] > 0]
-
-#sort the score list by the score (second term)
-
-sorted_wordscores = sorted(wordscores, key=lambda t: t[1] * -1)
-
-topwords = []
-
-for word, score in [(feature_names[word_id], score) for (word_id, score) 
-                    in sorted_wordscores][:50]:
-    print('{0: <50} {1}'.format(word, score))
-    topwords.append(word)
-    
-x = ' '.join(topwords)
-wordcloud = WordCloud().generate(x)
-plt.axis('off')
-plt.imshow(wordcloud, interpolation='bilinear')
-plt.savefig(folder + 'wordcloud'+ datetime.now().strftime('%Y%m%d%H%M%S') + 
-            '.png')
-plt.show()
+word_list_to_cloud(topwords)
