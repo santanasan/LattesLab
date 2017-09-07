@@ -4,9 +4,6 @@ Created on Fri Sep  1 19:35:49 2017
 
 @author: thiag
 """
-
-import xml.etree.cElementTree as ET
-import zipfile
 from sklearn.feature_extraction.text import TfidfVectorizer
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud
@@ -16,6 +13,33 @@ from pylab import rcParams
 rcParams['figure.figsize'] = 8, 6
 rcParams['figure.dpi'] = 200
 rcParams['font.size'] = 22
+
+def getlattesdesc_folder(folder):
+    import zipfile
+    import xml.etree.cElementTree as ET
+    
+    [goodlist, badlist] = getfileslist(folder)
+
+    summarylist = []
+
+    del(badlist)
+    for cvzipfile in goodlist:
+        filename = folder + cvzipfile
+#abre o arquivo zip baixado do site do lattes
+        archive = zipfile.ZipFile((filename), 'r')
+#cvdata = archive.read('curriculo.xml')
+        cvfile = archive.open('curriculo.xml', 'r')
+
+#get the summary information from lattes cv
+        tree = ET.parse(cvfile)
+        root = tree.getroot()
+        try:
+            desc = root[0][0].attrib['TEXTO-RESUMO-CV-RH']
+        except:
+            desc = ""
+        summarylist.append(desc)
+        
+    return summarylist
 
 def getfileslist(folder):
     import os
@@ -47,29 +71,8 @@ def getfileslist(folder):
 folder="D:\\thiag\\Documents\\INPE\\Research\\Datasets\\" + \
         "DoutoresEngenharias\\Eng2\\"
 
-[goodlist, badlist] = getfileslist(folder)
+summarylist = getlattesdesc_folder(folder)
 
-del(badlist)
-
-summarylist = []
-
-#def getdesc(filename):
-for cvzipfile in goodlist:
-    filename = folder + cvzipfile
-#abre o arquivo zip baixado do site do lattes
-    archive = zipfile.ZipFile((filename), 'r')
-#cvdata = archive.read('curriculo.xml')
-    cvfile = archive.open('curriculo.xml', 'r')
-
-#get the summary information from lattes cv
-    tree = ET.parse(cvfile)
-    root = tree.getroot()
-    try:
-        desc = root[0][0].attrib['TEXTO-RESUMO-CV-RH']
-    except:
-        desc = ""
-    summarylist.append(desc)
-    
 #initialize the tf idf matrix
 
 tf = TfidfVectorizer(analyzer='word', ngram_range=(1,1),
