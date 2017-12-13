@@ -1,0 +1,10 @@
+README.rst
+setup.cfg
+setup.py
+LattesLab/__init__.py
+LattesLab.egg-info/PKG-INFO
+LattesLab.egg-info/SOURCES.txt
+LattesLab.egg-info/dependency_links.txt
+LattesLab.egg-info/not-zip-safe
+LattesLab.egg-info/requires.txt
+LattesLab.egg-info/top_level.txt
