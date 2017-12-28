@@ -386,41 +386,59 @@ def lattes_pibics(rawdata):
     plt.suptitle('Scientific Initiation Grants per Student', fontsize=20)
     plt.show()
 
-def masters_rate_year(rawdata):
+def degree_rate_year(rawdata, degreetype='G'):
 #Histogram of masters degrees
-    """ Plots a histogram of Masters degrees started per year.
+    """ Plots a histogram of a given degree concluded per year.
 
     Args:
         rawdata: dataframe containing the data for the histogram.
+        degreetype: 'G' for graduation (default option)
+                    'M' for masters degree
+                    'D' for doctorate / PhD
+                    'PD' for post-doctorate.
     """
     import matplotlib.pyplot as plt
-    import numpy as np
     
     plt.figure(figsize=(8, 6), dpi=96)
     
-    vmasters = rawdata['anoPrimeiroM'].tolist()
+    if degreetype == 'PD' or degreetype == 'pd':
+        vtitle = rawdata['anoPrimeiroPosDoc'].tolist()
+        dummy1 = 'Post-Doctorate'
+    elif degreetype == 'D' or degreetype == 'd':
+        vtitle = rawdata['anoPrimeiroD'].tolist()
+        dummy1 = 'Doctorate'
+    elif degreetype == 'M' or degreetype == 'm':
+        vtitle = rawdata['anoPrimeiroM'].tolist()
+        dummy1 = 'Masters'
+    elif degreetype == 'G' or degreetype == 'g':
+        vtitle = rawdata['anoPrimeiraGrad'].tolist()
+        dummy1 = 'Graduation'
+    else:
+        print('Invalid parameter "degreetype". Using default parameter "G".')
+        vtitle = rawdata['anoPrimeiraGrad'].tolist()
+        dummy1 = 'Graduation'
 
 #If the first year is zero, get the second smaller year
-    if min(vmasters):
-        anomaster0 = min(vmasters)
+    if min(vtitle):
+        degyear0 = min(vtitle)
     else:
-        anomaster0 = sorted(set(vmasters))[1]
+        degyear0 = sorted(set(vtitle))[1]
 #last year of occurence of a masters degree
 
-    anomaster1 = max(vmasters)
+    degyear1 = max(vtitle)
 
 #plot the histogram and store in x
-    dummy = plt.hist(vmasters, bins=range(anomaster0, anomaster1),
+    dummy2 = plt.hist(vtitle, bins=range(degyear0, degyear1),
                       align='left', histtype='bar', rwidth=0.95)
 
-    plt.suptitle('Masters Degrees Obtained per Year', fontsize=20)
+    plt.suptitle(dummy1 + ' Degrees Obtained per Year', fontsize=20)
 
 #Plot the total of people who finished masters degree in the given position
-    plt.text(anomaster0, 0.8*np.argmax(dummy[0]), 'Total = ' +
-             str(len(rawdata['anoPrimeiroM'].loc[lambda s: s > 0])), size='20')
+    plt.text(degyear0, 0.8*max(dummy2[0]), 'Total = ' +
+             str(len([i for i in vtitle if i > 0])), size='20')
     plt.show()
 
-    del dummy
+    del dummy2
 
 def lattes_grad_level(rawdata):
     """ Plots a histogram of the specialization level of the students.
@@ -1214,6 +1232,15 @@ def lattes_classes_from_folder(cfolder, imin=2, imax=10, option=0, refdate1='',
         folder: the folder where the Lattes CV files are found.
         imin: lowest number of mean publication profiles analyzed.
         imax: highest number of mean publication profiles analyzed.
+        option: argument that defines how the publication dates will be 
+            treated by the algorithm:
+        option=0: production is based on calendar year. leave frame unchanged.
+        option=1: first production value is first non-zero value of the
+           production vector. The last vector indexes are substituted by zeros.
+        option=2: first production year is first year of PIBIC scholarship.
+           Only make sense to use it in PIBIC-based dataframes.
+        refdate1: lowest date to limit the analysis.
+        refdate2: highest date to limit the analysis.
     """
     import LattesLab as ll
     import os
