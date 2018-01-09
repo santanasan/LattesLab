@@ -33,11 +33,11 @@ def get_freq_pie_chart(row, mytitle=""):
     rcParams['figure.figsize'] = 8, 6
     rcParams['figure.dpi'] = 96
     rcParams['font.size'] = 12
-    
+
     fig = plt.figure()
-    
+
     ax = fig.add_subplot(221)
-    
+
     labels = np.array(row.unique())
     quants = np.array(row.value_counts())
     percents = 100*quants/sum(quants)
@@ -49,19 +49,16 @@ def get_freq_pie_chart(row, mytitle=""):
         else:
             dummy = str(percents[i])[0:4]
         xyz.append([labels[i], quants[i], dummy + '%'])
-    
+
     ax.set_title(mytitle)
     ax.axis("equal")
-    #pie = row.value_counts().plot(kind='pie', 
-    #                              labels=['']*len(labels),
-    #                              startangle = 90)
-    
-    pie = ax.pie(row.value_counts(), labels=['']*len(labels), startangle = 90)
-    
+
+    pie = ax.pie(row.value_counts(), labels=['']*len(labels), startangle=90)
+
     ax2 = fig.add_subplot(211)
     ax2.axis("off")
     ax2.legend(pie[0], xyz, loc="center right")
-    
+
     return xyz, fig
 
 def get_ctgrs_pie_chart(row, mytitle="", refdate2=''):
@@ -79,7 +76,7 @@ def get_ctgrs_pie_chart(row, mytitle="", refdate2=''):
     import matplotlib.pyplot as plt
     import numpy as np
     from datetime import datetime
-    
+
     labels = ['0-30 days',
               '30-60 days',
               '60-90 days',
@@ -87,11 +84,11 @@ def get_ctgrs_pie_chart(row, mytitle="", refdate2=''):
               '120-150 days',
               '150-180 days',
               '180+ days']
-    
+
     labels = np.array(labels)
-    
+
     quants = np.array(7*[0])
-    
+
     #verify usability of variable refdate2
     try:
         datetime.strptime(refdate2, '%d%m%Y')
@@ -101,37 +98,37 @@ def get_ctgrs_pie_chart(row, mytitle="", refdate2=''):
 
     mask = [(datetime.strptime(refdate2, '%d%m%Y') - \
              datetime.strptime(i, '%d%m%Y')).days for i in row]
-    
+
     for i in mask:
         if i < 0:
             print('Erro')
             break
-        elif i <=30:
-            quants[0]+=1
-        elif i <=60:
-            quants[1]+=1
-        elif i <=90:
-            quants[2]+=1
-        elif i <=120:
-            quants[3]+=1
-        elif i <=150:
-            quants[4]+=1
-        elif i <=180:
-            quants[5]+=1
+        elif i <= 30:
+            quants[0] += 1
+        elif i <= 60:
+            quants[1] += 1
+        elif i <= 90:
+            quants[2] += 1
+        elif i <= 120:
+            quants[3] += 1
+        elif i <= 150:
+            quants[4] += 1
+        elif i <= 180:
+            quants[5] += 1
         else:
-            quants[6]+=1
-            
+            quants[6] += 1
+
     percents = 100*quants/sum(quants)
-            
+
     from pylab import rcParams
     rcParams['figure.figsize'] = 8, 6
     rcParams['figure.dpi'] = 96
     rcParams['font.size'] = 12
-    
+
     fig = plt.figure()
-    
+
     ax = fig.add_subplot(221)
-    
+
     xyz = []
     for i in range(0, len(labels)):
         if len(str(percents[i]).partition('.')[0]) == 2:
@@ -139,16 +136,16 @@ def get_ctgrs_pie_chart(row, mytitle="", refdate2=''):
         else:
             dummy = str(percents[i])[0:4]
         xyz.append([labels[i], quants[i], dummy + '%'])
-    
+
     ax.set_title(mytitle)
     ax.axis("equal")
-    
-    pie = ax.pie(quants, labels=['']*len(labels), startangle = 90)
-    
+
+    pie = ax.pie(quants, labels=['']*len(labels), startangle=90)
+
     ax2 = fig.add_subplot(211)
     ax2.axis("off")
     ax2.legend(pie[0], xyz, loc="center right")
-    
+
     return xyz, fig
 
 def word_list_to_cloud(cfolder, topwords):
@@ -167,7 +164,7 @@ def word_list_to_cloud(cfolder, topwords):
     from datetime import datetime
     import matplotlib.pyplot as plt
     import os
-    
+
     folder = os.path.normpath(cfolder)
 
     dummy = ' '.join(topwords)
@@ -178,7 +175,8 @@ def word_list_to_cloud(cfolder, topwords):
                 '.png')
     plt.show()
 
-def summary_list_top_words(summarylist, nwords=50, terms=[],nprint=False):
+def summary_list_top_words(summarylist, nwords=50, badwords=[], terms=[],
+                           nprint=False):
 
     """ Gets words with higher TF-IDF score
 
@@ -188,6 +186,7 @@ def summary_list_top_words(summarylist, nwords=50, terms=[],nprint=False):
     Args:
         summarylist (list): list of documents with its contents.
         nwords (int): quantity of words returned by the function.
+        badwords (list): list of stopwords.
         terms: thesaurus/ vocabulary of terms.
 
     """
@@ -195,18 +194,22 @@ def summary_list_top_words(summarylist, nwords=50, terms=[],nprint=False):
     from sklearn.feature_extraction.text import TfidfVectorizer
 #initialize the tf idf matrix
 #    badwords = ['quot','of','the','de','do','da','em','no','na']
-    badwords = ['quot', 'of','the','in','and','on','at','for','to','by','an',
-                'with','from','com','de','em','um','uma','do','da','para','no',
-                'na']
-    if terms==[]:
+    dummy = ['quot', 'of', 'the', 'in', 'and', 'on', 'at', 'for', 'to', 'by',
+             'an', 'with', 'from', 'com', 'de', 'em', 'um', 'uma', 'do', 'da',
+             'para', 'no', 'na']
+
+    badwords = badwords + list(set(dummy) - set(badwords))
+    del dummy
+
+    if terms == []:
         tf = TfidfVectorizer(analyzer='word', ngram_range=(1, 1),
                              min_df=0, max_df=.75, stop_words=badwords,
                              sublinear_tf=True)
     else:
         tf = TfidfVectorizer(analyzer='word', ngram_range=(1, 1),
                              min_df=0, max_df=.75, stop_words=badwords,
-                             vocabulary = terms,
-                             sublinear_tf=True)        
+                             vocabulary=terms,
+                             sublinear_tf=True)
 
 #fit and transform the list of lattes cv summaries to tf idf matrix
 
@@ -216,7 +219,7 @@ def summary_list_top_words(summarylist, nwords=50, terms=[],nprint=False):
     dense = tfidf_matrix.todense()
 
     lattessummary = np.sum(dense, axis=0).tolist()[0]
-    
+
 #if the score of the word is >0, add the word and its score to the wordscores
 #list
 
@@ -296,14 +299,14 @@ def nodes_class(graph, nodeslist):
     """
     import networkx as nx
 #    nx.set_node_attributes(graph, "type", "external")
-    nx.set_node_attributes(graph, "external", "type")
+    nx.set_node_attributes(graph, "type", "external")
     for x in graph.nodes():
         if x in nodeslist:
             graph.node[x]["type"] = "internal"
     return graph
 
 
-def lattes_owner(filename):
+def lattes_owner(cfolder, filename):
 
     """ Returns the name of the owner of the Lattes CV found in arg filename
 
@@ -314,8 +317,13 @@ def lattes_owner(filename):
     """
     import zipfile
     import xml.etree.ElementTree as ET
+    import os
+
+    folder = os.path.normpath(cfolder)
+    rightfile = os.path.join(folder, filename)
+
     #abre o arquivo zip baixado do site do lattes
-    archive = zipfile.ZipFile((filename), 'r')
+    archive = zipfile.ZipFile(rightfile, 'r')
 #cvdata = archive.read('curriculo.xml')
     cvfile = archive.open('curriculo.xml', 'r')
 
@@ -327,7 +335,6 @@ def lattes_owner(filename):
     return cvowner
 
 def lattes_age(rawdata, refdate=""):
-
     """ Plots a histogram of the Lattes CV collection age. The age is
         calculated from the date refdate.
 
@@ -338,7 +345,7 @@ def lattes_age(rawdata, refdate=""):
     import numpy as np
     import matplotlib.pyplot as plt
     from datetime import datetime
-    
+
     try:
         date0 = datetime.strptime(refdate, '%d%m%Y')
     except:
@@ -350,7 +357,7 @@ def lattes_age(rawdata, refdate=""):
          for i in rawdata['atualizado']]
     y = np.array([round(i.days/30) for i in x])
 
-    z = y[y>0]
+    z = y[y > 0]
 #histogram of Lattes CV age in months
     plt.figure(figsize=(8, 6), dpi=96)
     dummy = plt.hist(z, bins=range(0, round(max(z)+10, 2)),
@@ -367,23 +374,23 @@ def lattes_age(rawdata, refdate=""):
 
 def lattes_pibics(rawdata):
 
-    """ Plots a histogram of PIBIC scholarships per student in the dataframe.
+    """ Plots a histogram of PIBIC scholarships per researcher in the dataframe.
 
     Args:
         rawdata: dataframe containing the data for the histogram.
     """
     import matplotlib.pyplot as plt
-#histogram of PIBIC scholarships per student
+#histogram of PIBIC scholarships per researcher
     plt.figure(figsize=(8, 6), dpi=96)
-    
-    vpibic = rawdata['quantasVezesPIBIC'].tolist()    
+
+    vpibic = rawdata['quantasVezesPIBIC'].tolist()
 
     plt.hist(vpibic, bins=range(max(vpibic)+2), align='left',
              histtype='bar', rwidth=0.95)
 
     plt.xticks(range(min(vpibic), max(vpibic)+1), fontsize=22)
 
-    plt.suptitle('Scientific Initiation Grants per Student', fontsize=20)
+    plt.suptitle('Scientific Initiation Grants per Researcher', fontsize=20)
     plt.show()
 
 def degree_rate_year(rawdata, degreetype='G'):
@@ -398,19 +405,19 @@ def degree_rate_year(rawdata, degreetype='G'):
                     'PD' for post-doctorate.
     """
     import matplotlib.pyplot as plt
-    
+
     plt.figure(figsize=(8, 6), dpi=96)
-    
-    if degreetype == 'PD' or degreetype == 'pd':
+
+    if degreetype.lower() == 'pd':
         vtitle = rawdata['anoPrimeiroPosDoc'].tolist()
         dummy1 = 'Post-Doctorate'
-    elif degreetype == 'D' or degreetype == 'd':
+    elif degreetype.lower() == 'd':
         vtitle = rawdata['anoPrimeiroD'].tolist()
         dummy1 = 'Doctorate'
-    elif degreetype == 'M' or degreetype == 'm':
+    elif degreetype.lower() == 'm':
         vtitle = rawdata['anoPrimeiroM'].tolist()
         dummy1 = 'Masters'
-    elif degreetype == 'G' or degreetype == 'g':
+    elif degreetype.lower() == 'g':
         vtitle = rawdata['anoPrimeiraGrad'].tolist()
         dummy1 = 'Graduation'
     else:
@@ -441,7 +448,7 @@ def degree_rate_year(rawdata, degreetype='G'):
     del dummy2
 
 def lattes_grad_level(rawdata):
-    """ Plots a histogram of the specialization level of the students.
+    """ Plots a histogram of the specialization level of the researchers.
 
     Args:
         rawdata: dataframe containing the data for the histogram.
@@ -463,7 +470,7 @@ def lattes_grad_level(rawdata):
     plt.figure(figsize=(8, 6), dpi=96)
     fig = graddata.plot(y='Quantity', kind='bar', legend=False)
     fig.set_xticklabels(graddata.index, rotation=45)
-    plt.title('Academic Level of the Students')
+    plt.title('Academic Level of the Researchers')
     plt.show()
 
 def get_pub_year_data(rawdata):
@@ -488,8 +495,9 @@ def get_pub_year_data(rawdata):
 
     pubyeardata = pd.DataFrame(index=rawdata.index)
     for i in range(0, Nworks):
-        pubyeardata['pub' + str(firstyear + i)] = rawdata['papers' +
-                    str(firstyear + i)] + rawdata['works' + str(firstyear + i)]
+        pubyeardata['pub' + str(firstyear + i)] = \
+        rawdata['papers' + str(firstyear + i)] + \
+        rawdata['works' + str(firstyear + i)]
 
         if i == Nworks-1:
             pubdata = pubyeardata.copy()
@@ -506,7 +514,7 @@ def first_nonzero(frame, frameindex, option=0):
     Args:
         frame: the dataframe where the production data is found.
         frameindex: contains the year of the first PIBIC scholarship for each
-           student in arg frame. Is only used if arg option=2
+           researcher in arg frame. Is only used if arg option=2
         option=0: production is based on calendar year. leave frame unchanged.
         option=1: first production value is first non-zero value of the
            production vector. The last vector indexes are substituted by zeros.
@@ -672,7 +680,7 @@ def get_graph_from_file(filename, opt='all'):
 #opens zip file downloaded from lattes website
 #abre o arquivo zip baixado do site do lattes
 
-    archive = zipfile.ZipFile((filename), 'r')
+    archive = zipfile.ZipFile(filename, 'r')
     cvfile = archive.open('curriculo.xml', 'r')
 
 #inicializa o arquivo xpath
@@ -681,15 +689,15 @@ def get_graph_from_file(filename, opt='all'):
     tree = ET.parse(cvfile)
     root = tree.getroot()
 
-    if opt == 'all':
+    if opt.lower() == 'all':
 ## get all the authors names cited on lattes cv
         x = root.findall('.//*[@NOME-COMPLETO-DO-AUTOR]')
         nameattb = 'NOME-COMPLETO-DO-AUTOR'
-    elif opt == 'phdboards':
+    elif opt.lower() == 'phdboards':
 ## get all the phd commitees found in the lattes cv
         x = root.findall('.//PARTICIPACAO-EM-BANCA-DE-DOUTORADO/*[@NOME-DO-CANDIDATO]')
         nameattb = 'NOME-DO-CANDIDATO'
-    elif opt == 'allboards':
+    elif opt.lower() == 'allboards':
 ## get all commitees found in the lattes cv
         x = root.findall('.//PARTICIPACAO-EM-BANCA-TRABALHOS-CONCLUSAO//*[@NOME-DO-CANDIDATO]')
         nameattb = 'NOME-DO-CANDIDATO'
@@ -719,7 +727,8 @@ def get_graph_from_file(filename, opt='all'):
 
 def get_graph_from_folder(cfolder):
     """
-    From Lattes CV files in a folder, ret
+    From Lattes CV files in a folder, returns a graph of the collaborations of
+    the
     """
 
     import LattesLab as ll
@@ -730,9 +739,9 @@ def get_graph_from_folder(cfolder):
     import numpy as np
     import warnings
     import os
-    
+
     folder = os.path.normpath(cfolder)
-	
+
     warnings.filterwarnings("ignore")
 
     [filelist, errlist] = get_files_list(folder)
@@ -741,10 +750,10 @@ def get_graph_from_folder(cfolder):
     namelist = []
 
     for file in filelist:
-        filename = os.path.join(folder,file)
+        filename = os.path.join(folder, file)
         dummygraph = ll.get_graph_from_file(filename)
         vecgraph.append(dummygraph)
-        namelist.append(ll.lattes_owner(filename))
+        namelist.append(ll.lattes_owner(folder, filename))
 
     #join the graphs in the vector vecgraph in a single network
 
@@ -767,22 +776,23 @@ def get_graph_from_folder(cfolder):
     #pos=nx.spring_layout(network, k=1/np.sqrt(len(network)))
     pos = nx.shell_layout(network, [intlist, extlist])
     nx.draw_networkx_nodes(network, pos, nodelist=extlist,
-                           node_color='r',  alpha=0.2)   
+                           node_color='r', alpha=0.2)
     nx.draw_networkx_nodes(network, pos, nodelist=intlist, node_color='b')
     #nx.draw_networkx_labels(network,pos)
     nx.draw_networkx_edges(network, pos, width=1.0, alpha=0.2)
     plt.axis('off')
-    plt.show()
 
     figfile = 'graph' + datetime.now().strftime('%Y%m%d%H%M%S') + '.png'
 
-    plt.savefig(os.path.join(folder, figfile))
-    
+    plt.savefig(os.path.join(folder, figfile), format='png')
+
+    plt.show()
+
     textfilename = "Labels" + datetime.now().strftime('%Y%m%d%H%M%S') + ".txt"
 
     textfile = open(os.path.join(folder, textfilename), "w")
 
-    for x in network.nodes(data = True):
+    for x in network.nodes(data=True):
         dummy1 = str(x[0]).encode(encoding='ISO-8859-1', errors='strict'). \
                         decode(encoding='utf-8', errors='ignore')
         dummy2 = x[1]['name'].encode(encoding='ISO-8859-1', errors='strict'). \
@@ -807,12 +817,14 @@ def get_graph_from_folder(cfolder):
     secondconnections = ll.get_node_connections(intlist, network, 2)
 
     connections = pd.DataFrame(
-            {'name': namelist,
-             'firstconnections': firstconnections,
-             'secondconnections': secondconnections,
-             'ratio': np.array(firstconnections)/np.array(secondconnections)
-             })
-    datafilename = "DataFrame" + datetime.now().strftime('%Y%m%d%H%M%S') + ".txt"
+        {'name': namelist,
+         'firstconnections': firstconnections,
+         'secondconnections': secondconnections,
+         'ratio': np.array(firstconnections)/np.array(secondconnections)
+          })
+    datafilename = "DataFrame" + datetime.now().strftime('%Y%m%d%H%M%S') + \
+                   ".txt"
+
     connections.to_csv(os.path.join(folder, datafilename))
 
     return [network, connections]
@@ -842,7 +854,7 @@ def top_n_contributions(xgraph, n):
 
     for i in range(0, n):
         dummy = [k for k in xgraph.edges(data=True) if
-                  k[2]['weight'] == weightlist[i]]
+                 k[2]['weight'] == weightlist[i]]
         for z in dummy: topcontribs.append(z)
 
     for z in topcontribs:
@@ -877,8 +889,7 @@ def get_files_list(cfolder):
         try:
             rightname = os.path.join(folder, filename)
             archive = zipfile.ZipFile(rightname, 'r')
-            if (archive.namelist()[0][-3:] == 'xml')| \
-                (archive.namelist()[0][-3:] == 'XML'):
+            if archive.namelist()[0][-3:].lower() == 'xml':
                 cvfile = archive.open(archive.namelist()[0], 'r')
                 ET.parse(cvfile)
             else:
@@ -902,7 +913,7 @@ def get_colab(filename, columns):
     import pandas as pd
 
 #abre o arquivo zip baixado do site do lattes
-    archive = zipfile.ZipFile((filename), 'r')
+    archive = zipfile.ZipFile(filename, 'r')
 #cvdata = archive.read('curriculo.xml')
     cvfile = archive.open('curriculo.xml', 'r')
 
@@ -953,7 +964,7 @@ def get_colab(filename, columns):
                 year = x[0].attrib['ANO-DO-ARTIGO']
                 title = x[0].attrib['TITULO-DO-ARTIGO']
                 dummy = pd.DataFrame(data=[[colabtype, cvid, cvid2, year, title]],
-                                      columns=columns)
+                                     columns=columns)
                 colabframe = colabframe.append(dummy)
 
     return colabframe
@@ -965,7 +976,7 @@ def join_graphs(vecgraph):
     """
     import networkx as nx
     if len(vecgraph) < 2:
-        return vecgraph
+        return vecgraph[0]
     elif len(vecgraph) == 2:
         return nx.compose(vecgraph[0], vecgraph[1])
     else:
@@ -987,7 +998,7 @@ def get_lattes_desc_folder(cfolder):
     import xml.etree.cElementTree as ET
     import os
     import LattesLab as ll
-    
+
     folder = os.path.normpath(cfolder)
 
     [goodlist, badlist] = ll.get_files_list(folder)
@@ -998,7 +1009,7 @@ def get_lattes_desc_folder(cfolder):
     for cvzipfile in goodlist:
         filename = os.path.join(folder, cvzipfile)
 #abre o arquivo zip baixado do site do lattes
-        archive = zipfile.ZipFile((filename), 'r')
+        archive = zipfile.ZipFile(filename, 'r')
 #cvdata = archive.read('curriculo.xml')
         cvfile = archive.open('curriculo.xml', 'r')
 
@@ -1027,7 +1038,7 @@ def get_dataframe_from_folder(cfolder, savefile=True):
     import zipfile
     from datetime import datetime
     import os
-    
+
     folder = os.path.normpath(cfolder)
 
     columns = ['Nome',
@@ -1232,7 +1243,7 @@ def lattes_classes_from_folder(cfolder, imin=2, imax=10, option=0, refdate1='',
         folder: the folder where the Lattes CV files are found.
         imin: lowest number of mean publication profiles analyzed.
         imax: highest number of mean publication profiles analyzed.
-        option: argument that defines how the publication dates will be 
+        option: argument that defines how the publication dates will be
             treated by the algorithm:
         option=0: production is based on calendar year. leave frame unchanged.
         option=1: first production value is first non-zero value of the
@@ -1244,20 +1255,20 @@ def lattes_classes_from_folder(cfolder, imin=2, imax=10, option=0, refdate1='',
     """
     import LattesLab as ll
     import os
-    
+
     folder = os.path.normpath(cfolder)
 
     lattesframe = ll.get_dataframe_from_folder(folder, True)
 
     cleandata = lattesframe
-    
+
     lattesframe = ll.filter_by_date(lattesframe, refdate1, refdate2)
 
     ll.lattes_age(lattesframe)
 
     ll.lattes_pibics(lattesframe)
 
-    ll.masters_rate_year(lattesframe)
+    ll.degree_rate_year(lattesframe, 'M')
 
     ll.lattes_grad_level(lattesframe)
 
@@ -1266,13 +1277,14 @@ def lattes_classes_from_folder(cfolder, imin=2, imax=10, option=0, refdate1='',
     ll.first_nonzero(pubdata, lattesframe['anoPrimeiroPIBIC'], option)
 
     chartdata1, fig1 = ll.get_freq_pie_chart(lattesframe.nacionalidade,
-                                         "Nationalities Frequency")
+                                             "Nationalities Frequency")
 
     chartdata2, fig2 = ll.get_freq_pie_chart(lattesframe.quantasVezesPIBIC,
-                                         "PIBIC Scholarships Frequency")
+                                             "PIBIC Scholarships Frequency")
 
-    chartdata3, fig3 = ll.get_ctgrs_pie_chart(lattesframe.atualizado,
-                                          "Frequency of Lattes Age in Days")
+    chartdata3, fig3 = \
+        ll.get_ctgrs_pie_chart(lattesframe.atualizado,
+                               "Frequency of Lattes Age in Days")
 
     cleandata = pubdata
     fpcs = []
@@ -1313,7 +1325,7 @@ def lattes_classes_from_frame(lattesframe, imin=2, imax=10, option=0):
 
     ll.lattes_pibics(lattesframe)
 
-    ll.masters_rate_year(lattesframe)
+    ll.degree_rate_year(lattesframe, 'M')
 
     ll.lattes_grad_level(lattesframe)
 
@@ -1389,22 +1401,22 @@ def filter_by_date(lattesframe, refdate1='', refdate2=''):
     before a certain date.
     Args:
         lattesframe: the pandas dataframe to be filtered.
-        refdate1: the lower-bound limit date to be used as reference. 
+        refdate1: the lower-bound limit date to be used as reference.
         String in the format ddmmyyyy.
-        refdate2: the upper-bound limit date to be used as reference. 
+        refdate2: the upper-bound limit date to be used as reference.
         String in the format ddmmyyyy.
     """
-    
+
     from datetime import datetime
-        
+
 #verify usability of variable refdate2
     try:
         datetime.strptime(refdate2, '%d%m%Y')
     except:
         refdate2 = datetime.now().strftime('%d%m%Y')
         print('Upper-limit date invalid. Using default date of today.')
-        
-#verify usability of variable refdate1        
+
+#verify usability of variable refdate1
     try:
         datetime.strptime(refdate1, '%d%m%Y')
     except:
@@ -1412,7 +1424,7 @@ def filter_by_date(lattesframe, refdate1='', refdate2=''):
         print('Lower-limit date invalid. Using default date of 01/01/1900.')
 
 #verify if the upper and lower limits are correctly defined
-    if (datetime.strptime(refdate1, '%d%m%Y') > 
+    if (datetime.strptime(refdate1, '%d%m%Y') >
         datetime.strptime(refdate2, '%d%m%Y')):
         dummie = refdate1
         refdate1 = refdate2
@@ -1423,7 +1435,7 @@ def filter_by_date(lattesframe, refdate1='', refdate2=''):
             (datetime.strptime(i, '%d%m%Y') > \
             datetime.strptime(refdate1, '%d%m%Y')) \
             for i in lattesframe['atualizado']]
-    
+
     return lattesframe[mask]
 
 def top_words_frame(cfolder, nwords=10):
@@ -1438,27 +1450,17 @@ def top_words_frame(cfolder, nwords=10):
     import xml.etree.cElementTree as ET
     import os
     import pandas as pd
-    
+
     columns = ["Name"] + ["Keyword" + str(i+1) for i in range(0, nwords)]
-    
+
     wordsframe = pd.DataFrame(columns=columns)
-    
+
     folder = os.path.normpath(cfolder)
-    
+
     terms = []
-    
-    #file = "c:\\Users\\thiag\\Desktop\\nasathesaurus.txt"
-    #
-    #with open(file, "r") as ins:
-    #    terms = []
-    #    for line in ins:
-    #        terms.append(line.rstrip())
-    #        
-    #terms = set(terms)
-    
-    
+
     [goodlist, badlist] = ll.get_files_list(folder)
-    
+
     del badlist
     for cvzipfile in goodlist:
         filename = os.path.join(folder, cvzipfile)
@@ -1466,53 +1468,437 @@ def top_words_frame(cfolder, nwords=10):
         archive = zipfile.ZipFile(filename, 'r')
     #cvdata = archive.read('curriculo.xml')
         cvfile = archive.open('curriculo.xml', 'r')
-    
+
     #get the summary information from lattes cv
         tree = ET.parse(cvfile)
         root = tree.getroot()
-        
+
         dummy = root.findall('.//TRABALHOS-EM-EVENTOS')
-        y1 = []        
+        y1 = []
         for x in dummy[0]:
             try:
                 y1.append(x[0].attrib['TITULO-DO-TRABALHO'])
             except:
                 pass
-    
+
         dummy = root.findall('.//ARTIGOS-PUBLICADOS')
         y2 = []
         for x in dummy[0]:
             try:
                 y2.append(x[0].attrib['TITULO-DO-ARTIGO'])
             except:
-                pass    
-    
+                pass
+
     #   dummy = root.findall('.//CAPITULOS-DE-LIVROS-PUBLICADOS')
     #   y3 = []
     #   for x in dummy[0]:
     #        try:
     #           y3.append(x[0].attrib['TITULO-DO-CAPITULO-DO-LIVRO'])
     #        except:
-    #            pass  
+    #            pass
     #   dummy = root.findall('.//LIVROS-PUBLICADOS-OU-ORGANIZADOS')
     #   y4 = []
     #   for x in dummy[0]:
     #       try:
     #           y4.append(x[0].attrib['TITULO-DO-LIVRO'])
     #        except:
-    #            pass  
-    
+    #            pass
+
         desc = y1 + y2
-    
+
         topwords = ll.summary_list_top_words(desc, nwords, terms)
-     
+
         cvowner = root[0].attrib['NOME-COMPLETO']
-        
+
         dummyframe = pd.DataFrame(data=[[cvowner] + topwords], columns=columns)
-        
+
         wordsframe = wordsframe.append(dummyframe)
-        
+
     return wordsframe
 
 def is_in_df(name, df):
-    return not df.loc[lambda s: s==name].empty
+    """
+    """
+    return not df.loc[lambda s: s == name].empty
+
+def get_work_history_file(cfolder, filename, nyears):
+    """
+    """
+    import xml.etree.ElementTree as ET
+    import zipfile
+    from datetime import datetime
+    import os
+
+    folder = os.path.normpath(cfolder)
+    rightname = os.path.join(folder, filename)
+
+    archive = zipfile.ZipFile(rightname, 'r')
+    cvfile = archive.open(archive.namelist()[0], 'r')
+
+    tree = ET.parse(cvfile)
+    root = tree.getroot()
+
+    #quantidade de trabalhos publicados
+    x = root.findall('.//TRABALHOS-EM-EVENTOS')
+
+    if not x:
+        qtyworks = 0
+    else:
+        qtyworks = len(x[0].getchildren())
+
+    nwork = []
+
+    for i in range(0, qtyworks):
+        nwork.append(x[0][i][0].attrib["ANO-DO-TRABALHO"])
+
+    nworkyear = [0]*nyears
+
+#num intervalo de Nworks anos, contar a quantidade de publicacoes por ano
+# de 2017 i=0 para tras
+
+    for i in range(0, nyears):
+        nworkyear[i] = nwork.count(str(datetime.now().year - i))
+
+    return nworkyear
+
+def get_paper_history_file(cfolder, filename, nyears):
+    """
+    """
+    import xml.etree.ElementTree as ET
+    import zipfile
+    from datetime import datetime
+    import os
+
+    folder = os.path.normpath(cfolder)
+    rightname = os.path.join(folder, filename)
+
+    archive = zipfile.ZipFile(rightname, 'r')
+    cvfile = archive.open(archive.namelist()[0], 'r')
+
+    tree = ET.parse(cvfile)
+    root = tree.getroot()
+
+    #quantidade de artigos publicados
+    x = root.findall('.//ARTIGOS-PUBLICADOS')
+
+    if len(x) > 0:
+        npapers = len(x[0].getchildren())
+    else:
+        npapers = 0
+
+    allpapers = []
+
+    for i in range(0, npapers):
+        allpapers.append(x[0][i][0].attrib["ANO-DO-ARTIGO"])
+
+    npaperyear = [0]*nyears
+
+#num intervalo de Nworks anos, contar a quantidade de publicacoes por ano
+# de 2017 i=0 para tras
+
+    for i in range(0, nyears):
+        npaperyear[i] = allpapers.count(str(datetime.now().year - i))
+
+    return npaperyear
+
+#dummy = get_pub_history(folder, '0096913881679975.zip', 20)
+
+def get_history_frame_1(lattesframe, name, nyears):
+
+    from datetime import datetime
+    import matplotlib.pyplot as plt
+    import numpy as np
+
+    from pylab import rcParams
+    rcParams['figure.figsize'] = 8, 6
+    rcParams['figure.dpi'] = 96
+    rcParams['font.size'] = 12
+
+    dummy = [str(x) for x in lattesframe.columns if 'papers' in x]
+    y1 = lattesframe.loc[lattesframe['Nome'] == name, dummy].values.tolist()[0]
+
+    dummy = [str(x) for x in lattesframe.columns if 'works' in x]
+    y2 = lattesframe.loc[lattesframe['Nome'] == name, dummy].values.tolist()[0]
+
+    maxnyears = len(y2)
+
+    x = [(datetime.now().year - x) for x in range(0, maxnyears)]
+
+    if nyears > maxnyears:
+        print('Number of years requested bigger than maximum supported ' + \
+              'by dataframe. Using default value of ' + str(maxnyears) + '.')
+    else:
+        x = x[0:nyears]
+        y1 = y1[0:nyears]
+        y2 = y2[0:nyears]
+
+    plt.figure(2)
+    p2 = plt.bar(x, y2)
+    p1 = plt.bar(x, y1, bottom=y2)
+    plt.legend((p1[0], p2[0]), ('Papers', 'Works'))
+    plt.xticks(np.arange(min(x), max(x), int((max(x)-min(x))/5)))
+    plt.title('Publication history of \n' + name)
+    plt.show()
+
+    return [y1, y2]
+
+def get_params(cfolder, file, param, nyears):
+    """
+    From the file in arg file, returns the quantity of documents correspondent
+    to the parameters listed in the arg param. The function also returns the
+    distribution of production of the types described in arg param per year,
+    starting from the current year and moving a quantity of years to the past.
+    This quantity is represented by arg nyears.
+    Args:
+        cfolder: folder where the Lattes CV file is found.
+        filename: name of the file containing the Lattes CV.
+        param: a list of strings containing the parameters to be retrieved from
+        the Lattes CV file.
+        Possible list of parameters:
+            'papers' -> list of the published scientific articles.
+            'works' -> list of works published in congresses.
+            'orientations' -> list of people the researcher has oriented, both
+            in masters and PhD programs.
+            'chapters' -> list of chapters of books written.
+            'books' -> list of books published.
+        nyears: quantity of years to be analyzed
+    """
+
+    import xml.etree.ElementTree as ET
+    import zipfile
+    import os
+
+    folder = os.path.normpath(cfolder)
+
+    filename = os.path.join(folder, file)
+
+    archive = zipfile.ZipFile(filename, 'r')
+    cvfile = archive.open(archive.namelist()[0], 'r')
+    tree = ET.parse(cvfile)
+    root = tree.getroot()
+
+    str_to_search = []
+    n = []
+    dist = []
+
+    if type(param) is not list:
+        param = [param]
+
+    for iparam in param:
+        ni = []
+        xi = []
+        str_to_search = []
+        if iparam.lower() == 'papers':
+            str_to_search.append('.//ARTIGO-PUBLICADO')
+
+        elif iparam.lower() == 'works':
+            str_to_search.append('.//TRABALHO-EM-EVENTOS')
+
+        elif iparam.lower() == 'orientations':
+            str_to_search.append('.//ORIENTACOES-CONCLUIDAS-PARA-MESTRADO')
+            str_to_search.append('.//ORIENTACOES-CONCLUIDAS-PARA-DOUTORADO')
+
+        elif iparam.lower() == 'books':
+            str_to_search.append('.//LIVRO-PUBLICADO-OU-ORGANIZADO')
+
+        elif iparam.lower() == 'chapters':
+            str_to_search.append('.//CAPITULO-DE-LIVRO-PUBLICADO')
+        else:
+            print('ERROR: INVALID PARAMETER CHOICE.')
+            return
+
+        for i in range(0, len(str_to_search)):
+            xi.append(root.findall(str_to_search[i]))
+            if len(xi[i]) > 0:
+                ni.append(len(xi[i]))
+            else:
+                ni.append(0)
+
+        yi = get_params_dist(xi, iparam, ni, nyears)
+        dist.append(yi)
+        n.append(ni)
+
+    return n, dist
+
+def get_params_dist(xmlset, param, n, nyears):
+    """
+    From the xml elements in arg xmlset, returns the sequence of production of
+    the types described in arg param per year, starting from the current
+    year and moving a quantity of years to the past. This quantity is
+    represented by arg nyears.
+    Args:
+        xmlset: list of xml elements corresponding to the parameters to be
+        analyzed.
+        param: a string containing the parameter to be retrieved from
+        the Lattes CV file.
+        Possible parameters:
+            'papers' -> list of the published scientific articles.
+            'works' -> list of works published in congresses.
+            'orientations' -> list of people the researcher has oriented, both
+            in masters and PhD programs.
+            'chapters' -> list of chapters of books written.
+            'books' -> list of books published.
+        n: list with the quantities of parameters to be retrieved from the
+        xml document.
+        nyears: quantity of years to be analyzed
+    """
+    import xml.etree.ElementTree as ET
+    from datetime import datetime
+
+    yearseq = []
+
+    for i in range(0, len(n)):
+        yearseq.append([])
+        for j in range(0, n[i]):
+            if param.lower() == 'papers':
+                yearseq[i].append(xmlset[i][j][0].attrib['ANO-DO-ARTIGO'])
+
+            elif param.lower() == 'works':
+                yearseq[i].append(xmlset[i][j][0].attrib['ANO-DO-TRABALHO'])
+
+            elif param.lower() == 'orientations':
+                yearseq[i].append(xmlset[i][j][0].attrib['ANO'])
+
+            elif param.lower() == 'books':
+                yearseq[i].append(xmlset[i][j][0].attrib['ANO'])
+
+            elif param.lower() == 'chapters':
+                yearseq[i].append(xmlset[i][j][0].attrib['ANO'])
+            else:
+                print('ERROR: INVALID PARAMETER CHOICE.')
+                return
+    dist = []
+    for i in range(0, len(n)):
+        dist.append([0]*nyears)
+        for j in range(0, nyears):
+            dist[i][j] = yearseq[i].count(str(datetime.now().year - j))
+
+    return dist
+
+def get_param_history_file(cfolder, filename, param, nyears):
+    """
+    From the file in arg filename, returns the sequence of production of
+    the types described in arg param per year, starting from the current
+    year and moving a quantity of years to the past. This quantity is
+    represented by arg nyears.
+    Args:
+        cfolder: folder where the Lattes CV file is found.
+        filename: name of the file containing the Lattes CV.
+        param: a list of strings containing the parameters to be retrieved from
+        the Lattes CV file.
+        Possible list of parameters:
+            'papers' -> list of the published scientific articles.
+            'works' -> list of works published in congresses.
+            'orientations' -> list of people the researcher has oriented, both
+            in masters and PhD programs.
+            'chapters' -> list of chapters of books written.
+            'books' -> list of books published.
+        nyears: quantity of years to be analyzed
+    """
+    import xml.etree.ElementTree as ET
+    import zipfile
+    from datetime import datetime
+    import os
+    import numpy as np
+
+    folder = os.path.normpath(cfolder)
+    rightname = os.path.join(folder, filename)
+
+    archive = zipfile.ZipFile(rightname, 'r')
+    cvfile = archive.open(archive.namelist()[0], 'r')
+
+    tree = ET.parse(cvfile)
+    root = tree.getroot()
+
+    [x, y] = get_params(folder, filename, param, nyears)
+
+    return y
+
+def get_history_file_1(cfolder, filename, param, nyears):
+    """
+    Exhibits a graphic with the production of the researcher. The 'production'
+    is defined according to the parameters inserted.
+
+    Args:
+        cfolder: the folder where the Lattes CV file is found
+        filename: the name of the Lattes CV file downloaded from the Lattes CV
+        website.
+        param: a list of parameters to be retrieved from Lattes CV file.
+        Possible list of parameters:
+            'papers' -> list of the published scientific articles.
+            'works' -> list of works published in congresses.
+            'orientations' -> list of people the researcher has oriented, both
+            in masters and PhD programs.
+            'chapters' -> list of chapters of books written.
+            'books' -> list of books published.
+        nyears: quantity of years to be analyzed
+    """
+    import matplotlib.pyplot as plt
+    import matplotlib.gridspec as gridspec
+    import LattesLab as ll
+    from datetime import datetime
+    import numpy as np
+
+    from pylab import rcParams
+    rcParams['figure.figsize'] = 8, 6
+    rcParams['figure.dpi'] = 96
+    rcParams['font.size'] = 12
+
+    Nworks = nyears
+
+    if type(param) is not list:
+        param = [param]
+
+    y = get_param_history_file(cfolder, filename, param, Nworks)
+
+    x = [(datetime.now().year - x) for x in range(0, Nworks)]
+
+    if nyears > Nworks:
+        print('Number of years requested bigger than maximum supported ' + \
+              'by dataframe. Using default value of ' + str(Nworks) + '.')
+    else:
+        x = x[0:nyears]
+        for i in y:
+            for j in i:
+                j = j[0:nyears]
+
+    yplot = []
+    for i in y:
+        for j in i:
+            yplot.append(j)
+
+    gs = gridspec.GridSpec(1, 2, width_ratios=[3, 1])
+    fig = plt.figure()
+
+    ax1 = fig.add_subplot(gs[0])
+
+    p = []
+    ybottom = [0]*nyears
+    for i in range(0, len(yplot)):
+        dummy = plt.bar(x, yplot[i], bottom=ybottom)
+        ybottom = list(np.add(ybottom, yplot[i]))
+        p.append(dummy)
+
+    xlegend = []
+    for i in param:
+        if i == 'orientations':
+            xlegend.append('orientations_master')
+            xlegend.append('orientations_phd')
+        else:
+            xlegend.append(i)
+
+    plt.yticks(np.arange(0, max(ybottom)+5, 5))
+    plt.xticks(np.arange(min(x), max(x), 5))
+    plt.grid(True)
+
+    name = ll.lattes_owner(cfolder, filename)
+    plt.title('Publication history of \n' + name)
+
+    ax2 = fig.add_subplot(gs[1])
+    ax2.axis("off")
+    ax2.legend(p[::-1], xlegend[::-1], loc="upper right")
+#    plt.legend(p[::-1], xlegend[::-1])
+
+    plt.show()
+
+    return yplot
