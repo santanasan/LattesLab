@@ -197,6 +197,15 @@ def summary_list_top_words(summarylist, nwords=50, badwords=[], terms=[],
     dummy = ['quot', 'of', 'the', 'in', 'and', 'on', 'at', 'for', 'to', 'by',
              'an', 'with', 'from', 'com', 'de', 'em', 'um', 'uma', 'do', 'da',
              'para', 'no', 'na']
+    
+    wordcount = [len(x.split()) for x in summarylist][0]
+    
+    maxwordsloop = nwords
+    
+    if wordcount < nwords:
+#        print('Number of words higher than number available. Using max' + \
+#              'number of words.')
+        maxwordsloop = wordcount
 
     badwords = badwords + list(set(dummy) - set(badwords))
     del dummy
@@ -212,30 +221,38 @@ def summary_list_top_words(summarylist, nwords=50, badwords=[], terms=[],
                              sublinear_tf=True)
 
 #fit and transform the list of lattes cv summaries to tf idf matrix
-
-    tfidf_matrix = tf.fit_transform(summarylist)
-    feature_names = tf.get_feature_names()
-
-    dense = tfidf_matrix.todense()
-
-    lattessummary = np.sum(dense, axis=0).tolist()[0]
-
-#if the score of the word is >0, add the word and its score to the wordscores
-#list
-
-    wordscores = [pair for pair in zip(range(0, len(lattessummary)),
-                                       lattessummary) if pair[1] > 0]
-
-#sort the score list by the score (second term)
-
-    sorted_wordscores = sorted(wordscores, key=lambda t: t[1] * -1)
-
-    topwords = []
-
-    for word, score in [(feature_names[word_id], score) for (word_id, score)
-                        in sorted_wordscores][:nwords]:
-        if nprint: print('{0: <40} {1}'.format(word, score))
-        topwords.append(word)
+    
+    try:
+        tfidf_matrix = tf.fit_transform(summarylist)
+        feature_names = tf.get_feature_names()
+    
+        dense = tfidf_matrix.todense()
+    
+        lattessummary = np.sum(dense, axis=0).tolist()[0]
+    
+    #if the score of the word is >0, add the word and its score to the wordscores
+    #list
+    
+        wordscores = [pair for pair in zip(range(0, len(lattessummary)),
+                                           lattessummary) if pair[1] > 0]
+    
+    #sort the score list by the score (second term)
+    
+        sorted_wordscores = sorted(wordscores, key=lambda t: t[1] * -1)
+    
+        topwords = []
+    
+        for word, score in [(feature_names[word_id], score) for (word_id, score)
+                            in sorted_wordscores][:maxwordsloop]:
+            if nprint: print('{0: <40} {1}'.format(word, score))
+            topwords.append(word)
+        
+        while len(topwords) < nwords:
+            topwords.append('')
+    except:
+        topwords = ['']*nwords  
+        
+    
 
     return topwords
 
@@ -749,8 +766,7 @@ def get_graph_from_folder(cfolder):
     vecgraph = []
     namelist = []
 
-    for file in filelist:
-        filename = os.path.join(folder, file)
+    for filename in filelist:
         dummygraph = ll.get_graph_from_file(filename)
         vecgraph.append(dummygraph)
         namelist.append(ll.lattes_owner(folder, filename))
@@ -866,7 +882,7 @@ def top_n_contributions(xgraph, n):
     return topcontribs
 
 
-def get_files_list(cfolder):
+def get_files_list(folderlist):
     """Gets a list of files from the arg folder and check for errors.
     Args:
         folder: the folder where the Lattes CV files are found. The Lattes CV
@@ -877,18 +893,27 @@ def get_files_list(cfolder):
     import zipfile
     import xml.etree.ElementTree as ET
 
-    folder = os.path.normpath(cfolder)
+    if type(folderlist) is not list:
+        folderlist = [folderlist]
 
-    fileslist = os.listdir(folder)
-    goodlist = badlist = []
-    goodlist = [x for x in fileslist if x.endswith('.zip')]
-    badlist = [x for x in fileslist if not x.endswith('.zip')]
+    goodlist = []
+    badlist = []
+    
+    for cfolder in folderlist:
+
+        folder = os.path.normpath(cfolder)
+
+        fileslist = [os.path.join(folder, x) for x in os.listdir(folder)]
+        good_dummy = [x for x in fileslist if x.endswith('.zip')]
+        bad_dummy = [x for x in fileslist if not x.endswith('.zip')]
+        goodlist += good_dummy
+        badlist += bad_dummy
 
 #test each xml for parsing capabilities
     for filename in goodlist:
         try:
-            rightname = os.path.join(folder, filename)
-            archive = zipfile.ZipFile(rightname, 'r')
+#            rightname = os.path.join(folder, filename)
+            archive = zipfile.ZipFile(filename, 'r')
             if archive.namelist()[0][-3:].lower() == 'xml':
                 cvfile = archive.open(archive.namelist()[0], 'r')
                 ET.parse(cvfile)
@@ -899,6 +924,7 @@ def get_files_list(cfolder):
             print('XML parsing error in file ' + filename)
             goodlist.remove(filename)
             badlist.append(filename)
+            
     return [goodlist, badlist]
 
 def get_colab(filename, columns):
@@ -985,7 +1011,7 @@ def join_graphs(vecgraph):
             dummy = nx.compose(dummy, vecgraph[i])
         return dummy
 
-def get_lattes_desc_folder(cfolder):
+def get_lattes_desc_folder(folderlist):
     """Extracts the description section of each Lattes CV found in arg folder.
     Args:
         folder: the folder where the Lattes CV files are found. The Lattes CV
@@ -999,15 +1025,12 @@ def get_lattes_desc_folder(cfolder):
     import os
     import LattesLab as ll
 
-    folder = os.path.normpath(cfolder)
-
-    [goodlist, badlist] = ll.get_files_list(folder)
+    [goodlist, badlist] = ll.get_files_list(folderlist)
 
     summarylist = []
 
     del badlist
-    for cvzipfile in goodlist:
-        filename = os.path.join(folder, cvzipfile)
+    for filename in goodlist:
 #abre o arquivo zip baixado do site do lattes
         archive = zipfile.ZipFile(filename, 'r')
 #cvdata = archive.read('curriculo.xml')
@@ -1024,11 +1047,12 @@ def get_lattes_desc_folder(cfolder):
 
     return summarylist
 
-def get_dataframe_from_folder(cfolder, savefile=True):
+def get_dataframe_from_folders(folderlist, savefile=True):
     """Extracts the Lattes CV dataframe to be used by other functions in
         this library.
     Args:
-        folder: the folder where the Lattes CV files are found. The Lattes CV
+        folderlist: a list of strings. Each string contains the name of one
+            folder where Lattes CV files are found. The Lattes CV
             files are downloaded as .zip files containing a .xml file.
         savefile: if True, the dataframe is stored in a .csv file for posterior
             use.
@@ -1039,8 +1063,7 @@ def get_dataframe_from_folder(cfolder, savefile=True):
     from datetime import datetime
     import os
 
-    folder = os.path.normpath(cfolder)
-
+#initiate the dataframe
     columns = ['Nome',
                'lattesId',
                'nacionalidade',
@@ -1060,26 +1083,26 @@ def get_dataframe_from_folder(cfolder, savefile=True):
 
     lattesframe = pd.DataFrame(columns=columns)
 
+#verify if the parameter folderlist is a list
+    
+    if type(folderlist) is not list:
+        folderlist = [folderlist]
+
 #filters the zip files
 
     ziplist = nonziplist = []
-
-    [ziplist, nonziplist] = get_files_list(folder)
+    [ziplist, nonziplist] = get_files_list(folderlist)
 
     count = 0
-
-    for filename in ziplist:
+    for rightname in ziplist:
         count += 1
-
-        rightname = os.path.join(folder, filename)
-
         archive = zipfile.ZipFile(rightname, 'r')
         cvfile = archive.open(archive.namelist()[0], 'r')
 
         tree = ET.parse(cvfile)
         root = tree.getroot()
 
-    #lista todos os atributos do arquivo XML
+    #list all XML file attributes
         elemtree = []
 
         for elem in tree.iter():
@@ -1091,7 +1114,7 @@ def get_dataframe_from_folder(cfolder, savefile=True):
         root.attrib
         root.getchildren()
 
-    #Dados gerais
+    #Retrieve genaral data
         readid = str(root.attrib["NUMERO-IDENTIFICADOR"])
         lastupd = str(root.attrib["DATA-ATUALIZACAO"])
         name = root[0].attrib["NOME-COMPLETO"]
@@ -1100,14 +1123,12 @@ def get_dataframe_from_folder(cfolder, savefile=True):
         except:
             nation = "Unspecified"
 
-    #Dados de formacao academica
-
+    #Retrieve academic background data    
         ngrad = nmaster = nphd = nposdoc = 0
         ano1grad = ano1master = ano1phd = ano1postdoc = 0
 
         x = root.findall('.//FORMACAO-ACADEMICA-TITULACAO')
 
-    #ESSA PARTE DO CODIGO MERECE UMA FUNCAO, TA BAGUNCADO
         if x != []:
             for i in range(0, len(x[0].getchildren())):
                 if x[0][i].tag == "GRADUACAO":
@@ -1123,11 +1144,11 @@ def get_dataframe_from_folder(cfolder, savefile=True):
                     [ano1postdoc, nposdoc] = \
                         get_grad_years(x[0][i], x[0][i].tag)
 
-    #producao bibliografica
+    #RESEARCHER PRODUCTION
 
         root[1].getchildren()
 
-    #quantidade de trabalhos publicados
+    #WORKS PUBLISHED
         x = root.findall('.//TRABALHOS-EM-EVENTOS')
 
         if not x:
@@ -1142,13 +1163,13 @@ def get_dataframe_from_folder(cfolder, savefile=True):
 
         nprodyear = [0]*Nworks
 
-    #num intervalo de 20 anos, contar a quantidade de publicacoes por ano de 2017
-    #i=0 para tras
+    #For a interval of Nwork years, count number of publications per year
+    #from current year backwards
 
         for i in range(0, Nworks):
             nprodyear[i] = nprod.count(str(datetime.now().year - i))
 
-    #quantidade de artigos publicados
+    #amout of papers published
         x = root.findall('.//ARTIGOS-PUBLICADOS')
 
         if len(x) > 0:
@@ -1163,14 +1184,13 @@ def get_dataframe_from_folder(cfolder, savefile=True):
 
         npaperyear = [0]*Nworks
 
-    #num intervalo de Nworks anos, contar a quantidade de publicacoes por ano
-    # de 2017 i=0 para tras
+    #For a interval of Nwork years, count number of publications per year
+    #from current year backwards
 
         for i in range(0, Nworks):
             npaperyear[i] = allpapers.count(str(datetime.now().year - i))
 
-    #Procurando pela quantidade de iniciações cientificas
-    #    root[0][4][0].tag #estava usando esse, mudei para o debaixo
+    #Retrieve Scientific Initiation Scolarships
         x = root.findall('.//*[@OUTRO-VINCULO-INFORMADO="Iniciação Cientifica"]') + \
             root.findall('.//*[@OUTRO-VINCULO-INFORMADO="Iniciação Científica"]') + \
             root.findall('.//*[@OUTRO-ENQUADRAMENTO-FUNCIONAL-INFORMADO=' +  \
@@ -1194,14 +1214,16 @@ def get_dataframe_from_folder(cfolder, savefile=True):
 
                 elem.attrib["ANO-FIM"] = str(datetime.now().year)
             if elem.tag == "VINCULOS":
-                if (elem.attrib["MES-INICIO"] != "")&(elem.attrib["MES-FIM"] != ""):
+                if (elem.attrib["MES-INICIO"] != "")& \
+                (elem.attrib["MES-FIM"] != ""):
                     qtdeanos += (float(elem.attrib["ANO-FIM"]) -
         				   			  float(elem.attrib["ANO-INICIO"]) +
     					   		     (float(elem.attrib["MES-FIM"]) -
     						   	      float(elem.attrib["MES-INICIO"]))/12)
                 else:
 
-    #As vezes o projeto comeca e termina no mesmo ano. Corrigir o delta anos.
+    #Sometimes the project begins and ends in the same year.
+    #Correcting the delta for these cases.
 
                     if elem.attrib["ANO-FIM"] == elem.attrib["ANO-INICIO"]:
                         qtdeanos += 1
@@ -1228,19 +1250,22 @@ def get_dataframe_from_folder(cfolder, savefile=True):
 #drop the old index
     lattesframe = lattesframe.drop('index', axis=1)
 
-    if savefile: lattesframe.to_csv(folder + 'dataframe.csv', index=False)
+    if savefile:
+        folder = os.getcwd()
+        lattesframe.to_csv(os.path.join(folder, 'dataframe.csv'),
+                           index=False)
 
     return lattesframe
 
-
-def lattes_classes_from_folder(cfolder, imin=2, imax=10, option=0, refdate1='',
+def lattes_classes_from_folder(folderlist, imin=2, imax=10, option=0, refdate1='',
                                refdate2=''):
     """
     From the Lattes CV files found in a given folder, extract some exploratory
     data results and perform analysis of the n mean publication profiles,
     where n varies from imin to imax.
     Args:
-        folder: the folder where the Lattes CV files are found.
+        folderlist: a list of strings containing names of the folders
+        where the Lattes CV files are found.
         imin: lowest number of mean publication profiles analyzed.
         imax: highest number of mean publication profiles analyzed.
         option: argument that defines how the publication dates will be
@@ -1256,9 +1281,7 @@ def lattes_classes_from_folder(cfolder, imin=2, imax=10, option=0, refdate1='',
     import LattesLab as ll
     import os
 
-    folder = os.path.normpath(cfolder)
-
-    lattesframe = ll.get_dataframe_from_folder(folder, True)
+    lattesframe = ll.get_dataframe_from_folders(folderlist, True)
 
     cleandata = lattesframe
 
@@ -1438,7 +1461,7 @@ def filter_by_date(lattesframe, refdate1='', refdate2=''):
 
     return lattesframe[mask]
 
-def top_words_frame(cfolder, nwords=10):
+def top_words_frame(folderlist, nwords=10):
     """Returns the a dataframe with the most important words found in the
     titles of articles and works per researcher.
     Args:
@@ -1455,15 +1478,18 @@ def top_words_frame(cfolder, nwords=10):
 
     wordsframe = pd.DataFrame(columns=columns)
 
-    folder = os.path.normpath(cfolder)
+#verify if the parameter folderlist is a list
+    
+    if type(folderlist) is not list:
+        folderlist = [folderlist]
 
     terms = []
 
-    [goodlist, badlist] = ll.get_files_list(folder)
+    [goodlist, badlist] = ll.get_files_list(folderlist)
 
     del badlist
-    for cvzipfile in goodlist:
-        filename = os.path.join(folder, cvzipfile)
+    
+    for filename in goodlist:
     #abre o arquivo zip baixado do site do lattes
         archive = zipfile.ZipFile(filename, 'r')
     #cvdata = archive.read('curriculo.xml')
@@ -1475,19 +1501,21 @@ def top_words_frame(cfolder, nwords=10):
 
         dummy = root.findall('.//TRABALHOS-EM-EVENTOS')
         y1 = []
-        for x in dummy[0]:
-            try:
-                y1.append(x[0].attrib['TITULO-DO-TRABALHO'])
-            except:
-                pass
+        if dummy != []:
+            for x in dummy[0]:
+                try:
+                    y1.append(x[0].attrib['TITULO-DO-TRABALHO'])
+                except:
+                    pass
 
         dummy = root.findall('.//ARTIGOS-PUBLICADOS')
         y2 = []
-        for x in dummy[0]:
-            try:
-                y2.append(x[0].attrib['TITULO-DO-ARTIGO'])
-            except:
-                pass
+        if dummy != []:
+            for x in dummy[0]:
+                try:
+                    y2.append(x[0].attrib['TITULO-DO-ARTIGO'])
+                except:
+                    pass
 
     #   dummy = root.findall('.//CAPITULOS-DE-LIVROS-PUBLICADOS')
     #   y3 = []
@@ -1505,8 +1533,10 @@ def top_words_frame(cfolder, nwords=10):
     #            pass
 
         desc = y1 + y2
-
-        topwords = ll.summary_list_top_words(desc, nwords, terms)
+        if desc !=[]:
+            topwords = ll.summary_list_top_words(desc, nwords, terms)
+        else:
+            topwords = ['']*nwords
 
         cvowner = root[0].attrib['NOME-COMPLETO']
 

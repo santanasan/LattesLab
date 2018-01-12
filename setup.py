@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='LattesLab',
-      version='0.2.0',
+      version='0.2.1',
       description='Set of tools to generate data products originated by Lattes CV files.',
       url='https://github.com/tcodingprojects/LattesLab',
       author='Thiago Santana',
