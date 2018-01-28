@@ -316,7 +316,7 @@ def nodes_class(graph, nodeslist):
     """
     import networkx as nx
 #    nx.set_node_attributes(graph, "type", "external")
-    nx.set_node_attributes(graph, "type", "external")
+    nx.set_node_attributes(graph, "external", "type")
     for x in graph.nodes():
         if x in nodeslist:
             graph.node[x]["type"] = "internal"
@@ -640,23 +640,65 @@ def get_grad_years(x, gradtype):
         gradtype: type of graduation course.
     """
     nfirst = nquant = 0
-    if (x.attrib["ANO-DE-CONCLUSAO"] != "") | (x.attrib["ANO-DE-INICIO"] != ""):
+#There may be cases where the year of conclusion or the year of beggining
+#of the course have not been disclosed. The function begins trying to find
+#these inputs, to avoid errors.
+    
+    try:
+        if x.attrib["ANO-DE-CONCLUSAO"]!="":
+            flag_end = True
+        else:
+            flag_end = False
+    except:
+        flag_end = False
+    
+    try:
+        if x.attrib["ANO-DE-INICIO"]!="":
+            flag_start = True
+        else:
+            flag_start = False
+    except:
+        flag_start = False
+        
+    if (flag_end) | (flag_start):
         nquant = nquant + 1
         if nquant == 1:
-            if x.attrib["ANO-DE-CONCLUSAO"] == "":
+            if flag_end == False:
+                inityear = get_year_from_str(x.attrib["ANO-DE-INICIO"])
                 x.attrib["ANO-DE-CONCLUSAO"] = \
-                    str(int(x.attrib["ANO-DE-INICIO"]) + xpectd_years(gradtype))
-            nfirst = int(x.attrib["ANO-DE-CONCLUSAO"])
-#Se terminou o curso
-        if x.attrib["ANO-DE-CONCLUSAO"] == "":
-            x.attrib["ANO-DE-CONCLUSAO"] = \
-                str(int(x.attrib["ANO-DE-INICIO"]) + xpectd_years(gradtype))
+                    inityear + xpectd_years(gradtype)
 
-        if nfirst > int(x.attrib["ANO-DE-CONCLUSAO"]):
-            nfirst = int(x.attrib["ANO-DE-CONCLUSAO"])
+            nfirst = get_year_from_str(x.attrib["ANO-DE-CONCLUSAO"])
+        else:
+            if flag_end == False:
+                inityear = get_year_from_str(x.attrib["ANO-DE-INICIO"])
+                x.attrib["ANO-DE-CONCLUSAO"] = \
+                    inityear + xpectd_years(gradtype)
+    
+            dummy = get_year_from_str(x.attrib["ANO-DE-CONCLUSAO"])
+            if nfirst > dummy:
+                nfirst = dummy  
 
     return [nfirst, nquant]
 
+def get_year_from_str(conclusionyear):
+    """
+    """    
+    try:
+        dummy = int(conclusionyear)
+    except:
+    #if there is a '/' somewhere
+        if '/' in conclusionyear:
+            dummy = int(conclusionyear.split('/')[1])
+            if dummy < 100:
+                if dummy < 20:
+                    dummy = dummy + 2000
+                else:
+                    dummy = dummy + 1900
+        else:
+            dummy = 9999
+    return dummy
+        
 def xpectd_years(gradtype):
     """From the arg gradtype, returns an average number of years the
     graduation course found in gradtype takes to be concluded.
@@ -1115,9 +1157,13 @@ def get_dataframe_from_folders(folderlist, savefile=True):
         root.getchildren()
 
     #Retrieve genaral data
-        readid = str(root.attrib["NUMERO-IDENTIFICADOR"])
-        lastupd = str(root.attrib["DATA-ATUALIZACAO"])
         name = root[0].attrib["NOME-COMPLETO"]
+        try:
+            readid = str(root.attrib["NUMERO-IDENTIFICADOR"])
+        except:
+            readid = str(9999999999999999)
+        lastupd = str(root.attrib["DATA-ATUALIZACAO"])
+#        print(name)
         try:
             nation = root[0].attrib["SIGLA-PAIS-NACIONALIDADE"]
         except:
@@ -1252,7 +1298,10 @@ def get_dataframe_from_folders(folderlist, savefile=True):
 
     if savefile:
         folder = os.getcwd()
-        lattesframe.to_csv(os.path.join(folder, 'dataframe.csv'),
+        csvfile = "dataframe" + datetime.now().strftime('%Y%m%d%H%M%S') + \
+            ".csv"
+
+        lattesframe.to_csv(os.path.join(folder, csvfile),
                            index=False)
 
     return lattesframe
@@ -1279,7 +1328,6 @@ def lattes_classes_from_folder(folderlist, imin=2, imax=10, option=0, refdate1='
         refdate2: highest date to limit the analysis.
     """
     import LattesLab as ll
-    import os
 
     lattesframe = ll.get_dataframe_from_folders(folderlist, True)
 
