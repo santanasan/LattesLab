@@ -1980,3 +1980,170 @@ def get_history_file_1(cfolder, filename, param, nyears):
     plt.show()
 
     return yplot
+
+def recode_str(str_input):
+    """
+    Recodes the input string in the UTF-8 coding.
+    Args:
+        str_input: the string to be decoded.
+    """
+    
+    dummy = str(str_input).encode(encoding='ISO-8859-1', errors='strict'). \
+        decode(encoding='utf-8', errors='ignore')
+                        
+    return dummy
+
+def get_pub_dataframe_from_folders(folderlist, savefile=True):
+    """
+    From the Lattes CVs in a folder, build a dataframe based on the title
+    of the works produced by each researcher.
+    Args:
+        folderlist: name of the folder that contains the Lattes CV. The 
+            Lattes CV files are downloaded as .zip files containing a
+            .xml file.
+        savefile: if True, the dataframe is stored in a .csv file for 
+            posterior use.
+    """
+    from datetime import datetime
+    import pandas as pd
+    import xml.etree.ElementTree as ET
+    import zipfile
+    import os
+    
+#initiate the dataframe
+    columns = ['Nome',
+               'lattesId',
+               'type',
+               'title',
+               'year',
+               'idiom']
+    
+#verify if the parameter folderlist is a list
+    
+    if type(folderlist) is not list:
+        folderlist = [folderlist]
+
+#filters the zip files
+
+    ziplist = nonziplist = []
+    [ziplist, nonziplist] = get_files_list(folderlist)
+
+    count = 0    
+    pubframe = pd.DataFrame(columns=columns)
+
+    for rightname in ziplist:
+        count += 1
+        archive = zipfile.ZipFile(rightname, 'r')
+        cvfile = archive.open(archive.namelist()[0], 'r')
+
+        tree = ET.parse(cvfile)
+        root = tree.getroot()   
+
+    #Retrieve genaral data
+        name = root[0].attrib["NOME-COMPLETO"]
+        try:
+            readid = str(root.attrib["NUMERO-IDENTIFICADOR"])
+        except:
+            readid = str(9999999999999999)
+        
+        #WORKS PUBLISHED
+        x = root.findall('.//TRABALHOS-EM-EVENTOS')        
+        for y in x[0]:
+            xtype = 'work'
+            try:
+                xtitle = y[0].attrib["TITULO-DO-TRABALHO"]
+            except:
+                xtitle = "TITLE_NOT_FOUND"
+            try:
+                xyear = y[0].attrib["ANO-DO-TRABALHO"]
+            except:
+                xyear = "9999"
+            try:
+                xidiom = y[0].attrib["IDIOMA"]
+            except:
+                xidiom = "IDIOM_NOT_FOUND"
+
+            dummy = [name, readid, xtype, xtitle, xyear, xidiom]
+            
+            dummy2 = pd.DataFrame(data=[dummy], columns=columns)
+    
+            pubframe = pubframe.append(dummy2)
+        
+        x = root.findall('.//ARTIGO-PUBLICADO')
+        for y in x:
+            xtype = 'paper'
+            try:
+                xtitle = y[0].attrib["TITULO-DO-ARTIGO"]
+            except:
+                xtitle = "TITLE_NOT_FOUND"
+            try:
+                xyear = y[0].attrib["ANO-DO-ARTIGO"]
+            except:
+                xyear = "9999"
+            try:
+                xidiom =y[0].attrib["IDIOMA"]
+            except:
+                xidiom = "IDIOM_NOT_FOUND"
+            dummy = [name, readid, xtype, xtitle, xyear, xidiom]
+            
+            dummy2 = pd.DataFrame(data=[dummy], columns=columns)
+    
+            pubframe = pubframe.append(dummy2)    
+        
+        x = root.findall('.//LIVRO-PUBLICADO-OU-ORGANIZADO')
+        for y in x:
+            xtype = 'book'
+            try:
+                xtitle = y[0].attrib["TITULO-DO-LIVRO"]
+            except:
+                xtitle = "TITLE_NOT_FOUND"
+            try:
+                xyear = y[0].attrib["ANO"]
+            except:
+                xyear = "9999"
+            try:
+                xidiom = y[0].attrib["IDIOMA"]
+            except:
+                xidiom = "IDIOM_NOT_FOUND"
+
+            dummy = [name, readid, xtype, xtitle, xyear, xidiom]
+            
+            dummy2 = pd.DataFrame(data=[dummy], columns=columns)
+    
+            pubframe = pubframe.append(dummy2)    
+    
+        x = root.findall('.//CAPITULO-DE-LIVRO-PUBLICADO')
+        for y in x:
+            xtype = 'chapter'
+            try:
+                xtitle = y[0].attrib["TITULO-DO-CAPITULO-DO-LIVRO"]
+            except:
+                xtitle = "TITLE_NOT_FOUND"
+            try:
+                xyear = y[0].attrib["ANO"]
+            except:
+                xyear = "9999"
+            try:
+                xidiom = y[0].attrib["IDIOMA"]
+            except:
+                xidiom = "IDIOM_NOT_FOUND"
+
+            dummy = [name, readid, xtype, xtitle, xyear, xidiom]
+            
+            dummy2 = pd.DataFrame(data=[dummy], columns=columns)
+    
+            pubframe = pubframe.append(dummy2)    
+            
+#reindex the dataframe
+    pubframe = pubframe.reset_index()
+#drop the old index
+    pubframe = pubframe.drop('index', axis=1)
+    
+    if savefile:
+        folder = os.getcwd()
+        csvfile = "dataframe" + datetime.now().strftime('%Y%m%d%H%M%S') + \
+            ".csv"
+
+        pubframe.to_csv(os.path.join(folder, csvfile),
+                           index=False)
+    return pubframe
