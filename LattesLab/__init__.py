@@ -1720,7 +1720,7 @@ def get_history_frame_1(lattesframe, name, nyears):
 
     return [y1, y2]
 
-def get_params(cfolder, file, param, nyears):
+def get_params(filename, param, nyears):
     """
     From the file in arg file, returns the quantity of documents correspondent
     to the parameters listed in the arg param. The function also returns the
@@ -1744,11 +1744,6 @@ def get_params(cfolder, file, param, nyears):
 
     import xml.etree.ElementTree as ET
     import zipfile
-    import os
-
-    folder = os.path.normpath(cfolder)
-
-    filename = os.path.join(folder, file)
 
     archive = zipfile.ZipFile(filename, 'r')
     cvfile = archive.open(archive.namelist()[0], 'r')
@@ -1853,7 +1848,7 @@ def get_params_dist(xmlset, param, n, nyears):
 
     return dist
 
-def get_param_history_file(cfolder, filename, param, nyears):
+def get_param_history_file(rightname, param, nyears):
     """
     From the file in arg filename, returns the sequence of production of
     the types described in arg param per year, starting from the current
@@ -1879,8 +1874,6 @@ def get_param_history_file(cfolder, filename, param, nyears):
     import os
     import numpy as np
 
-    folder = os.path.normpath(cfolder)
-    rightname = os.path.join(folder, filename)
 
     archive = zipfile.ZipFile(rightname, 'r')
     cvfile = archive.open(archive.namelist()[0], 'r')
@@ -1888,7 +1881,7 @@ def get_param_history_file(cfolder, filename, param, nyears):
     tree = ET.parse(cvfile)
     root = tree.getroot()
 
-    [x, y] = get_params(folder, filename, param, nyears)
+    [x, y] = get_params(rightname, param, nyears)
 
     return y
 
@@ -1916,6 +1909,7 @@ def get_history_file_1(cfolder, filename, param, nyears):
     import LattesLab as ll
     from datetime import datetime
     import numpy as np
+    import os
 
     from pylab import rcParams
     rcParams['figure.figsize'] = 8, 6
@@ -1927,7 +1921,10 @@ def get_history_file_1(cfolder, filename, param, nyears):
     if type(param) is not list:
         param = [param]
 
-    y = get_param_history_file(cfolder, filename, param, Nworks)
+    folder = os.path.normpath(cfolder)
+    rightfile = os.path.join(folder, filename)
+
+    y = get_param_history_file(rightfile, param, Nworks)
 
     x = [(datetime.now().year - x) for x in range(0, Nworks)]
 
@@ -1980,6 +1977,108 @@ def get_history_file_1(cfolder, filename, param, nyears):
     plt.show()
 
     return yplot
+
+def get_history_file_n(folderlist, param, nyears):
+    """
+    Exhibits a graphic with the production of the group of researchers.
+    The 'production' is defined according to the parameters inserted.
+
+    Args:
+        folderlist: the list of folders where the Lattes CV file are
+        found.
+        param: a list of parameters to be retrieved from Lattes CV file.
+        Possible list of parameters:
+            'papers' -> list of the published scientific articles.
+            'works' -> list of works published in congresses.
+            'orientations' -> list of people the researcher has oriented, both
+            in masters and PhD programs.
+            'chapters' -> list of chapters of books written.
+            'books' -> list of books published.
+        nyears: quantity of years to be analyzed
+    """
+    import matplotlib.pyplot as plt
+    import matplotlib.gridspec as gridspec
+    from datetime import datetime
+    import numpy as np
+
+    from pylab import rcParams
+    rcParams['figure.figsize'] = 8, 6
+    rcParams['figure.dpi'] = 96
+    rcParams['font.size'] = 12
+
+    if type(folderlist) is not list:
+        folderlist = [folderlist]
+
+#filters the zip files
+
+    ziplist = nonziplist = []
+    [ziplist, nonziplist] = get_files_list(folderlist)
+
+    if type(param) is not list:
+        param = [param]
+
+    count = 0
+    
+    for rightname in ziplist:
+        count += 1
+
+        dummy = get_param_history_file(rightname, param, Nworks)
+        if count == 1:
+            y = dummy
+        else:
+            y = sumlist(y, dummy)
+
+    x = [(datetime.now().year - x) for x in range(0, Nworks)]
+
+    if nyears > Nworks:
+        print('Number of years requested bigger than maximum supported ' + \
+              'by dataframe. Using default value of ' + str(Nworks) + '.')
+    else:
+        x = x[0:nyears]
+        for i in y:
+            for j in i:
+                j = j[0:nyears]
+
+    yplot = []
+    for i in y:
+        for j in i:
+            yplot.append(j)
+
+    gs = gridspec.GridSpec(1, 2, width_ratios=[3, 1])
+    fig = plt.figure()
+
+    ax1 = fig.add_subplot(gs[0])
+
+    p = []
+    ybottom = [0]*nyears
+    for i in range(0, len(yplot)):
+        dummy = plt.bar(x, yplot[i], bottom=ybottom)
+        ybottom = list(np.add(ybottom, yplot[i]))
+        p.append(dummy)
+
+    xlegend = []
+    for i in param:
+        if i == 'orientations':
+            xlegend.append('orientations_master')
+            xlegend.append('orientations_phd')
+        else:
+            xlegend.append(i)
+
+    plt.yticks(np.arange(0, max(ybottom)+5, 5))
+    plt.xticks(np.arange(min(x), max(x), 5))
+    plt.grid(True)
+
+    plt.title('Group Publication History')
+
+    ax2 = fig.add_subplot(gs[1])
+    ax2.axis("off")
+    ax2.legend(p[::-1], xlegend[::-1], loc="upper right")
+#    plt.legend(p[::-1], xlegend[::-1])
+
+    plt.show()
+
+    return yplot
+
 
 def recode_str(str_input):
     """
@@ -2147,3 +2246,21 @@ def get_pub_dataframe_from_folders(folderlist, savefile=True):
         pubframe.to_csv(os.path.join(folder, csvfile),
                            index=False)
     return pubframe
+
+x = [[0, 2, 6, 6, 10, 5, 4, 10, 10, 6, 6, 2, 0, 0, 1, 0, 0, 0, 0, 0], 
+     [0, 0, 7, 5, 1, 7, 4, 5, 3, 2, 6, 5, 2, 0, 0, 0, 0, 0, 0, 0]]
+
+y = [[0, 3, 2, 1, 4, 8, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+     [0, 1, 5, 4, 1, 3, 0, 2, 1, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+
+def sumlist(x, y):
+    """
+    Sums two lists of the same shape elementwise. Returns the sum.
+    """
+    z = x
+    for i in range(0,len(z)):
+        if type(x[i]) is list and type(y[i]) is list:
+            z[i] = sumlist(x[i], y[i])
+        else:
+            z[i] = x[i] + y[i]
+    return z
