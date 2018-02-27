@@ -201,7 +201,8 @@ def summary_list_top_words(summarylist, nwords=50, badwords=[], terms=[],
 #    badwords = ['quot','of','the','de','do','da','em','no','na']
     dummy = ['quot', 'of', 'the', 'in', 'and', 'on', 'at', 'for', 'to', 'by',
              'an', 'with', 'from', 'com', 'de', 'em', 'um', 'uma', 'do', 'da',
-             'para', 'no', 'na']
+             'dos', 'das', 'para', 'no', 'na', 'nos', 'nas', 'por', 'pelo',
+             'pela']
 
     wordcount = sum([len(x.split()) for x in summarylist])
 
