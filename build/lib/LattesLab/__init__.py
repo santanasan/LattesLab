@@ -13,7 +13,7 @@ rcParams['font.size'] = 22
 ####This variable defines the amount of years of publications and works
 ####collected per Lattes CV files
 
-Nworks = 20
+NWORKS = 20
 
 def get_freq_pie_chart(row, mytitle=""):
     """ Pie chart generating function
@@ -148,7 +148,7 @@ def get_ctgrs_pie_chart(row, mytitle="", refdate2=''):
 
     return xyz, fig
 
-def word_list_to_cloud(cfolder, topwords):
+def word_list_to_cloud(cfolder, topwords, wtitle='', saveit=False):
     """ Word cloud generating function
 
     From the list of words in arg topwords generates a word cloud and saves
@@ -156,8 +156,10 @@ def word_list_to_cloud(cfolder, topwords):
 
     Args:
         folder(str): string that contains the folder address.
-        topwords(list): list of the words that will generate the word cloud.
-
+        topwords(list): list of the words that will generate the word
+        cloud.
+        wtitle(str): title of the word cloud
+        saveit(bool): if True, saves the wordcloud file
     """
 
     from wordcloud import WordCloud
@@ -169,10 +171,13 @@ def word_list_to_cloud(cfolder, topwords):
 
     dummy = ' '.join(topwords)
     wordcloud = WordCloud().generate(dummy)
+    if wtitle != '':
+        plt.title(wtitle)
     plt.axis('off')
     plt.imshow(wordcloud, interpolation='bilinear')
-    plt.savefig(folder + 'wordcloud'+ datetime.now().strftime('%Y%m%d%H%M%S')+
-                '.png')
+    if saveit:
+        plt.savefig(folder + 'wordcloud'+
+                    datetime.now().strftime('%Y%m%d%H%M%S') + '.png')
     plt.show()
 
 def summary_list_top_words(summarylist, nwords=50, badwords=[], terms=[],
@@ -197,11 +202,11 @@ def summary_list_top_words(summarylist, nwords=50, badwords=[], terms=[],
     dummy = ['quot', 'of', 'the', 'in', 'and', 'on', 'at', 'for', 'to', 'by',
              'an', 'with', 'from', 'com', 'de', 'em', 'um', 'uma', 'do', 'da',
              'para', 'no', 'na']
-    
-    wordcount = [len(x.split()) for x in summarylist][0]
-    
+
+    wordcount = sum([len(x.split()) for x in summarylist])
+
     maxwordsloop = nwords
-    
+
     if wordcount < nwords:
 #        print('Number of words higher than number available. Using max' + \
 #              'number of words.')
@@ -221,41 +226,39 @@ def summary_list_top_words(summarylist, nwords=50, badwords=[], terms=[],
                              sublinear_tf=True)
 
 #fit and transform the list of lattes cv summaries to tf idf matrix
-    
+
     try:
         tfidf_matrix = tf.fit_transform(summarylist)
         feature_names = tf.get_feature_names()
-    
+
         dense = tfidf_matrix.todense()
-    
+
         lattessummary = np.sum(dense, axis=0).tolist()[0]
-    
+
     #if the score of the word is >0, add the word and its score to the wordscores
     #list
-    
+
         wordscores = [pair for pair in zip(range(0, len(lattessummary)),
                                            lattessummary) if pair[1] > 0]
-    
+
     #sort the score list by the score (second term)
-    
+
         sorted_wordscores = sorted(wordscores, key=lambda t: t[1] * -1)
-    
+
         topwords = []
-    
+
         for word, score in [(feature_names[word_id], score) for (word_id, score)
                             in sorted_wordscores][:maxwordsloop]:
-            if nprint: print('{0: <40} {1}'.format(word, score))
+            if nprint:
+                print('{0: <40} {1}'.format(word, score))
             topwords.append(word)
-        
+
         while len(topwords) < nwords:
             topwords.append('')
     except:
-        topwords = ['']*nwords  
-        
-    
+        topwords = ['']*nwords
 
     return topwords
-
 
 def get_node_connections(nodelist, network, depth=1):
 
@@ -283,7 +286,8 @@ def get_node_connections(nodelist, network, depth=1):
         for i in range(0, len(nodelist)):
             x = 0
             for y in dummy:
-                if nodelist[i] in y: x = x + 1
+                if nodelist[i] in y:
+                    x = x + 1
             connections.append(x)
 
     elif depth == 2:
@@ -294,7 +298,8 @@ def get_node_connections(nodelist, network, depth=1):
             for y in dummy2:
 #verify connections of those connected to intlist[i]
                 for z in dummy:
-                    if y[1] in z: x = x + 1
+                    if y[1] in z:
+                        x = x + 1
             connections.append(x)
 
     return connections
@@ -501,22 +506,22 @@ def get_pub_year_data(rawdata):
 
     import pandas as pd
 
-    firstyear = datetime.now().year - Nworks + 1
+    firstyear = datetime.now().year - NWORKS + 1
 
     #Normalizes the year of the first publication
     #The first year of the publication dataframe is the current calendar
-    #year minus Nworks
+    #year minus NWORKS
 
     #For means of production indexes, the quantity of papers and works
     #presented in congresses are summed to each other
 
     pubyeardata = pd.DataFrame(index=rawdata.index)
-    for i in range(0, Nworks):
+    for i in range(0, NWORKS):
         pubyeardata['pub' + str(firstyear + i)] = \
         rawdata['papers' + str(firstyear + i)] + \
         rawdata['works' + str(firstyear + i)]
 
-        if i == Nworks-1:
+        if i == NWORKS-1:
             pubdata = pubyeardata.copy()
             strindex = ['year']*pubdata.shape[1]
             for i in range(1, pubdata.shape[1]):
@@ -541,7 +546,7 @@ def first_nonzero(frame, frameindex, option=0):
     import pandas as pd
     from datetime import datetime
 
-    firstyear = datetime.now().year - Nworks + 1
+    firstyear = datetime.now().year - NWORKS + 1
 
     nrows = frame.shape[0]
     ncols = frame.shape[1]
@@ -567,8 +572,9 @@ def first_nonzero(frame, frameindex, option=0):
                     frame.set_value(i, frame.columns[ncols-1-j], 0)
                 count = count + 1
     else:
-        if option != 0: print('Invalid option in function argument.\n Using'+\
-                            ' default option = 0.')
+        if option != 0:
+            print('Invalid option in function argument.\n Using'+ \
+                  ' default option = 0.')
 
 def set_fuzzycmeans_clstr(imin, imax, cleandata):
     """Applies the algorithm fuzzy c means to the dataframe in arg cleandata
@@ -643,47 +649,47 @@ def get_grad_years(x, gradtype):
 #There may be cases where the year of conclusion or the year of beggining
 #of the course have not been disclosed. The function begins trying to find
 #these inputs, to avoid errors.
-    
+
     try:
-        if x.attrib["ANO-DE-CONCLUSAO"]!="":
+        if x.attrib["ANO-DE-CONCLUSAO"] != "":
             flag_end = True
         else:
             flag_end = False
     except:
         flag_end = False
-    
+
     try:
-        if x.attrib["ANO-DE-INICIO"]!="":
+        if x.attrib["ANO-DE-INICIO"] != "":
             flag_start = True
         else:
             flag_start = False
     except:
         flag_start = False
-        
+
     if (flag_end) | (flag_start):
         nquant = nquant + 1
         if nquant == 1:
-            if flag_end == False:
+            if not flag_end:
                 inityear = get_year_from_str(x.attrib["ANO-DE-INICIO"])
                 x.attrib["ANO-DE-CONCLUSAO"] = \
                     inityear + xpectd_years(gradtype)
 
             nfirst = get_year_from_str(x.attrib["ANO-DE-CONCLUSAO"])
         else:
-            if flag_end == False:
+            if not flag_end:
                 inityear = get_year_from_str(x.attrib["ANO-DE-INICIO"])
                 x.attrib["ANO-DE-CONCLUSAO"] = \
                     inityear + xpectd_years(gradtype)
-    
+
             dummy = get_year_from_str(x.attrib["ANO-DE-CONCLUSAO"])
             if nfirst > dummy:
-                nfirst = dummy  
+                nfirst = dummy
 
     return [nfirst, nquant]
 
 def get_year_from_str(conclusionyear):
     """
-    """    
+    """
     try:
         dummy = int(conclusionyear)
     except:
@@ -698,7 +704,7 @@ def get_year_from_str(conclusionyear):
         else:
             dummy = 9999
     return dummy
-        
+
 def xpectd_years(gradtype):
     """From the arg gradtype, returns an average number of years the
     graduation course found in gradtype takes to be concluded.
@@ -784,7 +790,7 @@ def get_graph_from_file(filename, opt='all'):
 
     return cvgraph
 
-def get_graph_from_folder(cfolder):
+def get_graph_from_folder(folderlist):
     """
     From Lattes CV files in a folder, returns a graph of the collaborations of
     the
@@ -796,14 +802,16 @@ def get_graph_from_folder(cfolder):
     from datetime import datetime
     import pandas as pd
     import numpy as np
-    import warnings
+#    import warnings
     import os
 
-    folder = os.path.normpath(cfolder)
+    filelist = errlist = []
+    [filelist, errlist] = get_files_list(folderlist)
+    del errlist
+#
+#    warnings.filterwarnings("ignore")
 
-    warnings.filterwarnings("ignore")
-
-    [filelist, errlist] = get_files_list(folder)
+    folder = os.getcwd()
 
     vecgraph = []
     namelist = []
@@ -826,8 +834,10 @@ def get_graph_from_folder(cfolder):
     intlist = []
     extlist = []
     for x in network.nodes(data=True):
-        if x[1]['type'] == 'internal': intlist.append(x[0])
-        elif x[1]['type'] == 'external': extlist.append(x[0])
+        if x[1]['type'] == 'internal':
+            intlist.append(x[0])
+        elif x[1]['type'] == 'external':
+            extlist.append(x[0])
 
     #nx.draw_networkx_nodes(network,pos=nx.spring_layout(network),nodelist=intlist)
 
@@ -855,38 +865,36 @@ def get_graph_from_folder(cfolder):
                         decode(encoding='utf-8', errors='ignore')
         dummy2 = x[1]['name'].encode(encoding='ISO-8859-1', errors='strict'). \
                         decode(encoding='utf-8', errors='ignore')
-        textfile.write(dummy1 + '\t'+ dummy2)
+        textfile.write(dummy1 + '\t'+ dummy2 + '\n')
 
     textfile.close()
-    del x
 
     #list of all weights
-    netweights = list([x[2]['weight'] for x in network.edges(data=True)])
+#    netweights = list([x[2]['weight'] for x in network.edges(data=True)])
 
-    abc = ll.top_n_contributions(network, 10)
+    top_n_contributions(network, 10)
 
-    network2 = nx.Graph(x for x in network.edges(data=True) \
-                        if x[2]['weight'] > 1)
+#    network2 = nx.Graph(x for x in network.edges(data=True) \
+#                        if x[2]['weight'] > 1)
 
     #measure how many first connections people in internal group have:
-    firstconnections = ll.get_node_connections(intlist, network, 1)
+    firstconnections = get_node_connections(intlist, network, 1)
 
     #measure how many second connections people in internal group have:
-    secondconnections = ll.get_node_connections(intlist, network, 2)
+    secondconnections = get_node_connections(intlist, network, 2)
 
     connections = pd.DataFrame(
         {'name': namelist,
          'firstconnections': firstconnections,
          'secondconnections': secondconnections,
          'ratio': np.array(firstconnections)/np.array(secondconnections)
-          })
+        })
     datafilename = "DataFrame" + datetime.now().strftime('%Y%m%d%H%M%S') + \
                    ".txt"
 
     connections.to_csv(os.path.join(folder, datafilename))
 
     return [network, connections]
-
 
 def top_n_contributions(xgraph, n):
     """From the graph found in arg xgraph, takes the n largest (with score
@@ -913,14 +921,15 @@ def top_n_contributions(xgraph, n):
     for i in range(0, n):
         dummy = [k for k in xgraph.edges(data=True) if
                  k[2]['weight'] == weightlist[i]]
-        for z in dummy: topcontribs.append(z)
+        for z in dummy:
+            topcontribs.append(z)
 
     for z in topcontribs:
         print(xgraph.node[z[0]]['name'] + ' and ' + xgraph.node[z[1]]['name'] +
               ' have worked together ' + str(z[2]['weight']) + ' times.')
-    networklarge = [x for x in xgraph.edges(data=True) if
-                    x[2]['weight'] > weightlist[n]]
-    nx.draw(nx.Graph(networklarge), with_labels=True)
+#    networklarge = [x for x in xgraph.edges(data=True) if
+#                    x[2]['weight'] > weightlist[n]]
+#    nx.draw(nx.Graph(networklarge), with_labels=True)
     return topcontribs
 
 
@@ -935,12 +944,12 @@ def get_files_list(folderlist):
     import zipfile
     import xml.etree.ElementTree as ET
 
-    if type(folderlist) is not list:
+    if not isinstance(folderlist, list):
         folderlist = [folderlist]
 
     goodlist = []
     badlist = []
-    
+
     for cfolder in folderlist:
 
         folder = os.path.normpath(cfolder)
@@ -966,7 +975,7 @@ def get_files_list(folderlist):
             print('XML parsing error in file ' + filename)
             goodlist.remove(filename)
             badlist.append(filename)
-            
+
     return [goodlist, badlist]
 
 def get_colab(filename, columns):
@@ -1053,7 +1062,7 @@ def join_graphs(vecgraph):
             dummy = nx.compose(dummy, vecgraph[i])
         return dummy
 
-def get_lattes_desc_folder(folderlist):
+def get_lattes_desc_folders(folderlist):
     """Extracts the description section of each Lattes CV found in arg folder.
     Args:
         folder: the folder where the Lattes CV files are found. The Lattes CV
@@ -1064,7 +1073,6 @@ def get_lattes_desc_folder(folderlist):
     """
     import zipfile
     import xml.etree.cElementTree as ET
-    import os
     import LattesLab as ll
 
     [goodlist, badlist] = ll.get_files_list(folderlist)
@@ -1120,14 +1128,14 @@ def get_dataframe_from_folders(folderlist, savefile=True):
                'anoPrimeiroD',
                'quantosPD',
                'anoPrimeiroPosDoc'] + \
-               ["works" + str(datetime.now().year - i) for i in range(0, Nworks)] + \
-               ["papers" + str(datetime.now().year - i) for i in range(0, Nworks)]
+               ["works" + str(datetime.now().year - i) for i in range(0, NWORKS)] + \
+               ["papers" + str(datetime.now().year - i) for i in range(0, NWORKS)]
 
     lattesframe = pd.DataFrame(columns=columns)
 
 #verify if the parameter folderlist is a list
-    
-    if type(folderlist) is not list:
+
+    if not isinstance(folderlist, list):
         folderlist = [folderlist]
 
 #filters the zip files
@@ -1152,10 +1160,6 @@ def get_dataframe_from_folders(folderlist, savefile=True):
 
         elemtree = list(set(elemtree))
 
-        root.tag
-        root.attrib
-        root.getchildren()
-
     #Retrieve genaral data
         name = root[0].attrib["NOME-COMPLETO"]
         try:
@@ -1169,7 +1173,7 @@ def get_dataframe_from_folders(folderlist, savefile=True):
         except:
             nation = "Unspecified"
 
-    #Retrieve academic background data    
+    #Retrieve academic background data
         ngrad = nmaster = nphd = nposdoc = 0
         ano1grad = ano1master = ano1phd = ano1postdoc = 0
 
@@ -1207,12 +1211,12 @@ def get_dataframe_from_folders(folderlist, savefile=True):
         for i in range(0, qtyworks):
             nprod.append(x[0][i][0].attrib["ANO-DO-TRABALHO"])
 
-        nprodyear = [0]*Nworks
+        nprodyear = [0]*NWORKS
 
     #For a interval of Nwork years, count number of publications per year
     #from current year backwards
 
-        for i in range(0, Nworks):
+        for i in range(0, NWORKS):
             nprodyear[i] = nprod.count(str(datetime.now().year - i))
 
     #amout of papers published
@@ -1228,12 +1232,12 @@ def get_dataframe_from_folders(folderlist, savefile=True):
         for i in range(0, npapers):
             allpapers.append(x[0][i][0].attrib["ANO-DO-ARTIGO"])
 
-        npaperyear = [0]*Nworks
+        npaperyear = [0]*NWORKS
 
     #For a interval of Nwork years, count number of publications per year
     #from current year backwards
 
-        for i in range(0, Nworks):
+        for i in range(0, NWORKS):
             npaperyear[i] = allpapers.count(str(datetime.now().year - i))
 
     #Retrieve Scientific Initiation Scolarships
@@ -1260,7 +1264,7 @@ def get_dataframe_from_folders(folderlist, savefile=True):
 
                 elem.attrib["ANO-FIM"] = str(datetime.now().year)
             if elem.tag == "VINCULOS":
-                if (elem.attrib["MES-INICIO"] != "")& \
+                if (elem.attrib["MES-INICIO"] != "") & \
                 (elem.attrib["MES-FIM"] != ""):
                     qtdeanos += (float(elem.attrib["ANO-FIM"]) -
         				   			  float(elem.attrib["ANO-INICIO"]) +
@@ -1496,7 +1500,7 @@ def filter_by_date(lattesframe, refdate1='', refdate2=''):
 
 #verify if the upper and lower limits are correctly defined
     if (datetime.strptime(refdate1, '%d%m%Y') >
-        datetime.strptime(refdate2, '%d%m%Y')):
+            datetime.strptime(refdate2, '%d%m%Y')):
         dummie = refdate1
         refdate1 = refdate2
         refdate2 = dummie
@@ -1519,7 +1523,6 @@ def top_words_frame(folderlist, nwords=10):
     import LattesLab as ll
     import zipfile
     import xml.etree.cElementTree as ET
-    import os
     import pandas as pd
 
     columns = ["Name"] + ["Keyword" + str(i+1) for i in range(0, nwords)]
@@ -1527,8 +1530,8 @@ def top_words_frame(folderlist, nwords=10):
     wordsframe = pd.DataFrame(columns=columns)
 
 #verify if the parameter folderlist is a list
-    
-    if type(folderlist) is not list:
+
+    if not isinstance(folderlist, list):
         folderlist = [folderlist]
 
     terms = []
@@ -1536,7 +1539,7 @@ def top_words_frame(folderlist, nwords=10):
     [goodlist, badlist] = ll.get_files_list(folderlist)
 
     del badlist
-    
+
     for filename in goodlist:
     #abre o arquivo zip baixado do site do lattes
         archive = zipfile.ZipFile(filename, 'r')
@@ -1581,7 +1584,7 @@ def top_words_frame(folderlist, nwords=10):
     #            pass
 
         desc = y1 + y2
-        if desc !=[]:
+        if desc != []:
             topwords = ll.summary_list_top_words(desc, nwords, terms)
         else:
             topwords = ['']*nwords
@@ -1631,7 +1634,7 @@ def get_work_history_file(cfolder, filename, nyears):
 
     nworkyear = [0]*nyears
 
-#num intervalo de Nworks anos, contar a quantidade de publicacoes por ano
+#num intervalo de NWORKS anos, contar a quantidade de publicacoes por ano
 # de 2017 i=0 para tras
 
     for i in range(0, nyears):
@@ -1671,7 +1674,7 @@ def get_paper_history_file(cfolder, filename, nyears):
 
     npaperyear = [0]*nyears
 
-#num intervalo de Nworks anos, contar a quantidade de publicacoes por ano
+#num intervalo de NWORKS anos, contar a quantidade de publicacoes por ano
 # de 2017 i=0 para tras
 
     for i in range(0, nyears):
@@ -1754,7 +1757,7 @@ def get_params(filename, param, nyears):
     n = []
     dist = []
 
-    if type(param) is not list:
+    if not isinstance(param, list):
         param = [param]
 
     for iparam in param:
@@ -1778,7 +1781,7 @@ def get_params(filename, param, nyears):
             str_to_search.append('.//CAPITULO-DE-LIVRO-PUBLICADO')
         else:
             print('ERROR: INVALID PARAMETER CHOICE.')
-            return
+            return [0, 0]
 
         for i in range(0, len(str_to_search)):
             xi.append(root.findall(str_to_search[i]))
@@ -1791,7 +1794,7 @@ def get_params(filename, param, nyears):
         dist.append(yi)
         n.append(ni)
 
-    return n, dist
+    return [n, dist]
 
 def get_params_dist(xmlset, param, n, nyears):
     """
@@ -1916,21 +1919,19 @@ def get_history_file_1(cfolder, filename, param, nyears):
     rcParams['figure.dpi'] = 96
     rcParams['font.size'] = 12
 
-    Nworks = nyears
-
-    if type(param) is not list:
+    if not isinstance(param, list):
         param = [param]
 
     folder = os.path.normpath(cfolder)
     rightfile = os.path.join(folder, filename)
 
-    y = get_param_history_file(rightfile, param, Nworks)
+    y = get_param_history_file(rightfile, param, NWORKS)
 
-    x = [(datetime.now().year - x) for x in range(0, Nworks)]
+    x = [(datetime.now().year - x) for x in range(0, NWORKS)]
 
-    if nyears > Nworks:
+    if nyears > NWORKS:
         print('Number of years requested bigger than maximum supported ' + \
-              'by dataframe. Using default value of ' + str(Nworks) + '.')
+              'by dataframe. Using default value of ' + str(NWORKS) + '.')
     else:
         x = x[0:nyears]
         for i in y:
@@ -1972,7 +1973,6 @@ def get_history_file_1(cfolder, filename, param, nyears):
     ax2 = fig.add_subplot(gs[1])
     ax2.axis("off")
     ax2.legend(p[::-1], xlegend[::-1], loc="upper right")
-#    plt.legend(p[::-1], xlegend[::-1])
 
     plt.show()
 
@@ -2006,7 +2006,7 @@ def get_history_file_n(folderlist, param, nyears):
     rcParams['figure.dpi'] = 96
     rcParams['font.size'] = 12
 
-    if type(folderlist) is not list:
+    if not isinstance(folderlist, list):
         folderlist = [folderlist]
 
 #filters the zip files
@@ -2014,25 +2014,25 @@ def get_history_file_n(folderlist, param, nyears):
     ziplist = nonziplist = []
     [ziplist, nonziplist] = get_files_list(folderlist)
 
-    if type(param) is not list:
+    if not isinstance(param, list):
         param = [param]
 
     count = 0
-    
+
     for rightname in ziplist:
         count += 1
 
-        dummy = get_param_history_file(rightname, param, Nworks)
+        dummy = get_param_history_file(rightname, param, NWORKS)
         if count == 1:
             y = dummy
         else:
             y = sumlist(y, dummy)
 
-    x = [(datetime.now().year - x) for x in range(0, Nworks)]
+    x = [(datetime.now().year - x) for x in range(0, NWORKS)]
 
-    if nyears > Nworks:
+    if nyears > NWORKS:
         print('Number of years requested bigger than maximum supported ' + \
-              'by dataframe. Using default value of ' + str(Nworks) + '.')
+              'by dataframe. Using default value of ' + str(NWORKS) + '.')
     else:
         x = x[0:nyears]
         for i in y:
@@ -2064,7 +2064,7 @@ def get_history_file_n(folderlist, param, nyears):
         else:
             xlegend.append(i)
 
-    plt.yticks(np.arange(0, max(ybottom)+5, 5))
+    plt.yticks(np.arange(0, max(ybottom)+5, round((max(ybottom)+5)/100)*10))
     plt.xticks(np.arange(min(x), max(x), 5))
     plt.grid(True)
 
@@ -2086,10 +2086,10 @@ def recode_str(str_input):
     Args:
         str_input: the string to be decoded.
     """
-    
+
     dummy = str(str_input).encode(encoding='ISO-8859-1', errors='strict'). \
         decode(encoding='utf-8', errors='ignore')
-                        
+
     return dummy
 
 def get_pub_dataframe_from_folders(folderlist, savefile=True):
@@ -2097,10 +2097,10 @@ def get_pub_dataframe_from_folders(folderlist, savefile=True):
     From the Lattes CVs in a folder, build a dataframe based on the title
     of the works produced by each researcher.
     Args:
-        folderlist: name of the folder that contains the Lattes CV. The 
+        folderlist: name of the folder that contains the Lattes CV. The
             Lattes CV files are downloaded as .zip files containing a
             .xml file.
-        savefile: if True, the dataframe is stored in a .csv file for 
+        savefile: if True, the dataframe is stored in a .csv file for
             posterior use.
     """
     from datetime import datetime
@@ -2108,7 +2108,7 @@ def get_pub_dataframe_from_folders(folderlist, savefile=True):
     import xml.etree.ElementTree as ET
     import zipfile
     import os
-    
+
 #initiate the dataframe
     columns = ['Nome',
                'lattesId',
@@ -2116,10 +2116,10 @@ def get_pub_dataframe_from_folders(folderlist, savefile=True):
                'title',
                'year',
                'idiom']
-    
+
 #verify if the parameter folderlist is a list
-    
-    if type(folderlist) is not list:
+
+    if not isinstance(folderlist, list):
         folderlist = [folderlist]
 
 #filters the zip files
@@ -2127,7 +2127,7 @@ def get_pub_dataframe_from_folders(folderlist, savefile=True):
     ziplist = nonziplist = []
     [ziplist, nonziplist] = get_files_list(folderlist)
 
-    count = 0    
+    count = 0
     pubframe = pd.DataFrame(columns=columns)
 
     for rightname in ziplist:
@@ -2136,7 +2136,7 @@ def get_pub_dataframe_from_folders(folderlist, savefile=True):
         cvfile = archive.open(archive.namelist()[0], 'r')
 
         tree = ET.parse(cvfile)
-        root = tree.getroot()   
+        root = tree.getroot()
 
     #Retrieve genaral data
         name = root[0].attrib["NOME-COMPLETO"]
@@ -2144,9 +2144,9 @@ def get_pub_dataframe_from_folders(folderlist, savefile=True):
             readid = str(root.attrib["NUMERO-IDENTIFICADOR"])
         except:
             readid = str(9999999999999999)
-        
+
         #WORKS PUBLISHED
-        x = root.findall('.//TRABALHOS-EM-EVENTOS')        
+        x = root.findall('.//TRABALHOS-EM-EVENTOS')
         for y in x[0]:
             xtype = 'work'
             try:
@@ -2163,11 +2163,11 @@ def get_pub_dataframe_from_folders(folderlist, savefile=True):
                 xidiom = "IDIOM_NOT_FOUND"
 
             dummy = [name, readid, xtype, xtitle, xyear, xidiom]
-            
+
             dummy2 = pd.DataFrame(data=[dummy], columns=columns)
-    
+
             pubframe = pubframe.append(dummy2)
-        
+
         x = root.findall('.//ARTIGO-PUBLICADO')
         for y in x:
             xtype = 'paper'
@@ -2180,15 +2180,15 @@ def get_pub_dataframe_from_folders(folderlist, savefile=True):
             except:
                 xyear = "9999"
             try:
-                xidiom =y[0].attrib["IDIOMA"]
+                xidiom = y[0].attrib["IDIOMA"]
             except:
                 xidiom = "IDIOM_NOT_FOUND"
             dummy = [name, readid, xtype, xtitle, xyear, xidiom]
-            
+
             dummy2 = pd.DataFrame(data=[dummy], columns=columns)
-    
-            pubframe = pubframe.append(dummy2)    
-        
+
+            pubframe = pubframe.append(dummy2)
+
         x = root.findall('.//LIVRO-PUBLICADO-OU-ORGANIZADO')
         for y in x:
             xtype = 'book'
@@ -2206,11 +2206,11 @@ def get_pub_dataframe_from_folders(folderlist, savefile=True):
                 xidiom = "IDIOM_NOT_FOUND"
 
             dummy = [name, readid, xtype, xtitle, xyear, xidiom]
-            
+
             dummy2 = pd.DataFrame(data=[dummy], columns=columns)
-    
-            pubframe = pubframe.append(dummy2)    
-    
+
+            pubframe = pubframe.append(dummy2)
+
         x = root.findall('.//CAPITULO-DE-LIVRO-PUBLICADO')
         for y in x:
             xtype = 'chapter'
@@ -2228,39 +2228,83 @@ def get_pub_dataframe_from_folders(folderlist, savefile=True):
                 xidiom = "IDIOM_NOT_FOUND"
 
             dummy = [name, readid, xtype, xtitle, xyear, xidiom]
-            
+
             dummy2 = pd.DataFrame(data=[dummy], columns=columns)
-    
-            pubframe = pubframe.append(dummy2)    
-            
+
+            pubframe = pubframe.append(dummy2)
+
 #reindex the dataframe
     pubframe = pubframe.reset_index()
 #drop the old index
     pubframe = pubframe.drop('index', axis=1)
-    
+
     if savefile:
         folder = os.getcwd()
         csvfile = "dataframe" + datetime.now().strftime('%Y%m%d%H%M%S') + \
             ".csv"
 
         pubframe.to_csv(os.path.join(folder, csvfile),
-                           index=False)
+                        index=False)
     return pubframe
-
-x = [[0, 2, 6, 6, 10, 5, 4, 10, 10, 6, 6, 2, 0, 0, 1, 0, 0, 0, 0, 0], 
-     [0, 0, 7, 5, 1, 7, 4, 5, 3, 2, 6, 5, 2, 0, 0, 0, 0, 0, 0, 0]]
-
-y = [[0, 3, 2, 1, 4, 8, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-     [0, 1, 5, 4, 1, 3, 0, 2, 1, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
 
 def sumlist(x, y):
     """
     Sums two lists of the same shape elementwise. Returns the sum.
     """
     z = x
-    for i in range(0,len(z)):
-        if type(x[i]) is list and type(y[i]) is list:
+    for i in range(0, len(z)):
+        if isinstance(x[i], list) and isinstance(y[i], list):
             z[i] = sumlist(x[i], y[i])
         else:
             z[i] = x[i] + y[i]
     return z
+
+def list_of_list_to_list(listoflist):
+    """
+    Transforms a list of lists in a single list.
+    params:
+        listoflist: the list of lists
+    """
+    singlelist = []
+    for xlist in listoflist:
+        for xelem in xlist:
+            singlelist.append(xelem)
+
+    return singlelist
+
+def get_wordclouds_from_pub_frame(pubframe, saveit=False):
+    """
+    From the publications found in the dataframe pubframe, generate
+    a wordcloud referring to each researcher.
+    params:
+        pubframe(dataframe): the dataframe containing the publication
+        data
+        saveit(boolean): if True, saves snapshots of the wordclouds to
+        the working dir.
+    """
+    import os
+
+    folder = os.getcwd()
+
+    allnames = pubframe.Nome.unique().tolist()
+
+    alltitles = []
+    topwords = []
+
+    for name in allnames:
+        dummyframe = pubframe.loc[pubframe.Nome == name]
+        titles = []
+        for i in range(0, len(dummyframe)):
+            titles.append(dummyframe.iloc[i].title)
+        alltitles.append(titles)
+        top50 = summary_list_top_words(titles, 50)
+        topwords.append(top50)
+        word_list_to_cloud(folder, top50, 'WORDCLOUD: \n' + name,
+                           saveit)
+
+    dummytitles = list_of_list_to_list(alltitles)
+    top50 = summary_list_top_words(dummytitles, 50)
+    topwords.append(top50)
+    word_list_to_cloud(folder, top50, 'WORDCLOUD: ALL', saveit)
+
+    return allnames, alltitles, topwords
