@@ -76,6 +76,7 @@ def get_ctgrs_pie_chart(row, mytitle="", refdate2=''):
     import matplotlib.pyplot as plt
     import numpy as np
     from datetime import datetime
+    from datetime import timedelta
 
     labels = ['0-30 days',
               '30-60 days',
@@ -98,10 +99,19 @@ def get_ctgrs_pie_chart(row, mytitle="", refdate2=''):
 
     mask = [(datetime.strptime(refdate2, '%d%m%Y') - \
              datetime.strptime(i, '%d%m%Y')).days for i in row]
-
+        
+    if min(mask) < 0:
+        print('Dates more recent than date limit found. The most recent ' +
+              'date is ' + str(-min(mask)) + ' days earlier than the '+
+              'selected date and will be used as reference.')
+        newref = min(mask)
+        refdate2 = (datetime.strptime(refdate2, '%d%m%Y') +
+                    timedelta(days=-newref)).strftime('%d%m%Y')
+        mask = [i - newref for i in mask]
+        
     for i in mask:
         if i < 0:
-            print('Erro')
+            print('Error. Reference date later than dates on the dataframe.')
             break
         elif i <= 30:
             quants[0] += 1
@@ -257,7 +267,7 @@ def summary_list_top_words(summarylist, nwords=50, badwords=[], terms=[],
         while len(topwords) < nwords:
             topwords.append('')
     except:
-        topwords = ['']*nwords
+        topwords = [] #*nwords
 
     return topwords
 
@@ -2148,91 +2158,103 @@ def get_pub_dataframe_from_folders(folderlist, savefile=True):
 
         #WORKS PUBLISHED
         x = root.findall('.//TRABALHOS-EM-EVENTOS')
-        for y in x[0]:
-            xtype = 'work'
-            try:
-                xtitle = y[0].attrib["TITULO-DO-TRABALHO"]
-            except:
-                xtitle = "TITLE_NOT_FOUND"
-            try:
-                xyear = y[0].attrib["ANO-DO-TRABALHO"]
-            except:
-                xyear = "9999"
-            try:
-                xidiom = y[0].attrib["IDIOMA"]
-            except:
-                xidiom = "IDIOM_NOT_FOUND"
-
-            dummy = [name, readid, xtype, xtitle, xyear, xidiom]
-
-            dummy2 = pd.DataFrame(data=[dummy], columns=columns)
-
-            pubframe = pubframe.append(dummy2)
+        try:
+            for y in x[0]:
+                xtype = 'work'
+                try:
+                    xtitle = y[0].attrib["TITULO-DO-TRABALHO"]
+                except:
+                    xtitle = "TITLE_NOT_FOUND"
+                try:
+                    xyear = y[0].attrib["ANO-DO-TRABALHO"]
+                except:
+                    xyear = "9999"
+                try:
+                    xidiom = y[0].attrib["IDIOMA"]
+                except:
+                    xidiom = "IDIOM_NOT_FOUND"
+    
+                dummy = [name, readid, xtype, xtitle, xyear, xidiom]
+    
+                dummy2 = pd.DataFrame(data=[dummy], columns=columns)
+    
+                pubframe = pubframe.append(dummy2)
+        except:
+            pass
 
         x = root.findall('.//ARTIGO-PUBLICADO')
-        for y in x:
-            xtype = 'paper'
-            try:
-                xtitle = y[0].attrib["TITULO-DO-ARTIGO"]
-            except:
-                xtitle = "TITLE_NOT_FOUND"
-            try:
-                xyear = y[0].attrib["ANO-DO-ARTIGO"]
-            except:
-                xyear = "9999"
-            try:
-                xidiom = y[0].attrib["IDIOMA"]
-            except:
-                xidiom = "IDIOM_NOT_FOUND"
-            dummy = [name, readid, xtype, xtitle, xyear, xidiom]
-
-            dummy2 = pd.DataFrame(data=[dummy], columns=columns)
-
-            pubframe = pubframe.append(dummy2)
+        try:
+            for y in x:
+                xtype = 'paper'
+                try:
+                    xtitle = y[0].attrib["TITULO-DO-ARTIGO"]
+                except:
+                    xtitle = "TITLE_NOT_FOUND"
+                try:
+                    xyear = y[0].attrib["ANO-DO-ARTIGO"]
+                except:
+                    xyear = "9999"
+                try:
+                    xidiom = y[0].attrib["IDIOMA"]
+                except:
+                    xidiom = "IDIOM_NOT_FOUND"
+                dummy = [name, readid, xtype, xtitle, xyear, xidiom]
+    
+                dummy2 = pd.DataFrame(data=[dummy], columns=columns)
+    
+                pubframe = pubframe.append(dummy2)
+        except:
+            pass
 
         x = root.findall('.//LIVRO-PUBLICADO-OU-ORGANIZADO')
-        for y in x:
-            xtype = 'book'
-            try:
-                xtitle = y[0].attrib["TITULO-DO-LIVRO"]
-            except:
-                xtitle = "TITLE_NOT_FOUND"
-            try:
-                xyear = y[0].attrib["ANO"]
-            except:
-                xyear = "9999"
-            try:
-                xidiom = y[0].attrib["IDIOMA"]
-            except:
-                xidiom = "IDIOM_NOT_FOUND"
-
-            dummy = [name, readid, xtype, xtitle, xyear, xidiom]
-
-            dummy2 = pd.DataFrame(data=[dummy], columns=columns)
-
-            pubframe = pubframe.append(dummy2)
+        try:
+            for y in x:
+                xtype = 'book'
+                try:
+                    xtitle = y[0].attrib["TITULO-DO-LIVRO"]
+                except:
+                    xtitle = "TITLE_NOT_FOUND"
+                try:
+                    xyear = y[0].attrib["ANO"]
+                except:
+                    xyear = "9999"
+                try:
+                    xidiom = y[0].attrib["IDIOMA"]
+                except:
+                    xidiom = "IDIOM_NOT_FOUND"
+    
+                dummy = [name, readid, xtype, xtitle, xyear, xidiom]
+    
+                dummy2 = pd.DataFrame(data=[dummy], columns=columns)
+    
+                pubframe = pubframe.append(dummy2)
+        except:
+            pass
 
         x = root.findall('.//CAPITULO-DE-LIVRO-PUBLICADO')
-        for y in x:
-            xtype = 'chapter'
-            try:
-                xtitle = y[0].attrib["TITULO-DO-CAPITULO-DO-LIVRO"]
-            except:
-                xtitle = "TITLE_NOT_FOUND"
-            try:
-                xyear = y[0].attrib["ANO"]
-            except:
-                xyear = "9999"
-            try:
-                xidiom = y[0].attrib["IDIOMA"]
-            except:
-                xidiom = "IDIOM_NOT_FOUND"
-
-            dummy = [name, readid, xtype, xtitle, xyear, xidiom]
-
-            dummy2 = pd.DataFrame(data=[dummy], columns=columns)
-
-            pubframe = pubframe.append(dummy2)
+        try:
+            for y in x:
+                xtype = 'chapter'
+                try:
+                    xtitle = y[0].attrib["TITULO-DO-CAPITULO-DO-LIVRO"]
+                except:
+                    xtitle = "TITLE_NOT_FOUND"
+                try:
+                    xyear = y[0].attrib["ANO"]
+                except:
+                    xyear = "9999"
+                try:
+                    xidiom = y[0].attrib["IDIOMA"]
+                except:
+                    xidiom = "IDIOM_NOT_FOUND"
+    
+                dummy = [name, readid, xtype, xtitle, xyear, xidiom]
+    
+                dummy2 = pd.DataFrame(data=[dummy], columns=columns)
+    
+                pubframe = pubframe.append(dummy2)
+        except:
+            pass
 
 #reindex the dataframe
     pubframe = pubframe.reset_index()
@@ -2299,9 +2321,12 @@ def get_wordclouds_from_pub_frame(pubframe, saveit=False):
             titles.append(dummyframe.iloc[i].title)
         alltitles.append(titles)
         top50 = summary_list_top_words(titles, 50)
-        topwords.append(top50)
-        word_list_to_cloud(folder, top50, 'WORDCLOUD: \n' + name,
-                           saveit)
+        if top50:
+            topwords.append(top50)
+            word_list_to_cloud(folder, top50, 'WORDCLOUD: \n' + name,
+                               saveit)
+        else:
+            pass
 
     dummytitles = list_of_list_to_list(alltitles)
     top50 = summary_list_top_words(dummytitles, 50)
