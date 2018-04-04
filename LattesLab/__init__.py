@@ -109,6 +109,7 @@ def get_ctgrs_pie_chart(row, mytitle="", refdate2=''):
                     timedelta(days=-newref)).strftime('%d%m%Y')
         mask = [i - newref for i in mask]
         
+    refdate2 = datetime.strptime(refdate2, '%d%m%Y').strftime('%d/%m/%Y')
     for i in mask:
         if i < 0:
             print('Error. Reference date later than dates on the dataframe.')
@@ -146,8 +147,11 @@ def get_ctgrs_pie_chart(row, mytitle="", refdate2=''):
         else:
             dummy = str(percents[i])[0:4]
         xyz.append([labels[i], quants[i], dummy + '%'])
-
-    ax.set_title(mytitle)
+    
+    if mytitle == "":
+        ax.set_title('Reference Date = '+ refdate2)
+    else:
+        ax.set_title(mytitle + '\nReference Date = '+ refdate2)
     ax.axis("equal")
 
     pie = ax.pie(quants, labels=['']*len(labels), startangle=90)
@@ -566,10 +570,13 @@ def first_nonzero(frame, frameindex, option=0):
     if option == 1:
         #for each row
         for i in range(0, nrows):
+            count = 0
             while (frame.iloc[i, 0] == 0) & (count < ncols):
                 for j in range(0, ncols-1):
-                    frame.set_value(i, frame.columns[j], frame.iloc[i, j+1])
-                frame.set_value(i, frame.columns[ncols-1], 0)
+#                    frame.set_value(i, frame.columns[j], frame.iloc[i, j+1])
+                    frame.iat[i, j] = frame.iloc[i, j+1]
+#                frame.set_value(i, frame.columns[ncols-1], 0)
+                frame.iat[i, ncols-1] = 0
                 count = count + 1
 
     elif option == 2:
@@ -579,9 +586,10 @@ def first_nonzero(frame, frameindex, option=0):
             nshift = frameindex.iloc[i] - firstyear
             if nshift > 0:
                 for j in range(0, ncols-1-nshift):
-                    frame.set_value(i, frame.columns[j], frame.iloc[i, j+nshift])
-                    frame.set_value(i, frame.columns[ncols-1-j], 0)
-                count = count + 1
+#                    frame.set_value(i, frame.columns[j], frame.iloc[i, j+nshift])
+                    frame.iat[i, j] = frame.iloc[i, j+nshift]
+#                    frame.set_value(i, frame.columns[ncols-1-j], 0)
+                    frame.iat[i, ncols-1-j] = 0
     else:
         if option != 0:
             print('Invalid option in function argument.\n Using'+ \
