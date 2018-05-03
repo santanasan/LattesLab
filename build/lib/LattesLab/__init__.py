@@ -346,11 +346,9 @@ def nodes_class(graph, nodeslist):
 def lattes_owner(cfolder, filename):
 
     """ Returns the name of the owner of the Lattes CV found in arg filename
-
     Args:
         filename: complete path (folder + file) of the file where the Lattes
         CV is found. The file must be a zip file containing a XML file.
-
     """
     import zipfile
     import xml.etree.ElementTree as ET
@@ -359,15 +357,15 @@ def lattes_owner(cfolder, filename):
     folder = os.path.normpath(cfolder)
     rightfile = os.path.join(folder, filename)
 
-    #abre o arquivo zip baixado do site do lattes
+    #opens the Lattes CV file
     archive = zipfile.ZipFile(rightfile, 'r')
-#cvdata = archive.read('curriculo.xml')
     cvfile = archive.open('curriculo.xml', 'r')
 
-#inicializa o xpath
+    #initializes xpath
     tree = ET.parse(cvfile)
     root = tree.getroot()
-#get the cv owner name
+
+    #get the cv owner name
     cvowner = root[0].attrib['NOME-COMPLETO']
     return cvowner
 
