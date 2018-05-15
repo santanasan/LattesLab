@@ -465,13 +465,15 @@ def degree_rate_year(rawdata, degreetype='G'):
         degyear0 = min(vtitle)
     else:
         degyear0 = sorted(set(vtitle))[1]
-#last year of occurence of a masters degree
+#last year of occurence of that degree
 
     degyear1 = max(vtitle)
 
 #plot the histogram and store in x
     dummy2 = plt.hist(vtitle, bins=range(degyear0, degyear1),
                       align='left', histtype='bar', rwidth=0.95)
+    
+    plt.xticks(range(degyear0, degyear1, 5))
 
     plt.suptitle(dummy1 + ' Degrees Obtained per Year', fontsize=20)
 
@@ -684,6 +686,7 @@ def get_grad_years(x, gradtype):
         flag_start = False
 
     if (flag_end) | (flag_start):
+#if any year is given
         nquant = nquant + 1
         if nquant == 1:
             if not flag_end:
@@ -701,7 +704,8 @@ def get_grad_years(x, gradtype):
             dummy = get_year_from_str(x.attrib["ANO-DE-CONCLUSAO"])
             if nfirst > dummy:
                 nfirst = dummy
-
+#if no year (start or end) is given, the function returns the standard values
+#of zero.
     return [nfirst, nquant]
 
 def get_year_from_str(conclusionyear):
