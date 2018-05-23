@@ -37,11 +37,10 @@ def get_freq_pie_chart(row, mytitle=""):
     fig = plt.figure()
 
     ax = fig.add_subplot(221)
-
-    labels = np.array(row.unique())
-    quants = np.array(row.value_counts())
+    
+    labels, quants = np.unique(row.values, return_counts=True)
     percents = 100*quants/sum(quants)
-#    percents = round(percents, 2)
+    
     xyz = []
     for i in range(0, len(labels)):
         if len(str(percents[i]).partition('.')[0]) == 2:
@@ -1282,8 +1281,9 @@ def get_dataframe_from_folders(folderlist, savefile=True):
         for elem in x:
             if elem.attrib["ANO-FIM"] == "": # & \
     #            (elem.attrib["SITUACAO"]=="EM_ANDAMENTO"):
-
-                elem.attrib["ANO-FIM"] = str(datetime.now().year)
+#using last year of the interval as the last year that the CV has been updated
+                elem.attrib["ANO-FIM"] = str(
+                        datetime.strptime(lastupd, '%d%m%Y').year)
             if elem.tag == "VINCULOS":
                 if (elem.attrib["MES-INICIO"] != "") & \
                 (elem.attrib["MES-FIM"] != ""):
