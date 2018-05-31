@@ -938,13 +938,17 @@ def top_n_contributions(xgraph, n):
 
 #creates a list with the sorted weights
 
-    weightlist = list(np.sort(netweights)[::-1])
+#    weightlist = list(np.sort(netweights)[::-1])
+    weightlist = list(reversed(np.unique(netweights)))
+    count = 0
 
     for i in range(0, n):
-        dummy = [k for k in xgraph.edges(data=True) if
-                 k[2]['weight'] == weightlist[i]]
-        for z in dummy:
-            topcontribs.append(z)
+        if count < n:
+            dummy = [k for k in xgraph.edges(data=True) if
+                     k[2]['weight'] == weightlist[i]]
+            for z in dummy:
+                topcontribs.append(z)
+            count = count + len(dummy)
 
     for z in topcontribs:
         print(xgraph.node[z[0]]['name'] + ' and ' + xgraph.node[z[1]]['name'] +
