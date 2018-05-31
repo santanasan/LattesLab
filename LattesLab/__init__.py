@@ -493,13 +493,14 @@ def lattes_grad_level(rawdata):
     import matplotlib.pyplot as plt
 
     pibics = len(rawdata.loc[rawdata.quantasVezesPIBIC >= 1])
+    grads = len(rawdata.loc[rawdata.quantasGrad >= 1])
     masters = len(rawdata.loc[rawdata.quantosM >= 1])
     phds = len(rawdata.loc[rawdata.quantosD >= 1])
     pphds = len(rawdata.loc[rawdata.quantosPD >= 1])
 
-    graddata = pd.DataFrame([pibics, masters, phds, pphds],
-                            index=['Scientific Initiation', 'Masters', 'PhD',
-                                   'Postdoctorate'],
+    graddata = pd.DataFrame([pibics, grads, masters, phds, pphds],
+                            index=['Scientific Initiation', 'Graduations',
+                                   'Masters', 'PhD', 'Postdoctorate'],
                             columns=['Quantity'])
 
 
@@ -776,7 +777,8 @@ def get_graph_from_file(filename, opt='all'):
 
     if opt.lower() == 'all':
 ## get all the authors names cited on lattes cv
-        x = root.findall('.//*[@NOME-COMPLETO-DO-AUTOR]')
+#        x = root.findall('.//*[@NOME-COMPLETO-DO-AUTOR]')
+        x = root.findall('.//PRODUCAO-BIBLIOGRAFICA//*[@NOME-COMPLETO-DO-AUTOR]')
         nameattb = 'NOME-COMPLETO-DO-AUTOR'
     elif opt.lower() == 'phdboards':
 ## get all the phd commitees found in the lattes cv
@@ -787,7 +789,7 @@ def get_graph_from_file(filename, opt='all'):
         x = root.findall('.//PARTICIPACAO-EM-BANCA-TRABALHOS-CONCLUSAO//*[@NOME-DO-CANDIDATO]')
         nameattb = 'NOME-DO-CANDIDATO'
 
-    y = list(enumerate(x))
+#    y = list(enumerate(x))
 
 #initialize the graph
     cvgraph = nx.Graph()
@@ -839,7 +841,7 @@ def get_graph_from_folder(folderlist):
     for filename in filelist:
         dummygraph = ll.get_graph_from_file(filename)
         vecgraph.append(dummygraph)
-        namelist.append(ll.lattes_owner(folder, filename))
+        namelist.append(ll.lattes_owner(os.path.dirname(filename), filename))
 
     #join the graphs in the vector vecgraph in a single network
 
