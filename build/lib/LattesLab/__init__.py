@@ -1167,8 +1167,8 @@ def get_dataframe_from_folders(folderlist, savefile=True):
                'anoPrimeiroD',
                'quantosPD',
                'anoPrimeiroPosDoc'] + \
-               ["works" + str(datetime.now().year - i) for i in range(0, NWORKS)] + \
-               ["papers" + str(datetime.now().year - i) for i in range(0, NWORKS)]
+               ["works" + str(datetime.now().year - NWORKS + i + 1) for i in range(0, NWORKS)] + \
+               ["papers" + str(datetime.now().year - NWORKS + i + 1) for i in range(0, NWORKS)]
 
     lattesframe = pd.DataFrame(columns=columns)
 
@@ -1256,7 +1256,7 @@ def get_dataframe_from_folders(folderlist, savefile=True):
     #from current year backwards
 
         for i in range(0, NWORKS):
-            nprodyear[i] = nprod.count(str(datetime.now().year - i))
+            nprodyear[i] = nprod.count(str(datetime.now().year - NWORKS + i + 1))
 
     #amout of papers published
         x = root.findall('.//ARTIGOS-PUBLICADOS')
@@ -1277,7 +1277,7 @@ def get_dataframe_from_folders(folderlist, savefile=True):
     #from current year backwards
 
         for i in range(0, NWORKS):
-            npaperyear[i] = allpapers.count(str(datetime.now().year - i))
+            npaperyear[i] = allpapers.count(str(datetime.now().year - NWORKS + i + 1))
 
     #Retrieve Scientific Initiation Scolarships
         x = root.findall('.//*[@OUTRO-VINCULO-INFORMADO="Iniciação Cientifica"]') + \
