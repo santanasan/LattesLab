@@ -634,7 +634,7 @@ def set_fuzzycmeans_clstr(imin, imax, cleandata):
                   str(i)+' Centroid Model')
         plt.show()
         
-        ndim = int(round(np.sqrt(i)))
+        ndim = int(np.ceil(np.sqrt(i)))
         fig, axs = plt.subplots(ndim, ndim, sharex=True, sharey=True)
         fig.suptitle('Publication profiles and their associated Centroid')
         for j1 in range(ndim):
