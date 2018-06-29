@@ -621,8 +621,8 @@ def set_fuzzycmeans_clstr(imin, imax, cleandata):
     clusters = []
     for i in range(imin, imax):
         center, u, u0, d, jm, p, fpc = fuzz.cluster.cmeans(\
-            cleandata.transpose(), i, 2, error=0.005, \
-            maxiter=1000, init=None)
+            cleandata.transpose(), i, 2, error=0.001, \
+            maxiter=5000, init=None)
         cluster_membership = np.argmax(u, axis=0)
 #plota o histograma de cada centroide
         plt.figure()
@@ -633,7 +633,22 @@ def set_fuzzycmeans_clstr(imin, imax, cleandata):
         plt.title('Number of Points in Each Centroid of the ' +
                   str(i)+' Centroid Model')
         plt.show()
-
+        
+        ndim = int(round(np.sqrt(i)))
+        fig, axs = plt.subplots(ndim, ndim, sharex=True, sharey=True)
+        fig.suptitle('Publication profiles and their associated Centroid')
+        for j1 in range(ndim):
+            for j2 in range(ndim):
+                k = ndim*j1 + j2
+                if k < i:
+                    try:
+                        axs[j1,j2].plot(range(cleandata.shape[1]),\
+                                        cleandata[cluster_membership==k].T)
+                    except:
+                        pass
+                    axs[j1,j2].plot(center[k], 'k', linestyle='-.',linewidth=2)
+                    axs[j1,j2].grid(linestyle=':')
+        
 #agrupa funcao de desempenho
         fpcs.append(fpc)
 #agrupa os centroides
@@ -642,7 +657,7 @@ def set_fuzzycmeans_clstr(imin, imax, cleandata):
         clusters.append(cluster_membership)
 
         fig, ax = plt.subplots()
-        plt.title('Model with ' + str(i) + ' Mean Publication Profiles')
+        fig.suptitle('Model with ' + str(i) + ' Mean Publication Profiles')
         for j in range(0, i):
             ax.plot(center[j], label=str(clusterweight[0][j]))
 
