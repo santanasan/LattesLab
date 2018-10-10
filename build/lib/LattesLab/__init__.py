@@ -403,7 +403,9 @@ def lattes_age(rawdata, refdate=""):
     plt.axvline(z.mean(), color='black', linestyle='dashed',
                 linewidth=2)
     plt.text(round(max(z)+10, 2)*0.3, 0.8*max(dummy[0]),
-             'Mean = ' + str(round(z.mean(), 2)))
+             'Mean = ' + str(round(z.mean(), 2)) + ' months', fontsize=16)
+    plt.xlabel("Lattes CV age in months")
+    plt.ylabel("Quantity of Lattes CVs")
     plt.suptitle('Age of Lattes CV in months', fontsize=20)
     plt.show()
     del dummy
@@ -426,6 +428,9 @@ def lattes_pibics(rawdata):
              histtype='bar', rwidth=0.95)
 
     plt.xticks(range(min(vpibic), max(vpibic)+1), fontsize=22)
+    
+    plt.xlabel("Quantity of PIBICs grants")
+    plt.ylabel("Number of researchers")
 
     plt.suptitle('Scientific Initiation Grants per Researcher', fontsize=20)
     plt.show()
@@ -477,11 +482,17 @@ def degree_rate_year(rawdata, degreetype='G'):
     
     plt.xticks(range(degyear0, degyear1, 5))
 
+    plt.xlabel("Calendar year")
+    plt.ylabel("Number of degrees obtained")
+
     plt.suptitle(dummy1 + ' Degrees Obtained per Year', fontsize=20)
 
 #Plot the total of people who finished masters degree in the given position
-    plt.text(degyear0, 0.8*max(dummy2[0]), 'Total = ' +
+    plt.text(degyear0, 0.98*max(dummy2[0]), 'Total = ' +
              str(len([i for i in vtitle if i > 0])), size='20')
+
+#    plt.text(degyear0, 0.8*max(dummy2[0]), 'Total = ' +
+#             str(len([i for i in vtitle if i > 0])), size='20')
     plt.show()
 
     del dummy2
@@ -494,6 +505,10 @@ def lattes_grad_level(rawdata):
     """
     import pandas as pd
     import matplotlib.pyplot as plt
+    
+    from pylab import rcParams
+    rcParams['figure.figsize'] = 8, 6
+    rcParams['figure.dpi'] = 96
 
     pibics = len(rawdata.loc[rawdata.quantasVezesPIBIC >= 1])
     grads = len(rawdata.loc[rawdata.quantasGrad >= 1])
@@ -510,6 +525,7 @@ def lattes_grad_level(rawdata):
     plt.figure(figsize=(8, 6), dpi=96)
     fig = graddata.plot(y='Quantity', kind='bar', legend=False)
     fig.set_xticklabels(graddata.index, rotation=45)
+    plt.ylabel('Quantity of researchers')
     plt.title('Academic Level of the Researchers')
     plt.show()
 
@@ -622,7 +638,7 @@ def set_fuzzycmeans_clstr(imin, imax, cleandata):
     for i in range(imin, imax):
         center, u, u0, d, jm, p, fpc = fuzz.cluster.cmeans(\
             cleandata.transpose(), i, 2, error=0.001, \
-            maxiter=5000, init=None)
+            maxiter=10000, init=None)
         cluster_membership = np.argmax(u, axis=0)
 #plota o histograma de cada centroide
         plt.figure()
@@ -630,13 +646,31 @@ def set_fuzzycmeans_clstr(imin, imax, cleandata):
         clusterweight = plt.hist(cluster_membership, bins=range(i+1),
                                  align='left', histtype='bar', rwidth=0.95)
         plt.xticks(range(0, i))
-        plt.title('Number of Points in Each Centroid of the ' +
+        plt.title('Number of Researchers Associated to Each Centroid of the ' +
                   str(i)+' Centroid Model')
+        plt.xlabel('Centroid label')
+        plt.ylabel('Researchers associated to centroid')
         plt.show()
         
         ndim = int(np.ceil(np.sqrt(i)))
-        fig, axs = plt.subplots(ndim, ndim, sharex=True, sharey=True)
+        if ndim*(ndim-1) >= i:
+            fig, axs = plt.subplots(ndim-1, ndim, sharex=True, sharey=True)
+        else:
+            fig, axs = plt.subplots(ndim, ndim, sharex=True, sharey=True)
+        
+        # add a big axes, hide frame
+        fig.add_subplot(111, frameon=False)
+        # hide tick and tick label of the big axes
+#        plt.tick_params(labelcolor='none', top='off', bottom='off',
+#                        left='off', right='off')
+        plt.tick_params(labelcolor='none', top=False, bottom=False,
+                        left=False, right=False)
+        plt.grid(False)
+        plt.xlabel('Year index')
+        plt.ylabel('Number of publications')
+        
         fig.suptitle('Publication profiles and their associated Centroid')
+        
         for j1 in range(ndim):
             for j2 in range(ndim):
                 k = ndim*j1 + j2
@@ -646,7 +680,7 @@ def set_fuzzycmeans_clstr(imin, imax, cleandata):
                                         cleandata[cluster_membership==k].T)
                     except:
                         pass
-                    axs[j1,j2].plot(center[k], 'k', linestyle='-.',linewidth=2)
+                    axs[j1,j2].plot(center[k], 'k', linestyle='-.', linewidth=2)
                     axs[j1,j2].grid(linestyle=':')
         
 #agrupa funcao de desempenho
@@ -661,16 +695,22 @@ def set_fuzzycmeans_clstr(imin, imax, cleandata):
         for j in range(0, i):
             ax.plot(center[j], label=str(clusterweight[0][j]))
 
-        legend = ax.legend(loc='upper right', shadow=True)
-        plt.show()
+        ax.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.,
+                  shadow=True)
 
-#    plt.figure()
-#    plt.plot(center, label=cluster_membership)
-#    plt.title(str(i)+ ' Centroides')
+#        legend = ax.legend(loc='right', shadow=True)
+        
+        plt.xlabel('Year index')
+        plt.ylabel('Number of publications')
+
+        plt.show()
 
     plt.figure()
     plt.plot(range(imin, imax), fpcs, '-x')
-    plt.title('Fuzzy C Means Performance related to the Centroid Quantity')
+    plt.xlabel('Centroid Quantity')
+    plt.ylabel('FPC')
+    plt.title('Fuzzy Partition Coefficient (FPC) as function of Centroid' +
+              ' Quantity\n Best = 1, Worst = 0')
     plt.show()
     return centers, clusters, fpcs
 
@@ -686,45 +726,56 @@ def get_grad_years(x, gradtype):
 #There may be cases where the year of conclusion or the year of beggining
 #of the course have not been disclosed. The function begins trying to find
 #these inputs, to avoid errors.
-
-    try:
-        if x.attrib["ANO-DE-CONCLUSAO"] != "":
-            flag_end = True
-        else:
+    if gradtype != "LIVRE-DOCENCIA":
+        try:
+            if x.attrib["ANO-DE-CONCLUSAO"] != "":
+                flag_end = True
+            else:
+                flag_end = False
+        except:
             flag_end = False
-    except:
-        flag_end = False
-
-    try:
-        if x.attrib["ANO-DE-INICIO"] != "":
-            flag_start = True
-        else:
+    
+        try:
+            if x.attrib["ANO-DE-INICIO"] != "":
+                flag_start = True
+            else:
+                flag_start = False
+        except:
             flag_start = False
-    except:
-        flag_start = False
-
-    if (flag_end) | (flag_start):
+    
+        if (flag_end) | (flag_start):
 #if any year is given
-        nquant = nquant + 1
-        if nquant == 1:
-            if not flag_end:
-                inityear = get_year_from_str(x.attrib["ANO-DE-INICIO"])
-                x.attrib["ANO-DE-CONCLUSAO"] = \
-                    inityear + xpectd_years(gradtype)
-
-            nfirst = get_year_from_str(x.attrib["ANO-DE-CONCLUSAO"])
-        else:
-            if not flag_end:
-                inityear = get_year_from_str(x.attrib["ANO-DE-INICIO"])
-                x.attrib["ANO-DE-CONCLUSAO"] = \
-                    inityear + xpectd_years(gradtype)
-
-            dummy = get_year_from_str(x.attrib["ANO-DE-CONCLUSAO"])
-            if nfirst > dummy:
-                nfirst = dummy
+            nquant = nquant + 1
+            if nquant == 1:
+                if not flag_end:
+                    inityear = get_year_from_str(x.attrib["ANO-DE-INICIO"])
+                    x.attrib["ANO-DE-CONCLUSAO"] = \
+                        inityear + xpectd_years(gradtype)
+    
+                nfirst = get_year_from_str(x.attrib["ANO-DE-CONCLUSAO"])
+            else:
+                if not flag_end:
+                    inityear = get_year_from_str(x.attrib["ANO-DE-INICIO"])
+                    x.attrib["ANO-DE-CONCLUSAO"] = \
+                        inityear + xpectd_years(gradtype)
+    
+                dummy = get_year_from_str(x.attrib["ANO-DE-CONCLUSAO"])
+                if nfirst > dummy:
+                    nfirst = dummy
+                    
+    elif gradtype == "LIVRE-DOCENCIA":
+        try:
+            nfirst = get_year_from_str(x.attrib["ANO-DE-OBTENCAO-DO-TITULO"])
+            nquant = 1
+        except:
+            pass
+        
+        
 #if no year (start or end) is given, the function returns the standard values
 #of zero.
     return [nfirst, nquant]
+
+
 
 def get_year_from_str(conclusionyear):
     """
@@ -758,6 +809,8 @@ def xpectd_years(gradtype):
         return 4
     elif gradtype == "POS-DOUTORADO":
         return 2
+    elif gradtype == "LIVRE-DOCENCIA":
+        return 0
     else:
         print("Invalid input for graduation type in function xpectdyears")
         return 0
@@ -888,12 +941,20 @@ def get_graph_from_folder(folderlist, saveit=False):
     #pos=nx.spring_layout(network, k=1/np.sqrt(len(network)))
     pos = nx.shell_layout(network, [intlist, extlist])
     nx.draw_networkx_nodes(network, pos, nodelist=extlist,
-                           node_color='r', alpha=0.2)
-    nx.draw_networkx_nodes(network, pos, nodelist=intlist, node_color='b')
+                           node_color='r', alpha=0.2, 
+                           label='Other researchers in the network')
+    nx.draw_networkx_nodes(network, pos, nodelist=intlist, node_color='b',
+                           label='Lattes CV Owners')
     #nx.draw_networkx_labels(network,pos)
     nx.draw_networkx_edges(network, pos, width=1.0, alpha=0.2)
     plt.axis('off')
 
+    plt.legend(bbox_to_anchor=(1.05, 1), prop={'size': 12})
+    plt.text(1.2,-1.2,
+             'Number of Lattes CV Owners= ' + str(len(intlist)) +
+             '\nNumber of other researchers = ' + str(len(extlist)),
+             wrap=True, fontsize=12,
+             bbox=dict(facecolor='white', edgecolor='black'))
     plt.show()
 
 
@@ -1228,8 +1289,8 @@ def get_dataframe_from_folders(folderlist, savefile=True):
             nation = "Unspecified"
 
     #Retrieve academic background data
-        ngrad = nmaster = nphd = nposdoc = 0
-        ano1grad = ano1master = ano1phd = ano1postdoc = 0
+        ngrad = nmaster = nphd = nposdoc =  nlivredoc = 0
+        ano1grad = ano1master = ano1phd = ano1postdoc =  ano1livredoc = 0
 
         x = root.findall('.//FORMACAO-ACADEMICA-TITULACAO')
 
@@ -1246,6 +1307,9 @@ def get_dataframe_from_folders(folderlist, savefile=True):
                         get_grad_years(x[0][i], x[0][i].tag)
                 elif x[0][i].tag == "POS-DOUTORADO":
                     [ano1postdoc, nposdoc] = \
+                        get_grad_years(x[0][i], x[0][i].tag)
+                elif x[0][i].tag == "LIVRE-DOCENCIA":
+                    [ano1livredoc, nlivredoc] = \
                         get_grad_years(x[0][i], x[0][i].tag)
 
     #RESEARCHER PRODUCTION
@@ -1740,8 +1804,6 @@ def get_paper_history_file(cfolder, filename, nyears):
 
     return npaperyear
 
-#dummy = get_pub_history(folder, '0096913881679975.zip', 20)
-
 def get_history_frame_1(lattesframe, name, nyears):
 
     from datetime import datetime
@@ -1777,6 +1839,7 @@ def get_history_frame_1(lattesframe, name, nyears):
     plt.legend((p1[0], p2[0]), ('Papers', 'Works'))
     plt.xticks(np.arange(min(x), max(x), int((max(x)-min(x))/5)))
     plt.title('Publication history of \n' + name)
+    plt.xlabel('Calendar year')
     plt.show()
 
     return [y1, y2]
@@ -1929,19 +1992,6 @@ def get_param_history_file(rightname, param, nyears):
             'books' -> list of books published.
         nyears: quantity of years to be analyzed
     """
-    import xml.etree.ElementTree as ET
-    import zipfile
-    from datetime import datetime
-    import os
-    import numpy as np
-
-
-    archive = zipfile.ZipFile(rightname, 'r')
-    cvfile = archive.open(archive.namelist()[0], 'r')
-
-    tree = ET.parse(cvfile)
-    root = tree.getroot()
-
     [x, y] = get_params(rightname, param, nyears)
 
     return y
@@ -2001,10 +2051,7 @@ def get_history_file_1(cfolder, filename, param, nyears):
         for j in i:
             yplot.append(j)
 
-    gs = gridspec.GridSpec(1, 2, width_ratios=[3, 1])
-    fig = plt.figure()
-
-    ax1 = fig.add_subplot(gs[0])
+    fig, ax = plt.subplots()
 
     p = []
     ybottom = [0]*nyears
@@ -2021,16 +2068,19 @@ def get_history_file_1(cfolder, filename, param, nyears):
         else:
             xlegend.append(i)
 
-    plt.yticks(np.arange(0, max(ybottom)+5, 5))
+    plt.yticks(np.arange(0, max(ybottom)*1.1 + 5, 5))
     plt.xticks(np.arange(min(x), max(x), 5))
     plt.grid(True)
 
     name = ll.lattes_owner(cfolder, filename)
     plt.title('Publication history of \n' + name)
+    
+    plt.xlabel("Calendar year")
+    plt.ylabel("Quantity of publication items")
 
-    ax2 = fig.add_subplot(gs[1])
-    ax2.axis("off")
-    ax2.legend(p[::-1], xlegend[::-1], loc="upper right")
+    ax.legend(p[::-1], xlegend[::-1], loc=2, 
+              bbox_to_anchor=(1.05, 1), borderaxespad=0.,
+              shadow=True)
 
     plt.show()
 
@@ -2102,10 +2152,7 @@ def get_history_file_n(folderlist, param, nyears):
         for j in i:
             yplot.append(j)
 
-    gs = gridspec.GridSpec(1, 2, width_ratios=[3, 1])
-    fig = plt.figure()
-
-    ax1 = fig.add_subplot(gs[0])
+    fig, ax = plt.subplots()
 
     p = []
     ybottom = [0]*nyears
@@ -2122,16 +2169,18 @@ def get_history_file_n(folderlist, param, nyears):
         else:
             xlegend.append(i)
 
-    plt.yticks(np.arange(0, max(ybottom)+5, round((max(ybottom)+5)/100)*10))
+    plt.yticks(np.arange(0, max(ybottom)*1.1, round((max(ybottom)+5)/100)*10))
     plt.xticks(np.arange(min(x), max(x), 5))
     plt.grid(True)
 
     plt.title('Group Publication History')
 
-    ax2 = fig.add_subplot(gs[1])
-    ax2.axis("off")
-    ax2.legend(p[::-1], xlegend[::-1], loc="upper right")
-#    plt.legend(p[::-1], xlegend[::-1])
+    plt.xlabel("Calendar year")
+    plt.ylabel("Quantity of publication items")
+
+    ax.legend(p[::-1], xlegend[::-1], loc=2, 
+              bbox_to_anchor=(1.05, 1), borderaxespad=0.,
+              shadow=True)
 
     plt.show()
 
