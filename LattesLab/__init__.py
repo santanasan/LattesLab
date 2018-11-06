@@ -5,6 +5,9 @@ Created on Tue Aug  1 18:11:54 2017
 @author: thiag
 """
 ####The code that runs goes here
+
+#from consistency import consistency
+
 from pylab import rcParams
 rcParams['figure.figsize'] = 8, 6
 rcParams['figure.dpi'] = 96
@@ -775,8 +778,6 @@ def get_grad_years(x, gradtype):
 #of zero.
     return [nfirst, nquant]
 
-
-
 def get_year_from_str(conclusionyear):
     """
     """
@@ -814,7 +815,6 @@ def xpectd_years(gradtype):
     else:
         print("Invalid input for graduation type in function xpectdyears")
         return 0
-
 
 def get_graph_from_file(filename, opt='all'):
     """From the file in filename returns a graph where the nodes are the
@@ -860,8 +860,6 @@ def get_graph_from_file(filename, opt='all'):
         x = root.findall('.//PARTICIPACAO-EM-BANCA-TRABALHOS-CONCLUSAO//*[@NOME-DO-CANDIDATO]')
         nameattb = 'NOME-DO-CANDIDATO'
 
-#    y = list(enumerate(x))
-
 #initialize the graph
     cvgraph = nx.Graph()
 
@@ -899,14 +897,11 @@ def get_graph_from_folder(folderlist, saveit=False):
     from datetime import datetime
     import pandas as pd
     import numpy as np
-#    import warnings
     import os
 
     filelist = errlist = []
     [filelist, errlist] = get_files_list(folderlist)
     del errlist
-#
-#    warnings.filterwarnings("ignore")
 
     folder = os.getcwd()
 
@@ -956,7 +951,6 @@ def get_graph_from_folder(folderlist, saveit=False):
              wrap=True, fontsize=12,
              bbox=dict(facecolor='white', edgecolor='black'))
     plt.show()
-
 
     if saveit:
         figfile = 'graph' + datetime.now().strftime('%Y%m%d%H%M%S') + '.png'
@@ -1026,7 +1020,6 @@ def top_n_contributions(xgraph, n):
 
 #creates a list with the sorted weights
 
-#    weightlist = list(np.sort(netweights)[::-1])
     weightlist = list(reversed(np.unique(netweights)))
     count = 0
 
@@ -1289,28 +1282,12 @@ def get_dataframe_from_folders(folderlist, savefile=True):
             nation = "Unspecified"
 
     #Retrieve academic background data
-        ngrad = nmaster = nphd = nposdoc =  nlivredoc = 0
-        ano1grad = ano1master = ano1phd = ano1postdoc =  ano1livredoc = 0
 
-        x = root.findall('.//FORMACAO-ACADEMICA-TITULACAO')
-
-        if x != []:
-            for i in range(0, len(x[0].getchildren())):
-                if x[0][i].tag == "GRADUACAO":
-                    [ano1grad, ngrad] = \
-                        get_grad_years(x[0][i], x[0][i].tag)
-                elif x[0][i].tag == "MESTRADO":
-                    [ano1master, nmaster] = \
-                        get_grad_years(x[0][i], x[0][i].tag)
-                elif x[0][i].tag == "DOUTORADO":
-                    [ano1phd, nphd] = \
-                        get_grad_years(x[0][i], x[0][i].tag)
-                elif x[0][i].tag == "POS-DOUTORADO":
-                    [ano1postdoc, nposdoc] = \
-                        get_grad_years(x[0][i], x[0][i].tag)
-                elif x[0][i].tag == "LIVRE-DOCENCIA":
-                    [ano1livredoc, nlivredoc] = \
-                        get_grad_years(x[0][i], x[0][i].tag)
+        [ano1grad, ngrad] = get_grad_count(root, "GRADUACAO")
+        [ano1master, nmaster] = get_grad_count(root, "MESTRADO")
+        [ano1phd, nphd] = get_grad_count(root, "DOUTORADO")
+        [ano1postdoc, nposdoc] = get_grad_count(root, "POS-DOUTORADO")
+        [ano1livredoc, nlivredoc] = get_grad_count(root, "LIVRE-DOCENCIA")
 
     #RESEARCHER PRODUCTION
 
@@ -1721,11 +1698,22 @@ def top_words_frame(folderlist, nwords=10):
 
 def is_in_df(name, df):
     """
+        Finds if the researcher with name in arg name is present in the
+        Lattes CV dataframe.
+        Args:
+            name: name of the researcher
+            df: dataframe to be searched.
     """
     return not df.loc[lambda s: s == name].empty
 
 def get_work_history_file(cfolder, filename, nyears):
     """
+    Generates a vector of works found in a lattes CV.
+    Args:
+        cfolder: folder containing the researcher Lattes CV file.
+        filename: name of the file containing the Lattes CV.
+        nyears: number of years to be considered in the vector. It defines
+        the dimension of the vector.
     """
     import xml.etree.ElementTree as ET
     import zipfile
@@ -1766,6 +1754,12 @@ def get_work_history_file(cfolder, filename, nyears):
 
 def get_paper_history_file(cfolder, filename, nyears):
     """
+    Generates a vector of papers found in a lattes CV.
+    Args:
+        cfolder: folder containing the researcher Lattes CV file.
+        filename: name of the file containing the Lattes CV.
+        nyears: number of years to be considered in the vector. It defines
+        the dimension of the vector.
     """
     import xml.etree.ElementTree as ET
     import zipfile
@@ -2184,40 +2178,6 @@ def get_history_file_n(folderlist, param, nyears):
 
     plt.show()
 
-
-#    gs = gridspec.GridSpec(1, 2, width_ratios=[3, 1])
-#    fig, ax = plt.figure()
-#
-#    ax1 = fig.add_subplot(gs[0])
-#
-#    p = []
-#    ybottom = [0]*nyears
-#    for i in range(0, len(yplot)):
-#        dummy = plt.bar(x, yplot[i], bottom=ybottom)
-#        ybottom = list(np.add(ybottom, yplot[i]))
-#        p.append(dummy)
-#
-#    xlegend = []
-#    for i in param:
-#        if i == 'orientations':
-#            xlegend.append('orientations_master')
-#            xlegend.append('orientations_phd')
-#        else:
-#            xlegend.append(i)
-#
-#    plt.yticks(np.arange(0, max(ybottom)+5, round((max(ybottom)+5)/100)*10))
-#    plt.xticks(np.arange(min(x), max(x), 5))
-#    plt.grid(True)
-#
-#    plt.title('Group Publication History')
-#
-#    ax2 = fig.add_subplot(gs[1])
-#    ax2.axis("off")
-#    ax2.legend(p[::-1], xlegend[::-1], loc="upper right")
-##    plt.legend(p[::-1], xlegend[::-1])
-#
-#    plt.show()
-
     return yplot
 
 
@@ -2464,3 +2424,31 @@ def get_wordclouds_from_pub_frame(pubframe, saveit=False):
     word_list_to_cloud(folder, top50, 'WORDCLOUD: ALL', saveit)
 
     return allnames, alltitles, topwords
+
+def get_grad_count(root, gradtype):
+    """
+        Finds in the Lattes CV parsed in arg root the year the first 
+        graduation of the type described in arg gradtype, as well as the 
+        quantity of graduations of the same type.
+        Args:
+            root: the parsed Lattes CV file
+            gradtype: type of graduation. Can assume the following values:
+                "GRADUACAO", "MESTRADO", "DOUTORADO" or , "POS-DOUTORADO":
+    """
+    
+    if gradtype not in ["GRADUACAO", "MESTRADO", "DOUTORADO", 
+                        "POS-DOUTORADO", "LIVRE-DOCENCIA"]:
+        print('Graduation type not recognized. Using default value of ' + \
+              '"GRADUACAO".')
+        gradtype = "GRADUACAO"
+    
+    ngrad = ano1grad = 0
+
+    x = root.findall('.//FORMACAO-ACADEMICA-TITULACAO')
+
+    if x != []:
+        for i in range(0, len(x[0].getchildren())):
+            if x[0][i].tag == gradtype:
+                [ano1grad, ngrad] = get_grad_years(x[0][i], x[0][i].tag)
+    
+    return [ano1grad, ngrad]
