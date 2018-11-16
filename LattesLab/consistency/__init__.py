@@ -5,10 +5,13 @@ Created on Fri Oct 26 20:12:50 2018
 @author: thiag
 """
 
+from pylab import rcParams
+rcParams['figure.figsize'] = 8, 6
+rcParams['figure.dpi'] = 96
+rcParams['font.size'] = 22
+
 ###--------------------------------------------------------------------###
 # Consistencies functions go below
-
-import LattesLab as ll
 
 def test_summary(root, printerror=False):
     """Verifies if there are problems with the Lattes CV summary parsed
@@ -16,10 +19,10 @@ def test_summary(root, printerror=False):
     Args:
         root: the Lattes CV that has been parsed with the ElementTree
         language.
-        flag: if True, there is a summary. If False, the summary is absent.
+        flag: if 0, there is a summary. If 1, the summary is absent.
         printerror: if True, shows the errors in the command window.
     """
-    summaryflag = True
+    summaryflag = 0
 
 #get the summary information from lattes cv
     try:
@@ -27,7 +30,7 @@ def test_summary(root, printerror=False):
     except:
         desc = ""
         if printerror: print('Resumo não encontrado.')
-        summaryflag = False
+        summaryflag = 1
 
     return summaryflag
 
@@ -35,11 +38,11 @@ def test_id(root, printerror=False):
     """Verifies if there are problems with the Lattes CV ID parsed in the argument root.
     Args:
         root: the Lattes CV that has been parsed with the ElementTree language
-        flag: if True, there is an ID. If False, the ID is absent.
+        flag: if 0, there is an ID. If 1, the ID is absent.
         printerror: if True, shows the errors in the command window.
     """
 
-    idflag = True
+    idflag = 0
 
 #get the ID information from lattes cv
     try:
@@ -47,7 +50,7 @@ def test_id(root, printerror=False):
     except:
         readid = str(9999999999999999)
         if printerror: print('Numero identificador não encontrado.')
-        idflag = False
+        idflag = 1
 
     return idflag
 
@@ -55,11 +58,11 @@ def test_email(root, printerror=False):
     """Verifies if there are problems with the Lattes CV email parsed in the argument root.
     Args:
         root: the Lattes CV that has been parsed with the ElementTree language
-        flag: if True, there is an email. If False, the email is absent.
+        flag: if 0, there is an email. If 1, the email is absent.
         printerror: if True, shows the errors in the command window.
     """
 
-    emailflag = True
+    emailflag = 0
 
 #consistencia do email
     try:
@@ -67,7 +70,7 @@ def test_email(root, printerror=False):
     except:
         email = ''
         if printerror: print('E-mail não encontrado.')
-        emailflag = False
+        emailflag = 1
 
     return emailflag
 
@@ -106,12 +109,12 @@ def test_language(root, printerror=False):
     Args:
         root: the Lattes CV that has been parsed with the ElementTree
         language.
-        flag: if True, there are languages defined in the Lattes CV. If
-        False, no languages were defined.
+        flag: if 0, there are languages defined in the Lattes CV. If
+        1, no languages were defined.
         printerror: if True, shows the errors in the command window.
     """
 
-    languageflag = True
+    languageflag = 0
 
 #consistencia de idiomas.
     try:
@@ -119,7 +122,7 @@ def test_language(root, printerror=False):
     except:
         x = ''
         if printerror: print('Idiomas não definidos.')
-        languageflag = False
+        languageflag = 1
 
     return languageflag
 
@@ -129,11 +132,11 @@ def test_nationality(root, printerror=False):
     Args:
         root: the Lattes CV that has been parsed with the ElementTree
         language.
-        flag: if True, there are languages defined in the Lattes CV.
-        If False, no languages were defined.
+        flag: if 0, there are languages defined in the Lattes CV.
+        If 1, no languages were defined.
         printerror: if True, shows the errors in the command window.
     """
-    nationflag = True
+    nationflag = 0
 
 #consistencia da nacionalidade.
     try:
@@ -141,7 +144,7 @@ def test_nationality(root, printerror=False):
     except:
         nation = "Unspecified"
         if printerror: print('Nacionalidade não definida.')
-        nationflag = False
+        nationflag = 1
 
     return nationflag
 
@@ -153,11 +156,11 @@ def test_grad_end(root, gradtype, printerror=False):
         language.
         gradtype: type of graduation. Can assume the following values:
             "GRADUACAO", "MESTRADO", "DOUTORADO" or , "POS-DOUTORADO":
-        flag: if True, the graduations of the type gradtype were
-        concluded. If False, they were not.
+        flag: if 0, the graduations of the type gradtype were
+        concluded. If 1, they were not.
         printerror: if True, shows the errors in the command window.
     """
-    gradconclflag = True
+    gradconclflag = 0
 
     if gradtype not in ["GRADUACAO", "MESTRADO", "DOUTORADO",
                         "POS-DOUTORADO"]:
@@ -183,16 +186,16 @@ def test_grad_end(root, gradtype, printerror=False):
             if year0 != "" and year1 == "":
                 if gradtype == "GRADUACAO":
                     if printerror: print('Graduacao nao concluida.')
-                    gradconclflag = False
+                    gradconclflag = 1
                 elif gradtype == "MESTRADO":
                     if printerror: print('Mestrado nao concluido.')
-                    gradconclflag = False
+                    gradconclflag = 1
                 elif gradtype == "DOUTORADO":
                     if printerror: print('Doutorado nao concluido.')
-                    gradconclflag = False
+                    gradconclflag = 1
                 elif gradtype == "POS-DOUTORADO":
                     if printerror: print('Pos-Doutorado nao concluido.')
-                    gradconclflag = False
+                    gradconclflag = 1
     else:
         gradconclflag = 'N/A'
 
@@ -205,13 +208,13 @@ def test_grad_seq(root, printerror=False):
     Args:
         root: the Lattes CV that has been parsed with the ElementTree
         language.
-        flag: if True, the graduations are in the expected sequence.
-        If False, they were not.
+        flag: if 0, the graduations are in the expected sequence.
+        If 1, they were not.
         printerror: if True, shows the errors in the command window.
     """
     import LattesLab as ll
 
-    gradseqflag = True
+    gradseqflag = 0
 
 #consistencia da ordem de graduacoes
     ngrad = nmaster = nphd = nposdoc = nlivredoc = 0
@@ -239,14 +242,14 @@ def test_grad_seq(root, printerror=False):
     if ngrad == 0 and nmaster + nphd + nposdoc + nlivredoc > 0:
         if printerror: print('Graduacao nao detectada, pos graduacao ' + \
                              'ou livre-docencia detectada.')
-        gradseqflag = False
+        gradseqflag = 1
     elif nmaster == 0 and nphd + nposdoc > 0:
         if printerror: print('Mestrado nao detectado, doutorado detectado.')
-        gradseqflag = False
+        gradseqflag = 1
     elif nphd == 0 and nposdoc > 0:
         if printerror: print('Doutorado nao detectado, pos-doutorado ' + \
                              'detectado.')
-        gradseqflag = False
+        gradseqflag = 1
 
     return gradseqflag
 
@@ -261,13 +264,6 @@ def grad_level(root, printerror=False):
     """
     import LattesLab as ll
 
-#    if gradtype not in ["GRADUACAO", "MESTRADO", "DOUTORADO",
-#                        "POS-DOUTORADO"]:
-#        if printerror: print('Tipo de graduação inválido. Revertendo ' + \
-#                             'para o valor padrão "GRADUACAO".')
-#        gradtype = "GRADUACAO"
-
-#    gradflag = True
     gradlevel = "NÃO-INFORMADO"
 
 #consistencia da ordem de graduacoes
@@ -293,15 +289,6 @@ def grad_level(root, printerror=False):
                 [ano1livredoc, nlivredoc] = \
                     ll.get_grad_years(x[0][i], x[0][i].tag)
 
-#        if gradtype == "GRADUACAO":
-#            if ngrad == 0: gradflag = False
-#        elif gradtype == "MESTRADO":
-#            if nmaster == 0: gradflag = False
-#        elif gradtype == "DOUTORADO":
-#            if nphd == 0: gradflag = False
-#        elif gradtype == "POS-DOUTORADO":
-#            if nposdoc == 0: gradflag = False
-
         if nposdoc > 0:
             gradlevel = "POS-DOUTORADO"
         elif nphd > 0:
@@ -319,12 +306,12 @@ def test_if_work(root, printerror=False):
     Args:
         root: the Lattes CV that has been parsed with the ElementTree
         language.
-        flag: if True, the Lattes CV declares that the resercher produced
-        works. If False, the researcher hasn't declared that they
+        flag: if 0, the Lattes CV declares that the resercher produced
+        works. If 1, the researcher hasn't declared that they
         presented works in events.
         printerror: if True, shows the errors in the command window.
     """
-    gradnworksflag = True
+    gradnworksflag = 0
 
 #consistencia do numero de trabalhos
     x = root.findall('.//TRABALHOS-EM-EVENTOS')
@@ -332,7 +319,7 @@ def test_if_work(root, printerror=False):
     if not x:
         qtyworks = 0
         if printerror: print('Nenhum trabalho publicado.')
-        gradnworksflag = False
+        gradnworksflag = 1
     else:
         qtyworks = len(x[0].getchildren())
 
@@ -346,12 +333,12 @@ def test_DOI_work(root, printerror=False):
     Args:
         root: the Lattes CV that has been parsed with the ElementTree
         language.
-        flag: if True, the Lattes CV declares that all cited works
-        contain a DOI. If False, there are works declared that do not
+        flag: if 0, the Lattes CV declares that all cited works
+        contain a DOI. If 1, there are works declared that do not
         have a DOI associated.
         printerror: if True, shows the errors in the command window.
     """
-    DOIworksflag = True
+    DOIworksflag = 0
 
     x = root.findall('.//TRABALHOS-EM-EVENTOS')
     if not x:
@@ -366,7 +353,7 @@ def test_DOI_work(root, printerror=False):
             except:
                 dummy = ''
             if dummy == '':
-                DOIworksflag = False
+                DOIworksflag = 1
                 if printerror: print('Existe trabalho publicado sem DOI.')
                 break
     return DOIworksflag
@@ -379,12 +366,12 @@ def test_work_page_start(root, printerror=False):
     Args:
         root: the Lattes CV that has been parsed with the ElementTree
         language.
-        flag: if True, the all works in the Lattes CV have a start
-        page declared. If False, at least one work hasn't a start
+        flag: if 0, the all works in the Lattes CV have a start
+        page declared. If 1, at least one work hasn't a start
         page declared.
         printerror: if True, shows the errors in the command window.
     """
-    workstartpageflag = True
+    workstartpageflag = 0
 
     x = root.findall('.//TRABALHOS-EM-EVENTOS')
     if not x:
@@ -399,7 +386,7 @@ def test_work_page_start(root, printerror=False):
             except:
                 dummy = ''
             if dummy == '':
-                workstartpageflag = False
+                workstartpageflag = 1
                 if printerror: print('Existe trabalho publicado sem' + \
                       ' identificação de página inicial.')
                 break
@@ -413,11 +400,11 @@ def test_work_page_end(root, printerror=False):
     Args:
         root: the Lattes CV that has been parsed with the ElementTree
         language.
-        flag: if True, the all works in the Lattes CV have a end page
-        declared. If False, at least one work hasn't a end page declared.
+        flag: if 0, the all works in the Lattes CV have a end page
+        declared. If 1, at least one work hasn't a end page declared.
         printerror: if True, shows the errors in the command window.
     """
-    workendpageflag = True
+    workendpageflag = 0
 
     x = root.findall('.//TRABALHOS-EM-EVENTOS')
     if not x:
@@ -434,7 +421,7 @@ def test_work_page_end(root, printerror=False):
                 dummy = ''
 
             if dummy == '':
-                workendpageflag = False
+                workendpageflag = 1
                 if printerror: print('Existe trabalho publicado sem' + \
                       ' identificação de página final.')
                 break
@@ -448,12 +435,12 @@ def test_work_author_name(root, printerror=False):
     Args:
         root: the Lattes CV that has been parsed with the ElementTree
         language.
-        flag: if True, the all work authors in the Lattes CV have their
-        complete name. If False, some author may have their name
+        flag: if 0, the all work authors in the Lattes CV have their
+        complete name. If 1, some author may have their name
         abbreviated.
         printerror: if True, shows the errors in the command window.
     """
-    authornameflag = True
+    authornameflag = 0
 
     x = root.findall('.//TRABALHOS-EM-EVENTOS')
     if not x:
@@ -467,7 +454,7 @@ def test_work_author_name(root, printerror=False):
             for z in y:
                 if '.' in z.attrib['NOME-COMPLETO-DO-AUTOR'] and \
                     authornameflag:
-                    authornameflag = False
+                    authornameflag = 1
                     if printerror: print('Possivel abreviação detectada ' + \
                           'em nome de autor de trabalho.')
                     break
@@ -481,12 +468,12 @@ def test_work_author_ID(root, printerror=False):
     Args:
         root: the Lattes CV that has been parsed with the ElementTree
         language.
-        flag: if True, the all work authors in the Lattes CV have a
-        CNPQ ID associated. If False, some author doesn't have a CNPQ
+        flag: if 0, the all work authors in the Lattes CV have a
+        CNPQ ID associated. If 1, some author doesn't have a CNPQ
         ID associated.
         printerror: if True, shows the errors in the command window.
     """
-    authorIDflag = True
+    authorIDflag = 0
 
     x = root.findall('.//TRABALHOS-EM-EVENTOS')
     if not x:
@@ -503,7 +490,7 @@ def test_work_author_ID(root, printerror=False):
                 except:
                     dummy = ''
                 if dummy == '' and authorIDflag:
-                    authorIDflag = False
+                    authorIDflag = 1
                     if printerror: print('Autor de trabalho citado ' + \
                           'sem ID CNPq apresentado.')
                     break
@@ -516,12 +503,12 @@ def test_if_paper(root, printerror=False):
     Args:
         root: the Lattes CV that has been parsed with the ElementTree
         language.
-        flag: if True, the Lattes CV declares that the resercher
-        produced papers. If False, the researcher hasn't declared that
+        flag: if 0, the Lattes CV declares that the resercher
+        produced papers. If 1, the researcher hasn't declared that
         they published any papers.
         printerror: if True, shows the errors in the command window.
     """
-    npapersflag = True
+    npapersflag = 0
 
     x = root.findall('.//ARTIGOS-PUBLICADOS')
 
@@ -530,7 +517,7 @@ def test_if_paper(root, printerror=False):
     else:
         npapers = 0
         if printerror: print('Nenhum artigo publicado.')
-        npapersflag = False
+        npapersflag = 1
 
     return npapersflag
 
@@ -541,12 +528,12 @@ def test_DOI_paper(root, printerror=False):
     Args:
         root: the Lattes CV that has been parsed with the ElementTree
         language.
-        flag: if True, the Lattes CV declares that all cited papers
-        contain a DOI. If False, there are papers declared that do not
+        flag: if 0, the Lattes CV declares that all cited papers
+        contain a DOI. If 1, there are papers declared that do not
         have a DOI associated.
         printerror: if True, shows the errors in the command window.
     """
-    DOIpapersflag = True
+    DOIpapersflag = 0
 
     x = root.findall('.//ARTIGOS-PUBLICADOS')
 
@@ -562,7 +549,7 @@ def test_DOI_paper(root, printerror=False):
             except:
                 dummy = ''
             if dummy == '':
-                DOIpapersflag = False
+                DOIpapersflag = 1
                 if printerror: print('Existe artigo publicado sem DOI.')
                 break
 
@@ -575,12 +562,12 @@ def test_paper_page_start(root, printerror=False):
     Args:
         root: the Lattes CV that has been parsed with the ElementTree
         language.
-        flag: if True, then all papers in the Lattes CV have a start
-        page declared. If False, at least one papers hasn't a start
+        flag: if 0, then all papers in the Lattes CV have a start
+        page declared. If 1, at least one papers hasn't a start
         page declared.
         printerror: if True, shows the errors in the command window.
     """
-    paperstartpageflag = True
+    paperstartpageflag = 0
 
     x = root.findall('.//ARTIGOS-PUBLICADOS')
 
@@ -598,7 +585,7 @@ def test_paper_page_start(root, printerror=False):
                 dummy = ''
 
             if dummy == '':
-                paperstartpageflag = False
+                paperstartpageflag = 1
                 if printerror: print('Existe artigo publicado sem ' + \
                       'identificação de página inicial.')
                 break
@@ -612,11 +599,11 @@ def test_paper_page_end(root, printerror=False):
     Args:
         root: the Lattes CV that has been parsed with the ElementTree
         language.
-        flag: if True, then all papers in the Lattes CV have a end page
-        declared. If False, at least one paper hasn't a end page declared.
+        flag: if 0, then all papers in the Lattes CV have a end page
+        declared. If 1, at least one paper hasn't a end page declared.
         printerror: if True, shows the errors in the command window.
     """
-    paperendpageflag = True
+    paperendpageflag = 0
 
     x = root.findall('.//ARTIGOS-PUBLICADOS')
 
@@ -633,7 +620,7 @@ def test_paper_page_end(root, printerror=False):
             except:
                 dummy = ''
             if dummy == '':
-                paperendpageflag = False
+                paperendpageflag = 1
                 if printerror: print('Existe artigo publicado sem ' + \
                       'identificação de página final.')
                 break
@@ -646,12 +633,12 @@ def test_paper_author_name(root, printerror=False):
     Args:
         root: the Lattes CV that has been parsed with the ElementTree
         language.
-        flag: if True, the all paper authors in the Lattes CV have
-        their complete name. If False, some author may have their name
+        flag: if 0, the all paper authors in the Lattes CV have
+        their complete name. If 1, some author may have their name
         abbreviated.
         printerror: if True, shows the errors in the command window.
     """
-    authornameflag = True
+    authornameflag = 0
 
     x = root.findall('.//ARTIGOS-PUBLICADOS')
 
@@ -666,7 +653,7 @@ def test_paper_author_name(root, printerror=False):
             for z in y:
                 if '.' in z.attrib['NOME-COMPLETO-DO-AUTOR'] and \
                     authornameflag:
-                    authornameflag = False
+                    authornameflag = 1
                     if printerror: print('Possivel abreviação detectada' + \
                           ' em nome de autor de artigo.')
                     break
@@ -680,12 +667,12 @@ def test_paper_author_ID(root, printerror=False):
     Args:
         root: the Lattes CV that has been parsed with the ElementTree
         language.
-        flag: if True, the all paper authors in the Lattes CV have a
-        CNPQ ID associated. If False, some author doesn't have a CNPQ
+        flag: if 0, the all paper authors in the Lattes CV have a
+        CNPQ ID associated. If 1, some author doesn't have a CNPQ
         ID associated.
         printerror: if True, shows the errors in the command window.
     """
-    authorIDflag = True
+    authorIDflag = 0
 
     x = root.findall('.//ARTIGOS-PUBLICADOS')
 
@@ -703,7 +690,7 @@ def test_paper_author_ID(root, printerror=False):
                 except:
                     dummy = ''
                 if dummy == '' and authorIDflag:
-                    authorIDflag = False
+                    authorIDflag = 1
                     if printerror: print('Autor de artigo citado sem ' + \
                                          'ID CNPq apresentado.')
                     break
@@ -717,12 +704,12 @@ def test_adviser(root, printerror=False):
     Args:
         root: the Lattes CV that has been parsed with the ElementTree
         language.
-        flag: if True, then degrees have an adviser cited. If False,
+        flag: if 0, then degrees have an adviser cited. If 1,
         some degree doesn't have an adviser associated.
         printerror: if True, shows the errors in the command window.
     """
     x = root.findall('.//FORMACAO-ACADEMICA-TITULACAO')
-    adviserflag = True
+    adviserflag = 0
 
     if x != []:
         for i in range(0, len(x[0].getchildren())):
@@ -734,7 +721,7 @@ def test_adviser(root, printerror=False):
                     dummy = ""
 
                 if dummy == "":
-                    adviserflag = False
+                    adviserflag = 1
                     if printerror: print('Nome do orientador de ' + \
                                          'graduação não fornecido.')
 
@@ -744,7 +731,7 @@ def test_adviser(root, printerror=False):
                     dummy = ""
                 
                 if dummy == "":
-                    adviserflag = False
+                    adviserflag = 1
                     if printerror: print('Título do trabalho de ' + \
                                          'conclusão de curso não fornecido.')
 
@@ -756,7 +743,7 @@ def test_adviser(root, printerror=False):
                     dummy = ""
                 
                 if dummy== "":
-                    adviserflag = False
+                    adviserflag = 1
                     if printerror: print('Nome do orientador de ' + \
                                          'mestrado não fornecido.')
 
@@ -766,7 +753,7 @@ def test_adviser(root, printerror=False):
                     dummy = ""
 
                 if dummy == "":
-                    adviserflag = False
+                    adviserflag = 1
                     if printerror: print('Título da dissertação de' + \
                                          ' mestrado não fornecido.')
 
@@ -778,7 +765,7 @@ def test_adviser(root, printerror=False):
                     dummy = ""
 
                 if dummy == "":
-                    adviserflag = False
+                    adviserflag = 1
                     if printerror: print('Nome do orientador de ' + \
                                          'doutorado não fornecido.')
 
@@ -788,7 +775,7 @@ def test_adviser(root, printerror=False):
                     dummy = ""
 
                 if dummy == "":
-                    adviserflag = False
+                    adviserflag = 1
                     if printerror: print('Título da tese de ' + \
                                          'doutorado não fornecido.')
 
@@ -800,14 +787,14 @@ def test_research_line(root, printerror=False):
     Args:
         root: the Lattes CV that has been parsed with the ElementTree
         language.
-        flag: if True, then the Lattes CV contains a line of research.
-        If False, the Lattes CV doesn't contain a line of research.
+        flag: if 0, then the Lattes CV contains a line of research.
+        If 1, the Lattes CV doesn't contain a line of research.
         printerror: if True, shows the errors in the command window.
     """
-    flagline = True
+    flagline = 0
     x = root.findall('.//*[@TITULO-DA-LINHA-DE-PESQUISA]')
     if x == []:
-        flagline = False
+        flagline = 1
         if printerror: print('Linhas de pesquisa não fornecidas.')
     return flagline
 
@@ -817,15 +804,15 @@ def test_areas(root, printerror=False):
     Args:
         root: the Lattes CV that has been parsed with the ElementTree
         language.
-        flag: if True, then the Lattes CV contains actuation areas.
-        If False, the Lattes CV doesn't contain actuation areas.
+        flag: if 0, then the Lattes CV contains actuation areas.
+        If 1, the Lattes CV doesn't contain actuation areas.
         printerror: if True, shows the errors in the command window.
     """
-    areasflag = True
+    areasflag = 0
     x = root.findall('.//AREAS-DE-ATUACAO')
 
     if x == []:
-        areasflag = False
+        areasflag = 1
         if printerror: print('Áreas de atuação não fornecidas.')
 
     return areasflag
@@ -836,12 +823,12 @@ def test_paper_doubles(root, printerror=False):
     Args:
         root: the Lattes CV that has been parsed with the ElementTree
         language.
-        flag: if True, then the Lattes CV contains papers with duplicate
-        titles. If False, the Lattes CV doesn't contain papers with
+        flag: if 0, then the Lattes CV contains papers with duplicate
+        titles. If 1, the Lattes CV doesn't contain papers with
         duplicate titles.
         printerror: if True, shows the errors in the command window.
     """
-    paperduplicatesflag = True
+    paperduplicatesflag = 0
     x = root.findall('.//*[@TITULO-DO-ARTIGO]')
     y = []
 
@@ -852,7 +839,7 @@ def test_paper_doubles(root, printerror=False):
 
     if len(set(y)) < len(y):
         if printerror: print('Nome de artigo duplicado encontrado.')
-        paperduplicatesflag = False
+        paperduplicatesflag = 1
     return paperduplicatesflag
 
 # Nomes de trabalhos duplicados
@@ -861,12 +848,12 @@ def test_work_doubles(root, printerror=False):
     Args:
         root: the Lattes CV that has been parsed with the ElementTree
         language.
-        flag: if True, then the Lattes CV contains works with duplicate
-        titles. If False, the Lattes CV doesn't contain works with
+        flag: if 0, then the Lattes CV contains works with duplicate
+        titles. If 1, the Lattes CV doesn't contain works with
         duplicate titles.
         printerror: if True, shows the errors in the command window.
     """
-    workduplicatesflag = True
+    workduplicatesflag = 0
     x = root.findall('.//*[@TITULO-DO-TRABALHO]')
     y = []
     for z in x:
@@ -874,7 +861,7 @@ def test_work_doubles(root, printerror=False):
     y = sorted(y)
     if len(set(y)) < len(y):
         if printerror: print('Nome de trabalho duplicado encontrado.')
-        workduplicatesflag = False
+        workduplicatesflag = 1
     return workduplicatesflag
 
 def get_test_frame(folderlist, printerror=False, savefile=True):
@@ -902,10 +889,10 @@ def get_test_frame(folderlist, printerror=False, savefile=True):
                'Year_1st_master',
                'Year_1st_doc',
                'Year_1st_postdoc',
+               'age_in_days',
                'summary_OK',
                'ID_OK',
                'e-mail_OK',
-               'age_in_days',
                'language_OK',
                'nation_OK',
                'Graduation_Concluded',
@@ -971,11 +958,11 @@ def get_test_frame(folderlist, printerror=False, savefile=True):
         [ano1master, nmaster] = ll.get_grad_count(root, "MESTRADO")
         [ano1phd, nphd] = ll.get_grad_count(root, "DOUTORADO")
         [ano1postdoc, nposdoc] = ll.get_grad_count(root, "POS-DOUTORADO")
-        
+ 
+        dayslate = con.test_update(root)       
         summaryflag = con.test_summary(root)
         idflag = con.test_id(root)
         emailflag = con.test_email(root)
-        dayslate = con.test_update(root)
         languageflag = con.test_language(root)
         nationflag = con.test_nationality(root)
         gradconclflag = con.test_grad_end(root, "GRADUACAO")
@@ -1004,8 +991,8 @@ def get_test_frame(folderlist, printerror=False, savefile=True):
 
 
         x = [nome, gradlevel, ano1grad, ano1master, ano1phd,
-             ano1postdoc, summaryflag, idflag, emailflag,
-             dayslate, languageflag,
+             ano1postdoc, dayslate, summaryflag, idflag, 
+             emailflag, languageflag,
              nationflag, gradconclflag, masterconclflag, docconclflag,
              posdocconclflag, gradseqflag, nworksflag, DOIworksflag,
              workstartpageflag, workendpageflag, workauthornameflag,
@@ -1024,6 +1011,6 @@ def get_test_frame(folderlist, printerror=False, savefile=True):
 
     if savefile:
         csvfile = "consistency_frame" + datetime.now().strftime('%Y%m%d%H%M%S') + ".csv"
-        lattesframe.to_csv(os.path.join(os.getcwd(), csvfile))
+        lattesframe.to_csv(os.path.join(os.getcwd(), csvfile), index=False)
 
     return lattesframe
