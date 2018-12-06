@@ -414,7 +414,7 @@ def test_work_page_end(root, printerror=False):
 
     if qtyworks > 0:
         for i in range(0, len(x[0])):
-            
+
             try:
                 dummy = x[0][i][1].attrib['PAGINA-FINAL']
             except:
@@ -512,7 +512,7 @@ def test_if_paper(root, printerror=False):
 
     x = root.findall('.//ARTIGOS-PUBLICADOS')
 
-    if len(x) > 0:
+    if x != []:
         npapers = len(x[0].getchildren())
     else:
         npapers = 0
@@ -537,7 +537,7 @@ def test_DOI_paper(root, printerror=False):
 
     x = root.findall('.//ARTIGOS-PUBLICADOS')
 
-    if len(x) > 0:
+    if x != []:
         npapers = len(x[0].getchildren())
     else:
         npapers = 0
@@ -571,14 +571,14 @@ def test_paper_page_start(root, printerror=False):
 
     x = root.findall('.//ARTIGOS-PUBLICADOS')
 
-    if len(x) > 0:
+    if x != []:
         npapers = len(x[0].getchildren())
     else:
         npapers = 0
 
     if npapers > 0:
         for i in range(0, len(x[0])):
-            
+
             try:
                 dummy = x[0][i][1].attrib['PAGINA-INICIAL']
             except:
@@ -607,16 +607,16 @@ def test_paper_page_end(root, printerror=False):
 
     x = root.findall('.//ARTIGOS-PUBLICADOS')
 
-    if len(x) > 0:
+    if x != []:
         npapers = len(x[0].getchildren())
     else:
         npapers = 0
 
     if npapers > 0:
         for i in range(0, len(x[0])):
-            
+
             try:
-                dummy = x[0][i][1].attrib['PAGINA-FINAL'] 
+                dummy = x[0][i][1].attrib['PAGINA-FINAL']
             except:
                 dummy = ''
             if dummy == '':
@@ -642,7 +642,7 @@ def test_paper_author_name(root, printerror=False):
 
     x = root.findall('.//ARTIGOS-PUBLICADOS')
 
-    if len(x) > 0:
+    if x != []:
         npapers = len(x[0].getchildren())
     else:
         npapers = 0
@@ -676,7 +676,7 @@ def test_paper_author_ID(root, printerror=False):
 
     x = root.findall('.//ARTIGOS-PUBLICADOS')
 
-    if len(x) > 0:
+    if x != []:
         npapers = len(x[0].getchildren())
     else:
         npapers = 0
@@ -729,7 +729,7 @@ def test_adviser(root, printerror=False):
                     dummy = x[0][i].attrib['TITULO-DO-TRABALHO-DE-CONCLUSAO-DE-CURSO']
                 except:
                     dummy = ""
-                
+
                 if dummy == "":
                     adviserflag = 1
                     if printerror: print('Título do trabalho de ' + \
@@ -741,8 +741,8 @@ def test_adviser(root, printerror=False):
                     dummy = x[0][i].attrib['NOME-COMPLETO-DO-ORIENTADOR']
                 except:
                     dummy = ""
-                
-                if dummy== "":
+
+                if dummy == "":
                     adviserflag = 1
                     if printerror: print('Nome do orientador de ' + \
                                          'mestrado não fornecido.')
@@ -876,12 +876,42 @@ def get_test_frame(folderlist, printerror=False, savefile=True):
     """
 
     import pandas as pd
-    import xml.etree.ElementTree as ET
-    import zipfile
     from datetime import datetime
     import os
     import LattesLab as ll
-    import LattesLab.consistency as con
+
+    #verify if the parameter folderlist is a list
+
+    if not isinstance(folderlist, list):
+        folderlist = [folderlist]
+
+    #filters the zip files
+
+    ziplist = nonziplist = []
+    [ziplist, nonziplist] = ll.get_files_list(folderlist)
+
+    lattesframe = get_frame_from_folders(ziplist)
+
+    lattesframe = lattesframe.reset_index()
+    lattesframe = lattesframe.drop('index', axis=1)
+
+    if savefile:
+        csvfile = "consistency_frame" + datetime.now().strftime('%Y%m%d%H%M%S') + ".csv"
+        lattesframe.to_csv(os.path.join(os.getcwd(), csvfile), index=False)
+
+    return lattesframe
+
+def get_frame_from_folders(ziplist):
+    """
+    Returns the dataframe with data found in the files contained inside
+    the argument ziplist. It is being defined to try parallel processing.
+    Let's hope it works.
+    Args:
+        ziplist: the list of files containing Lattes CVs
+        language.
+    """
+    import concurrent.futures
+    import pandas as pd
 
     columns = ['Nome',
                'Graduation_Level',
@@ -921,96 +951,394 @@ def get_test_frame(folderlist, printerror=False, savefile=True):
 
     lattesframe = pd.DataFrame(columns=columns)
 
-    #verify if the parameter folderlist is a list
-
-    if not isinstance(folderlist, list):
-        folderlist = [folderlist]
-
-    #filters the zip files
-
-    ziplist = nonziplist = []
-    [ziplist, nonziplist] = ll.get_files_list(folderlist)
-
-    count = 0
-    for rightname in ziplist:
-        count += 1
-        archive = zipfile.ZipFile(rightname, 'r')
-        cvfile = archive.open(archive.namelist()[0], 'r')
-
-        tree = ET.parse(cvfile)
-        root = tree.getroot()
-
-        nome = root[0].attrib['NOME-COMPLETO']
-
-    for rightname in ziplist:
-        count += 1
-        archive = zipfile.ZipFile(rightname, 'r')
-        cvfile = archive.open(archive.namelist()[0], 'r')
-
-        tree = ET.parse(cvfile)
-        root = tree.getroot()
-
-        nome = root[0].attrib['NOME-COMPLETO']
-
-        gradlevel = con.grad_level(root)
-        
-        [ano1grad, ngrad] = ll.get_grad_count(root, "GRADUACAO")
-        [ano1master, nmaster] = ll.get_grad_count(root, "MESTRADO")
-        [ano1phd, nphd] = ll.get_grad_count(root, "DOUTORADO")
-        [ano1postdoc, nposdoc] = ll.get_grad_count(root, "POS-DOUTORADO")
- 
-        dayslate = con.test_update(root)       
-        summaryflag = con.test_summary(root)
-        idflag = con.test_id(root)
-        emailflag = con.test_email(root)
-        languageflag = con.test_language(root)
-        nationflag = con.test_nationality(root)
-        gradconclflag = con.test_grad_end(root, "GRADUACAO")
-        masterconclflag = con.test_grad_end(root, "MESTRADO")
-        docconclflag = con.test_grad_end(root, "DOUTORADO")
-        posdocconclflag = con.test_grad_end(root, "POS-DOUTORADO")
-        gradseqflag = con.test_grad_seq(root)
-        nworksflag = con.test_if_work(root)
-        DOIworksflag = con.test_DOI_work(root)
-        workstartpageflag = con.test_work_page_start(root)
-        workendpageflag = con.test_work_page_end(root)
-        workauthornameflag = con.test_work_author_name(root)
-        workauthorIDflag = con.test_work_author_ID(root)
-        npapersflag = con.test_if_paper(root)
-        DOIpapersflag = con.test_DOI_paper(root)
-        paperstartpageflag = con.test_paper_page_start(root)
-        paperendpageflag = con.test_paper_page_end(root)
-        paperauthornameflag = con.test_paper_author_name(root)
-        paperauthorIDflag = con.test_paper_author_ID(root)
-        adviserflag = con.test_adviser(root)
-        lineflag = con.test_research_line(root)
-        areasflag = con.test_areas(root)
-        papersduplicatesflag = con.test_paper_doubles(root)
-        workduplicatesflag = con.test_work_doubles(root)
-
-
-
-        x = [nome, gradlevel, ano1grad, ano1master, ano1phd,
-             ano1postdoc, dayslate, summaryflag, idflag, 
-             emailflag, languageflag,
-             nationflag, gradconclflag, masterconclflag, docconclflag,
-             posdocconclflag, gradseqflag, nworksflag, DOIworksflag,
-             workstartpageflag, workendpageflag, workauthornameflag,
-             workauthorIDflag, npapersflag, DOIpapersflag,
-             paperstartpageflag, paperendpageflag, paperauthornameflag,
-             paperauthorIDflag, adviserflag, lineflag, areasflag,
-             papersduplicatesflag, workduplicatesflag]
-
-        dummy = pd.DataFrame(data=[x], columns=columns)
-
-        lattesframe = lattesframe.append(dummy)
-        del dummy
-
-    lattesframe = lattesframe.reset_index()
-    lattesframe = lattesframe.drop('index', axis=1)
-
-    if savefile:
-        csvfile = "consistency_frame" + datetime.now().strftime('%Y%m%d%H%M%S') + ".csv"
-        lattesframe.to_csv(os.path.join(os.getcwd(), csvfile), index=False)
+    with concurrent.futures.ThreadPoolExecutor(max_workers=15) as executor:
+        myframe = {executor.submit(process_file, file, columns): file for file in ziplist}
+        for future in concurrent.futures.as_completed(myframe):
+            lattesframe = lattesframe.append(future.result())
 
     return lattesframe
+
+def process_file(file, columns):
+    """
+    Processes the file.
+    Args:
+        file: the Lattes CV file address.
+        columns: columns of the dataframe
+    """
+    import pandas as pd
+    import xml.etree.ElementTree as ET
+    import zipfile
+
+    archive = zipfile.ZipFile(file, 'r')
+    cvfile = archive.open(archive.namelist()[0], 'r')
+
+    tree = ET.parse(cvfile)
+    root = tree.getroot()
+
+    x = get_frame_line(root)
+
+    dummy = pd.DataFrame(data=[x], columns=columns)
+
+    return dummy
+
+def get_frame_line(root):
+    """
+    Returns the line to be inserted in the dataframe. It is being defined
+    to try parallel processing. Let's hope it works.
+    Args:
+        root: the Lattes CV that has been parsed with the ElementTree
+        language.
+    """
+
+    import LattesLab as ll
+    import LattesLab.consistency as con
+
+    nome = root[0].attrib['NOME-COMPLETO']
+
+    gradlevel = con.grad_level(root)
+
+    [ano1grad, ngrad] = ll.get_grad_count(root, "GRADUACAO")
+    [ano1master, nmaster] = ll.get_grad_count(root, "MESTRADO")
+    [ano1phd, nphd] = ll.get_grad_count(root, "DOUTORADO")
+    [ano1postdoc, nposdoc] = ll.get_grad_count(root, "POS-DOUTORADO")
+
+    dayslate = con.test_update(root)
+    summaryflag = con.test_summary(root)
+    idflag = con.test_id(root)
+    emailflag = con.test_email(root)
+    languageflag = con.test_language(root)
+    nationflag = con.test_nationality(root)
+    gradconclflag = con.test_grad_end(root, "GRADUACAO")
+    masterconclflag = con.test_grad_end(root, "MESTRADO")
+    docconclflag = con.test_grad_end(root, "DOUTORADO")
+    posdocconclflag = con.test_grad_end(root, "POS-DOUTORADO")
+    gradseqflag = con.test_grad_seq(root)
+    nworksflag = con.test_if_work(root)
+    DOIworksflag = con.test_DOI_work(root)
+    workstartpageflag = con.test_work_page_start(root)
+    workendpageflag = con.test_work_page_end(root)
+    workauthornameflag = con.test_work_author_name(root)
+    workauthorIDflag = con.test_work_author_ID(root)
+    npapersflag = con.test_if_paper(root)
+    DOIpapersflag = con.test_DOI_paper(root)
+    paperstartpageflag = con.test_paper_page_start(root)
+    paperendpageflag = con.test_paper_page_end(root)
+    paperauthornameflag = con.test_paper_author_name(root)
+    paperauthorIDflag = con.test_paper_author_ID(root)
+    adviserflag = con.test_adviser(root)
+    lineflag = con.test_research_line(root)
+    areasflag = con.test_areas(root)
+    papersduplicatesflag = con.test_paper_doubles(root)
+    workduplicatesflag = con.test_work_doubles(root)
+
+    x = [nome, gradlevel, ano1grad, ano1master, ano1phd,
+         ano1postdoc, dayslate, summaryflag, idflag,
+         emailflag, languageflag,
+         nationflag, gradconclflag, masterconclflag, docconclflag,
+         posdocconclflag, gradseqflag, nworksflag, DOIworksflag,
+         workstartpageflag, workendpageflag, workauthornameflag,
+         workauthorIDflag, npapersflag, DOIpapersflag,
+         paperstartpageflag, paperendpageflag, paperauthornameflag,
+         paperauthorIDflag, adviserflag, lineflag, areasflag,
+         papersduplicatesflag, workduplicatesflag]
+
+    return x
+
+def total_prod(root, xtype='works'):
+    """Returns all works found in the Lattes CV parsed in the argument
+    root.
+    Args:
+        root: the Lattes CV that has been parsed with the ElementTree
+        language.
+        xtype: either 'works' or 'papers'
+    """
+#consistencia do numero de trabalhos
+
+    from collections import Counter
+    from datetime import datetime
+
+    if xtype == 'papers':
+        x = root.findall('.//ARTIGOS-PUBLICADOS')
+        ylabel = 'ANO-DO-ARTIGO'
+    elif xtype == 'works':
+        x = root.findall('.//TRABALHOS-EM-EVENTOS')
+        ylabel = "ANO-DO-TRABALHO"
+    else:
+        x = root.findall('.//TRABALHOS-EM-EVENTOS')
+        ylabel = "ANO-DO-TRABALHO"
+
+    count = []
+
+    if not x:
+        qtyworks = 0
+
+    else:
+        qtyworks = len(x[0].getchildren())
+
+        nprod = []
+
+        for i in range(0, qtyworks):
+            nprod.append(x[0][i][0].attrib[ylabel])
+
+        counter = Counter(nprod)
+        firstyear = int(min(counter.keys()))
+        for iyear in range(datetime.now().year, firstyear - 1, -1):
+            count.append(int(counter[str(iyear)]))
+
+    return count
+
+#Consistencia da existencia de DOI em todos os artigos
+def test_DOI_prod_list(root, xtype='works'):
+    """Returns a list of years where works that do not contain a DOI
+    (Digital Object Identifier) were found in the Lattes CV parsed in
+    the argument root.
+    Args:
+        root: the Lattes CV that has been parsed with the ElementTree
+        language.
+        xtype: either 'works' or 'papers'
+    """
+    from collections import Counter
+    from datetime import datetime
+
+    if xtype == 'papers':
+        x = root.findall('.//ARTIGOS-PUBLICADOS')
+        ylabel = 'ANO-DO-ARTIGO'
+    elif xtype == 'works':
+        x = root.findall('.//TRABALHOS-EM-EVENTOS')
+        ylabel = "ANO-DO-TRABALHO"
+    else:
+        x = root.findall('.//TRABALHOS-EM-EVENTOS')
+        ylabel = "ANO-DO-TRABALHO"
+
+    y = []
+
+    count = []
+
+    if x != []:
+        nprod = len(x[0].getchildren())
+    else:
+        nprod = 0
+
+    if nprod > 0:
+        for i in range(0, len(x[0])):
+            try:
+                dummy = x[0][i][0].attrib['DOI']
+            except:
+                dummy = ''
+
+            if dummy == '':
+                y.append(x[0][i][0].attrib[ylabel])
+
+        if y == []:
+            count = [0]
+        else:
+            counter = Counter(y)
+            firstyear = int(min(counter.keys()))
+            for iyear in range(datetime.now().year, firstyear - 1, -1):
+                count.append(int(counter[str(iyear)]))
+
+    return count
+
+# Artigos em periódicos ou congressos: ver se tem página inicial
+def test_prod_page_start_list(root, xtype='works'):
+    """Verifies if the papers declared in the Lattes CV parsed in the
+    argument root contain a declared start page.
+    Args:
+        root: the Lattes CV that has been parsed with the ElementTree
+        language.
+        xtype: either 'works' or 'papers'.
+    """
+    from collections import Counter
+    from datetime import datetime
+
+    if xtype == 'papers':
+        x = root.findall('.//ARTIGOS-PUBLICADOS')
+        ylabel = 'ANO-DO-ARTIGO'
+    elif xtype == 'works':
+        x = root.findall('.//TRABALHOS-EM-EVENTOS')
+        ylabel = "ANO-DO-TRABALHO"
+    else:
+        x = root.findall('.//TRABALHOS-EM-EVENTOS')
+        ylabel = "ANO-DO-TRABALHO"
+
+    y = []
+
+    count = []
+
+    if x != []:
+        nprod = len(x[0].getchildren())
+    else:
+        nprod = 0
+
+    if nprod > 0:
+        for i in range(0, len(x[0])):
+
+            try:
+                dummy = x[0][i][1].attrib['PAGINA-INICIAL']
+            except:
+                dummy = ''
+
+            if dummy == '':
+                y.append(x[0][i][0].attrib[ylabel])
+
+        if y == []:
+            count = [0]
+        else:
+            counter = Counter(y)
+            firstyear = int(min(counter.keys()))
+            for iyear in range(datetime.now().year, firstyear - 1, -1):
+                count.append(int(counter[str(iyear)]))
+
+    return count
+
+# Artigos em periódicos ou congressos: ver se tem página final
+def test_prod_page_end_list(root, xtype='works'):
+    """Verifies if the papers declared in the Lattes CV parsed in the
+    argument root contain a declared end page.
+    Args:
+        root: the Lattes CV that has been parsed with the ElementTree
+        language.
+        xtype: either 'works' or 'papers'.
+    """
+
+    from collections import Counter
+    from datetime import datetime
+
+    if xtype == 'papers':
+        x = root.findall('.//ARTIGOS-PUBLICADOS')
+        ylabel = 'ANO-DO-ARTIGO'
+    elif xtype == 'works':
+        x = root.findall('.//TRABALHOS-EM-EVENTOS')
+        ylabel = "ANO-DO-TRABALHO"
+    else:
+        x = root.findall('.//TRABALHOS-EM-EVENTOS')
+        ylabel = "ANO-DO-TRABALHO"
+
+    y = []
+
+    count = []
+
+    if x != []:
+        nprod = len(x[0].getchildren())
+    else:
+        nprod = 0
+
+    if nprod > 0:
+        for i in range(0, len(x[0])):
+
+            try:
+                dummy = x[0][i][1].attrib['PAGINA-FINAL']
+            except:
+                dummy = ''
+            if dummy == '':
+                y.append(x[0][i][0].attrib[ylabel])
+
+        if y == []:
+            count = [0]
+        else:
+            counter = Counter(y)
+            firstyear = int(min(counter.keys()))
+            for iyear in range(datetime.now().year, firstyear - 1, -1):
+                count.append(int(counter[str(iyear)]))
+
+    return count
+
+#Artigos: verificar nomes de autores:
+def test_prod_author_name_list(root, xtype='works'):
+    """Verifies if the names of papers authors declared in the Lattes CV
+    parsed in the argument root may contain abbreviations.
+    Args:
+        root: the Lattes CV that has been parsed with the ElementTree
+        language.
+        xtype: either 'works' or 'papers'.
+    """
+    from collections import Counter
+    from datetime import datetime
+
+    if xtype == 'papers':
+        x = root.findall('.//ARTIGOS-PUBLICADOS')
+        ylabel = 'ANO-DO-ARTIGO'
+    elif xtype == 'works':
+        x = root.findall('.//TRABALHOS-EM-EVENTOS')
+        ylabel = "ANO-DO-TRABALHO"
+    else:
+        x = root.findall('.//TRABALHOS-EM-EVENTOS')
+        ylabel = "ANO-DO-TRABALHO"
+
+    y = []
+
+    count = []
+
+    if x != []:
+        nprod = len(x[0].getchildren())
+    else:
+        nprod = 0
+
+    if nprod > 0:
+        for i in range(0, len(x[0])):
+            allnames = x[0][i].findall('AUTORES')
+            for z in allnames:
+                if '.' in z.attrib['NOME-COMPLETO-DO-AUTOR']:
+                    y.append(x[0][i][0].attrib[ylabel])
+
+        if y == []:
+            count = [0]
+        else:
+            counter = Counter(y)
+            firstyear = int(min(counter.keys()))
+            for iyear in range(datetime.now().year, firstyear - 1, -1):
+                count.append(int(counter[str(iyear)]))
+
+    return count
+
+#Artigos: verificar existencia de autores sem ID CNPQ:
+
+def test_prod_author_ID_list(root, xtype='works'):
+    """Verifies if the names of papers authors declared in the Lattes CV
+    parsed in the argument root contain a CNPQ ID associated.
+    Args:
+        root: the Lattes CV that has been parsed with the ElementTree
+        language.
+        xtype: either 'works' or 'papers'.
+    """
+    from collections import Counter
+    from datetime import datetime
+
+    if xtype == 'papers':
+        x = root.findall('.//ARTIGOS-PUBLICADOS')
+        ylabel = 'ANO-DO-ARTIGO'
+    elif xtype == 'works':
+        x = root.findall('.//TRABALHOS-EM-EVENTOS')
+        ylabel = "ANO-DO-TRABALHO"
+    else:
+        x = root.findall('.//TRABALHOS-EM-EVENTOS')
+        ylabel = "ANO-DO-TRABALHO"
+
+    y = []
+    count = []
+
+    if x != []:
+        nprod = len(x[0].getchildren())
+    else:
+        nprod = 0
+
+    if nprod > 0:
+        for i in range(0, len(x[0])):
+            allnames = x[0][i].findall('AUTORES')
+            for z in allnames:
+                try:
+                    dummy = z.attrib['NRO-ID-CNPQ']
+                except:
+                    dummy = ''
+                if dummy == '':
+                    y.append(x[0][i][0].attrib[ylabel])
+
+        if y == []:
+            count = [0]
+        else:
+            counter = Counter(y)
+            firstyear = int(min(counter.keys()))
+            for iyear in range(datetime.now().year, firstyear - 1, -1):
+                count.append(int(counter[str(iyear)]))
+
+    return count

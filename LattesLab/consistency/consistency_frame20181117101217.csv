@@ -1,0 +1,907 @@
+Nome,Graduation_Level,Year_1st_grad,Year_1st_master,Year_1st_doc,Year_1st_postdoc,age_in_days,summary_OK,ID_OK,e-mail_OK,language_OK,nation_OK,Graduation_Concluded,Masters_Concluded,Doctorate_Concluded,PostDoctorate_Concluded,Degrees_Sequency_OK,Works_are_cited,Works_DOI_OK,Works_page_start_OK,Works_page_end_OK,Works_Authors_names_OK,Works_Authors_IDs_OK,Papers_are_cited,Papers_DOI_OK,Papers_page_start_OK,Papers_page_end_OK,Papers_Authors_names_OK,Papers_Authors_IDs_OK,Advisers_OK,Research_Line_OK,Actuation_Area_OK,NO_papers_duplicates,NO_works_duplicates
+Jefferson Alves Nogueira da Silva,GRADUACAO,2016,0,0,0,1094,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Regiane Donizeti de Souza Martinez,GRADUACAO,2014,0,0,0,2046,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Tiago Nogueira de Sá Miranda,GRADUACAO,2014,0,0,0,1212,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,1,0,0,0
+Vinícius Bigogno Costa,GRADUACAO,2016,0,0,0,576,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Rafael Guimarães Pequeno França,GRADUACAO,2012,0,0,0,620,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Henrique de oliveira euclides,GRADUACAO,2015,0,0,0,536,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,1,0,0
+Heber Albuquerque Gonçalves,GRADUACAO,2014,0,0,0,2332,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Thales Koba de Moura,GRADUACAO,2016,0,0,0,896,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Etienne Souza Macedo,GRADUACAO,2015,0,0,0,1957,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Ádanna de Souza Andrade,GRADUACAO,2016,0,0,0,602,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Priscila Mayumi Pereira Yaguinuma,GRADUACAO,2015,0,0,0,1962,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Cassiano Vasconcelos dos Santos,GRADUACAO,2013,0,0,0,894,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Luiz Carlos Rosa,GRADUACAO,2016,0,0,0,835,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Amanda Rosa da Silva,GRADUACAO,2011,0,0,0,1648,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0
+Marcelo Pizzuti Pes,MESTRADO,2007,2009,0,0,1206,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,0,0,0,0
+Brunno Barreto Vasques,GRADUACAO,2008,0,0,0,2162,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+Taís Horcajo Martinez Fudoli Fávero,GRADUACAO,2008,0,0,0,4183,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Elói Alberto Grellmann,GRADUACAO,2007,0,0,0,985,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Pablo Fernando Carlesso,DOUTORADO,2009,2012,2016,0,809,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0
+Ana Luiza Dors Wilke,GRADUACAO,2014,0,0,0,750,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Paulo Maurício Andelo Vital,GRADUACAO,2007,0,0,0,4912,1,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Tiago de Araujo Bastos,GRADUACAO,2008,0,0,0,4601,1,0,1,0,1,0,0,0,0,0,0,1,1,1,0,0,0,1,1,1,0,0,1,1,1,0,0
+Viviane Cassol Marques,DOUTORADO,2007,2010,2017,0,1523,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+Venessa de Lima Takaoka,GRADUACAO,2007,0,0,0,2854,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Felipe Simon,GRADUACAO,2008,0,0,0,4159,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0
+Mateus Brizzotti Andrade,GRADUACAO,2008,0,0,0,4997,1,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Viviane Catalano Domingues Pereira,GRADUACAO,2017,0,0,0,1621,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Carolina da Silva Paes,GRADUACAO,2013,0,0,0,851,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Juan Galvarino Cerda Balcazar,DOUTORADO,2008,2011,2014,0,1074,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0
+Rafael Augusto Galo Fernandes,GRADUACAO,2008,0,0,0,4467,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Joel Rubert,GRADUACAO,2016,0,0,0,626,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,1,1,0,0,0
+Luzia Lux Lock,GRADUACAO,2008,0,0,0,4915,1,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0
+Rafael Navet de Souza,MESTRADO,2007,2012,0,0,2253,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,1,0,0
+Carina Oliveira de Souza,GRADUACAO,2010,0,0,0,3120,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Marcus Guedes,GRADUACAO,2010,0,0,0,2946,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,0,1,0,0,0
+Karl Pascher Wolf,GRADUACAO,2005,0,0,0,4924,1,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Elizabete Andrade Brandão,GRADUACAO,2007,0,0,0,4924,1,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Elisa Borstmann Jensen,GRADUACAO,2009,0,0,0,4596,1,0,1,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,1
+Rodrigo de Medeiros Ramos,GRADUACAO,2008,0,0,0,3319,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0
+Daniel Moisés Gonzalez Clua,MESTRADO,2007,2010,0,0,3864,0,0,1,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,1
+Leandro Teixeira Ferreira de Sene,GRADUACAO,2009,0,0,0,1424,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+Diego Almeida Kalume,GRADUACAO,2008,0,0,0,1990,0,0,0,0,1,1,1,1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Carlos Roberto Braga,POS-DOUTORADO,2008,2011,2015,2017,534,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,0,0,1,0,0,0,1
+Christina Nagliati Iacobucci,GRADUACAO,2007,0,0,0,3385,0,0,0,0,1,1,1,1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Gerson Tadeu Conti Filho,GRADUACAO,2006,0,0,0,3391,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+André Luis Tibola,MESTRADO,2011,2014,0,0,1465,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,1,0,0,1
+Samuel Martins da Silva,MESTRADO,2008,2010,0,0,1041,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,0,1,0,0,0
+Samuel Mendes Sanches Junior,DOUTORADO,2010,2013,2017,0,722,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1,0,0,0
+Lílian Caroline Paschoal,GRADUACAO,2007,0,0,0,1737,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Marcio Ceconi,MESTRADO,2010,2013,0,0,1334,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,0,1,0,0,0
+Ariane Campani Matos,GRADUACAO,2012,0,0,0,2186,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Tiago Domingos dos Santos,GRADUACAO,2011,0,0,0,3800,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0
+José Ezequiel Chiaradia,GRADUACAO,2011,0,0,0,2942,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0
+Delzuita Marques de Lima Silva,GRADUACAO,2009,0,0,0,2140,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Crystal Badra Fernandes Rosa,GRADUACAO,2010,0,0,0,3805,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,1,0,0
+Grazielle Cunha Cardoso,GRADUACAO,2010,0,0,0,3036,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Vanessa Oliveira da Silva,MESTRADO,2008,2011,0,0,561,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,0,1,0,0,0
+Lorenzo Marzari Félix,MESTRADO,2011,2015,0,0,983,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Diogo Gadioli de Oliveira,GRADUACAO,2009,0,0,0,3215,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0
+Gabriel Rocha Coelho,GRADUACAO,2010,0,0,0,3434,0,0,1,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,1,0,0
+Erikson Magno Gomes de Oliveira,MESTRADO,2011,2014,0,0,1452,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,1,0,0,0
+Hélio Lopes Moralez Filho,GRADUACAO,2009,0,0,0,3743,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Paulo Vitor Zurawski Saldanha,GRADUACAO,2015,0,0,0,1143,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Leandro Zanella de Souza Campos,DOUTORADO,2009,2012,2016,0,571,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,1
+Celito Muck Felipetto,GRADUACAO,2010,0,0,0,1971,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Thiago Batista dos Santos,DOUTORADO,2009,2013,2017,0,1103,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,1,1,0,1
+Aline Amorim de Almeida,GRADUACAO,2011,0,0,0,1843,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,0,1,0,0,0
+Alexandre Nunes de Souza Nassabay,GRADUACAO,2011,0,0,0,1121,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Alain Giacobini de Souza,DOUTORADO,2010,2013,2017,0,586,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,0,0,0,1,0,0,0
+Fabrício Deives Kummer,GRADUACAO,2013,0,0,0,1124,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Larissa Lemes Avari Lauterjung,MESTRADO,2010,2014,0,0,1390,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Lucas Silveira dos Santos,GRADUACAO,2014,0,0,0,1139,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,0,1,0,0
+Jeane Aparecida Rosa de Morais,GRADUACAO,2010,0,0,0,1565,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0
+Josemar de Siqueira,GRADUACAO,2009,0,0,0,944,0,0,1,0,0,1,1,1,1,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,1
+Guilherme Simon da Rosa,DOUTORADO,2011,2013,2017,0,560,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,0,1,0,0,0
+Vanessa Borsoi,GRADUACAO,2009,0,0,0,3742,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Omar Adel Kassab,GRADUACAO,2009,0,0,0,3792,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Daniela Wancura Barbieri Peixoto,DOUTORADO,2009,2012,2018,0,761,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,0,1,0,0,0
+Tiago Granato Moreira,GRADUACAO,2006,0,0,0,3749,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,1,0,0
+Francisco Assis de Sousa Júnior,MESTRADO,2016,2015,0,0,653,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Vanessa Cristina de Carvalho Oliveira,MESTRADO,2005,2010,0,0,1903,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Bruno Sielly Jales Costa,DOUTORADO,2008,2009,2014,0,535,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Carline Biasoli Trentin,DOUTORADO,2008,2011,2015,0,528,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,1,0,0,1
+Sandro Fettermann Bertagnolli,GRADUACAO,2010,0,0,0,1412,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Victória Tertuliana de Araújo Bellaparte Zanato,GRADUACAO,2011,0,0,0,2216,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Renata Novaes Calado,MESTRADO,2007,2018,0,0,652,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,1,1,0,0
+Vivian Dorat Betoni Gonzalez Clua,MESTRADO,2007,2008,0,0,2269,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,1
+Yhasmin Mendes de Moura,DOUTORADO,2009,2012,2015,0,668,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,0,0,0,0,1
+Renato Perrenoud Cornetti,GRADUACAO,2009,0,0,0,2795,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+João Paulo Assis Gobo,DOUTORADO,2009,2013,2017,0,600,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,0,1,0,0,1
+Ariane de Oliveira Braga,GRADUACAO,2007,0,0,0,1633,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Juliana Martins Maia Pereira,GRADUACAO,2008,0,0,0,4534,1,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Gilmara Cabral Fernandes,GRADUACAO,2004,0,0,0,4681,1,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Andreza da Costa Batista,MESTRADO,2007,2011,0,0,2524,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Harturo Praça Córdula de Oliveira,GRADUACAO,2015,0,0,0,1039,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Jéssica Motta Guimarães,MESTRADO,2010,2014,0,0,1222,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Yegor Gomes de Melo,GRADUACAO,2007,0,0,0,4460,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Jéssica Miranda e Souza,MESTRADO,2014,2017,0,0,673,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,1,1,0,0,0
+Rafaela de Sousa,GRADUACAO,2010,0,0,0,2487,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Maria Rita da Silva,DOUTORADO,2010,2012,2017,0,532,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+Eduardo da Costa Paul,DOUTORADO,2010,2014,2018,0,850,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,1,0,0,0
+Laysa Cristina Araújo Resende,POS-DOUTORADO,2008,2010,2014,2016,526,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,0,1,0,1,1
+Leila Paula Alves da Silva Nascimento,MESTRADO,2016,2010,0,0,2080,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,1,0,0,0
+Paula Caroline da Silva,GRADUACAO,2009,0,0,0,4007,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Camila Hernandes Furini,GRADUACAO,2010,0,0,0,3505,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,1,0,0
+Mariana Bernardes da Silva Palma,MESTRADO,2009,2012,0,0,3174,0,0,1,0,1,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,0,1,0,0,0
+Heloísa Mayara dos Santos Cruz,GRADUACAO,2014,0,0,0,1069,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,1,0,0
+Ricardo de Oliveira Leite Filho,NÃO-INFORMADO,0,0,0,0,4362,0,0,1,0,1,N/A,N/A,N/A,N/A,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Amanda Monteiro Galvão,GRADUACAO,2009,0,0,0,4162,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Tiago Henrique Matos de Carvalho,DOUTORADO,2009,0,2018,0,523,0,0,1,0,0,0,0,0,0,1,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,1
+Nadiara Pereira,MESTRADO,2009,2013,0,0,725,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,0,0,0,0
+Luana Serafini dos Santos,MESTRADO,2010,2013,0,0,786,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,1,1,0,0,1
+Bruna Cristina Braga,MESTRADO,2007,2016,0,0,585,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,0,1,0,0,0
+Sérgio Silva Pereira,GRADUACAO,2008,0,0,0,1199,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,1,0,0,0
+Adriano José Capelo,GRADUACAO,2005,0,0,0,3564,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,1,0,0
+Hélio Moreira da Silva,GRADUACAO,2006,0,0,0,528,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Higo Oliveira Nunes,MESTRADO,2007,2010,0,0,1831,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Weriton Renan Rodrigues Fidalgo,DOUTORADO,2009,0,2014,0,865,0,0,1,0,0,0,0,0,0,1,0,1,1,1,0,0,0,0,0,0,0,0,1,1,1,0,0
+Andréia Vieira Roussille,GRADUACAO,2009,0,0,0,4174,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Cristiane Oliveira Arantes,GRADUACAO,2006,0,0,0,3252,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,1,0,0
+Pedro Henrique Ribeiro da Silva Moraes,POS-DOUTORADO,2008,2011,2015,2017,567,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1,0,0,0
+Gustavo Pinheiro Melo,GRADUACAO,2009,0,0,0,4160,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Hugo Augusto Machado Vinhas,GRADUACAO,2009,0,0,0,4457,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Aderson Stanrley Peixoto Santos,DOUTORADO,2010,2014,2020,0,793,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+Bruno Nunes Vaz,GRADUACAO,2011,0,0,0,2383,0,0,0,0,1,1,1,1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Leno Silva Rocha,MESTRADO,2010,2014,0,0,898,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Roberta de Cássia Ferreira Porto,DOUTORADO,2008,2014,2019,0,618,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,1,0,0
+Albano Freire de Sousa Junior,GRADUACAO,2012,0,0,0,1250,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Mariane Carvalho de Assis,MESTRADO,2008,2011,0,0,857,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,0,0,0,0
+Caitano Luiz da Silva,MESTRADO,2008,2011,0,0,2792,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Eduardo Ceretta Dalla Favera,MESTRADO,2010,2012,0,0,2261,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Israel Borges Sebastião,DOUTORADO,2008,2011,2017,0,662,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,0,0,1,1,0,0,1
+Marcelo Majewski,MESTRADO,2012,2017,0,0,850,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Prieslei Estefanio Dominik Goulart Santos,DOUTORADO,2010,2013,2017,0,543,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0
+Micael da Silva Bacellar,GRADUACAO,2010,0,0,0,4006,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Jose Fernando Thuorst,MESTRADO,2011,2015,0,0,610,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,0,0,0,1,0,0,0
+Thatiana Costa Reis,MESTRADO,2009,2015,0,0,959,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,1,0,0
+Rafael Flores de Moura,GRADUACAO,2015,0,0,0,914,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Tardelli Ronan Coelho Stekel,DOUTORADO,2011,2013,2017,0,753,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,0,0,1,1,0,0,0
+Felipe dos Anjos Neves,MESTRADO,2010,2014,0,0,854,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Nicholas Iwamoto da Fonseca Busic,GRADUACAO,2010,0,0,0,4168,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Marco Antônio Barros da Silva Bezerra,GRADUACAO,2010,0,0,0,3743,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Victor Hugo Freitas de Oliveira,GRADUACAO,2007,0,0,0,908,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Cristiano Sarzi Machado,MESTRADO,2009,2011,0,0,2546,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Mauricio Rosa de Souza,GRADUACAO,2012,0,0,0,2076,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Lucas Lopes Costa,MESTRADO,2011,2015,0,0,614,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1
+Rafael Lopes Costa,DOUTORADO,2010,2012,2017,0,1487,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,1,1,0,0,0
+Danielle Cristina de Morais Amorim,DOUTORADO,2007,2010,2015,0,711,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,0,1,0,0,0
+Denis Sondermann Cardoso,GRADUACAO,2008,0,0,0,3216,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Vanessa Cristine Morais,GRADUACAO,2007,0,0,0,4168,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Mateus Sabadi Schuh,GRADUACAO,2009,0,0,0,753,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,1,1,0,0,0
+Taciana Soares Siqueira,GRADUACAO,2018,0,0,0,593,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Marcelo Augusto Mabuchi,NÃO-INFORMADO,0,0,0,0,4104,0,0,1,0,1,N/A,N/A,N/A,N/A,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Rodrigo Andrade Oliveira,GRADUACAO,2010,0,0,0,3806,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Tiago de Albuquerque Reis,MESTRADO,2007,2010,0,0,2553,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Ana Flávia Guedes Greco,MESTRADO,2009,2013,0,0,607,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+Geraldo Pinto Britto Filho,GRADUACAO,2008,0,0,0,3026,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Rodrigo Gerlach Silva,GRADUACAO,2010,0,0,0,4170,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Vivian Gomes Barbosa,GRADUACAO,2008,0,0,0,1326,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Fernando Augusto Custódio Faria,GRADUACAO,2009,0,0,0,1583,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Marcela Frank da Silva,GRADUACAO,2010,0,0,0,3630,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,0,0,0,0
+Thiago José da Silva,GRADUACAO,2008,0,0,0,1303,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Nikolas Kemmerich,DOUTORADO,2011,2013,2017,0,1494,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0,1
+Diogo Correa da Silva,GRADUACAO,2010,0,0,0,1639,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,1,1,0,0
+Celso Thiago Silva Barbosa,GRADUACAO,2007,0,0,0,534,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Paulo Stwart Dubovicki Vasques,GRADUACAO,2008,0,0,0,2969,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Nathália Silva de Oliveira,MESTRADO,2011,2014,0,0,653,0,0,0,0,0,1,1,1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Rafael Jonas Righi Batista,MESTRADO,2009,2012,0,0,909,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,1,1,0,0,0
+Diogo Alessandro Arsego,DOUTORADO,2010,2012,2017,0,1093,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,1,0,0,0
+Pedro Leonardo Morais Climaco,GRADUACAO,2010,0,0,0,4166,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Gesiele Cristina Ribeiro,NÃO-INFORMADO,0,0,0,0,4300,0,0,1,0,1,N/A,N/A,N/A,N/A,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Igor Freitas Fagundes,GRADUACAO,2010,0,0,0,1699,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,1,0,0
+Heloísa Pinheiro de Freitas,GRADUACAO,2012,0,0,0,2730,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Cézar Augusto Daroit,GRADUACAO,2010,0,0,0,3048,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Felipe Rodrigues Nogueira de Souza,GRADUACAO,2009,0,0,0,3259,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Everaldo Marcos Gonçalves,GRADUACAO,2017,0,0,0,702,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Larissa Azevedo Soares,MESTRADO,2011,2014,0,0,1612,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0
+Bruno Augusto Ferreira Vitorino,DOUTORADO,2008,2012,2017,0,751,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,0,0,0,1
+Juliano Moro,POS-DOUTORADO,2008,2011,2015,2016,604,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,1,0,0,0,1
+Vitor Conrado Faria Gomes,MESTRADO,2009,2012,0,0,655,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,0,0,0,0,0
+Anderson Ribeiro Siqueira,GRADUACAO,2012,0,0,0,1976,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,0,1,0,0,1
+Alan Wescley Barbalho Fonseca,MESTRADO,2012,2013,0,0,2018,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,0,0,0,1
+Jean Carlos Daroit,GRADUACAO,2009,0,0,0,1907,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+Pollyana da Silva Ematne de Barros,GRADUACAO,2008,0,0,0,4462,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Moisés Cirilo de Brito Souto,MESTRADO,2009,2011,0,0,758,0,0,0,0,0,1,1,1,1,0,0,1,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0
+Antonio Marcos Martins Silveira,GRADUACAO,2011,0,0,0,3802,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Tiago Jaskulski,DOUTORADO,2009,2012,2017,0,1711,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Rodrigo Brackmann,POS-DOUTORADO,2009,2012,2016,2016,540,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,0,0,1,1,0,0,0
+Willian Rigon Silva,GRADUACAO,2015,0,0,0,1272,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Mélany Arnoni Moraes,GRADUACAO,2010,0,0,0,4170,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0
+Verônica Fernandes Gama,MESTRADO,2008,2011,0,0,1408,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,1,1,0,0
+Daniel Vinicius Fiorin,GRADUACAO,2008,0,0,0,3596,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,0,0,0,0
+Denys de Souza Scheiner,GRADUACAO,2007,0,0,0,3286,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Guilherme Grams,DOUTORADO,2011,2013,2018,0,523,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,0,0,1,1,0,0,0
+Deiler Antônio Lima Oliveira,GRADUACAO,2010,0,0,0,1807,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,0,0,0,1,0
+Henrique Veiga Giannini,GRADUACAO,2009,0,0,0,1171,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,1,0,0
+Ana Luíza Carvalho Barquete,GRADUACAO,2010,0,0,0,3671,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,1,0,0
+Bernardo Henz,DOUTORADO,2011,2014,2018,0,551,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,0,0,1,1,0,0,1
+Mateus Cesar de Almeida Ferreira,GRADUACAO,2011,0,0,0,558,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Sammuel Rubens Amaro de Oliveira Reis,GRADUACAO,2011,0,0,0,2567,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Felipe de Souza Miranda,DOUTORADO,2010,0,2018,0,562,0,0,1,0,0,0,0,0,0,1,0,1,1,1,0,0,0,0,0,0,0,0,0,1,1,0,0
+Diogo Righi Barbosa,GRADUACAO,2010,0,0,0,1579,0,0,0,0,0,1,1,1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+Jeferson Alves,DOUTORADO,2010,0,2015,0,1563,0,0,0,0,0,0,0,0,0,1,0,1,1,1,0,0,0,0,0,0,0,0,1,1,0,0,0
+Fernando de Souza Savian,MESTRADO,2014,2017,0,0,541,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,1,0,0,0,0
+Ivan Pedro Varella Albuquerque,MESTRADO,2009,2012,0,0,3191,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Maria Rafaela Braga Salum de Abreu,MESTRADO,2007,2014,0,0,1342,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,0,1,0,1,0
+Sarah Lemes Freitas,MESTRADO,2011,2015,0,0,1401,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0,1
+André Luiz Guerra Fernandes,GRADUACAO,2011,0,0,0,1029,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Luiz Justino da Silva Junior,MESTRADO,2012,2015,0,0,614,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,0,1,0,0,1
+Vanessa Teixeira do Carmo,GRADUACAO,2012,0,0,0,2319,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Laís Maria Guizelli Morais,GRADUACAO,2019,0,0,0,1272,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,1,0,0
+Hung Su Lien,GRADUACAO,2011,0,0,0,3778,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Natássia Ramos da Silveira,GRADUACAO,2012,0,0,0,1028,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Alexandre Ceretta Dalla Favera,GRADUACAO,2013,0,0,0,1546,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,1,0,0,1
+Fabricio Rodrigues Segui Aparisi,GRADUACAO,2018,0,0,0,1511,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,1,1,0,0,0
+Daniel Borini Alves,DOUTORADO,2013,2012,2017,0,541,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,1,1,0,0,1
+Helder José Farias Lima,MESTRADO,2010,2013,0,0,1044,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
+Eduardo Escobar Bürger,DOUTORADO,2011,2014,2018,0,600,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,0,0,0,0
+Alessandro Eustaquio Campos Granato,DOUTORADO,2010,2013,2017,0,641,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0
+Rodrigo Domingues de Paula,GRADUACAO,2008,0,0,0,3434,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Diego Janjardi Briz Llopis,MESTRADO,2009,2012,0,0,617,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0
+Bruno Andrade Freitas Falcão,GRADUACAO,2011,0,0,0,1033,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,1,0,0
+Luth Silva Ramos,GRADUACAO,2012,0,0,0,1888,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Luciana Polanowski Correia,GRADUACAO,2011,0,0,0,3435,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Regis Lima Claus,GRADUACAO,2012,0,0,0,2795,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Jaya Anusha Munta,GRADUACAO,2011,0,0,0,3796,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Gabriel Noronha Campos Caridade,GRADUACAO,2010,0,0,0,2511,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Paolo Gennaro de Toledo Piza Rampazzo,GRADUACAO,2011,0,0,0,1614,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Jônatas Micael Vieira de Lima,MESTRADO,2011,2018,0,0,884,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,1,0,0
+Pedro Raphael de Souza Pedroso Bento,GRADUACAO,2013,0,0,0,1048,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+Fernando Almeida de Souza,MESTRADO,2009,2011,0,0,840,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,0,1,0,0,0
+Herbert Hipólito Ferreira Junior,GRADUACAO,2012,0,0,0,1732,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Davi Daniel Naves de Oliveira,GRADUACAO,2016,0,0,0,1024,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Gabriela de Oliveira e Pereira,GRADUACAO,2014,0,0,0,1125,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Beatriz Helene Xavier,DOUTORADO,2011,2016,2020,0,586,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Mariana Crauss,GRADUACAO,2013,0,0,0,551,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,1,0,0,0
+Carlos Vinicius Gomes da Silva,GRADUACAO,2012,0,0,0,3434,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Fabiano Aizawa,GRADUACAO,2011,0,0,0,3748,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Arthur Adriano Ferreira,GRADUACAO,2005,0,0,0,2199,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0
+Camila Rodrigues Silva,GRADUACAO,2011,0,0,0,3748,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Naira Cunha Costa,MESTRADO,2012,2014,0,0,872,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Stephanie Anne Liles,GRADUACAO,2016,0,0,0,2475,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Guilherme Rodrigues Nogueira de Souza,GRADUACAO,2011,0,0,0,3376,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Caroline de Souza Oliveira,GRADUACAO,2010,0,0,0,2897,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Raoni Silva Moura,GRADUACAO,2011,0,0,0,3748,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Leandro de Oliveira Macedo,GRADUACAO,2010,0,0,0,558,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,0,1,0,0
+Vinícius Albuquerque de Almeida,MESTRADO,2013,2015,0,0,1439,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,1,0,0
+Rafael Gonçalves Nogueira dos Santos,GRADUACAO,2014,0,0,0,1075,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Claudia dos Reis Ferreira,GRADUACAO,2015,0,0,0,1956,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Gabriel Borderes Motta,DOUTORADO,2011,2014,2018,0,642,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,0,0,1,1,1,0,0
+Janilda Eufrasio da Silva,GRADUACAO,2016,0,0,0,655,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,1,0,0,0
+Vanessa da Silva Brum Bastos,DOUTORADO,2011,2014,2018,0,523,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,1,1,0,0
+Mariele Coletto Furlan,DOUTORADO,2013,2012,2017,0,1994,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,1,0,0,1
+Jonathan Ribeiro Bonifacio,GRADUACAO,2016,0,0,0,722,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+Cássio Dalcin Steffanello,MESTRADO,2015,2017,0,0,956,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Ives Oliveira da Silva,GRADUACAO,2016,0,0,0,1040,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Ana Caroline Penna,MESTRADO,2015,2017,0,0,613,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Adjane de Fatima Machado Santos,GRADUACAO,2016,0,0,0,1542,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Jeremias Ponciano da Silva,GRADUACAO,2018,0,0,0,1223,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Marcos Felipe Oliveira de Carvalho,GRADUACAO,2014,0,0,0,660,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,0,1,0,0,0
+Lucas Ramos Vieira,DOUTORADO,2013,2012,2016,0,653,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,1,1,0,0,0
+Fabíola Magno da Silva,GRADUACAO,2015,0,0,0,2210,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Arielle Aparecida Morimoto,GRADUACAO,2014,0,0,0,1324,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Ândrei Camponogara,MESTRADO,2014,2016,0,0,620,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,1,0,1
+Ana Beatriz Reis Costa,GRADUACAO,2015,0,0,0,2410,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Felipe Costa Rufino,GRADUACAO,2015,0,0,0,2292,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Ligia Ferreira Granja da Luz,GRADUACAO,2016,0,0,0,641,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Cinthia Souza Vilela,GRADUACAO,2015,0,0,0,2087,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Vinícius Deggeroni,GRADUACAO,2020,0,0,0,615,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Ana Carolina Rosas Reis,GRADUACAO,2014,0,0,0,835,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Danielle Aparecida da Mota,GRADUACAO,2017,0,0,0,836,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Mariana dos Santos Vieitos,GRADUACAO,2013,0,0,0,2172,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0
+Otávio Migliavacca Madalosso,GRADUACAO,2015,0,0,0,1124,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Rafael Henrique Mauro Moreira,NÃO-INFORMADO,0,0,0,0,646,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Bianca Araujo Parra,GRADUACAO,2015,0,0,0,2419,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Igor Frassoni Guedes dos Santos,GRADUACAO,2015,0,0,0,978,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Henrique Nunes Migli,GRADUACAO,2016,0,0,0,2438,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Gabriel Vieira Souza Moreira,GRADUACAO,2012,0,0,0,2034,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Roger Hatwig de Lima,GRADUACAO,2015,0,0,0,748,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Luiz Felipe Kremer,MESTRADO,2015,2018,0,0,552,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,1,0,0
+Felipe Batista do Carmo,GRADUACAO,2013,0,0,0,2459,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Natália Machado Crespo,DOUTORADO,2013,2015,2019,0,563,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,0,1,0,0,0
+Bruno Luis Lapolli Borges,GRADUACAO,2015,0,0,0,1463,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+André Vasconcellos Bastos,GRADUACAO,2014,0,0,0,1101,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Lucas Camponogara Viera,MESTRADO,2014,2016,0,0,551,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,1
+Gustavo Rodrigues Toniolo,MESTRADO,2017,2016,0,0,682,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,0,0,0,0
+Tereza Cristina de Almeida Medeiros,GRADUACAO,2014,0,0,0,1408,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Patrícia Buzzatto Siqueira,MESTRADO,2016,2019,0,0,570,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Diego Henrique de Lima Souza,MESTRADO,2019,2015,0,0,1031,1,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Anderson Henrique Henriques Coelho,GRADUACAO,2013,0,0,0,1082,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Maiara Guimarães Flausino,GRADUACAO,2015,0,0,0,765,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,1
+Gustavo Simões Cordeiro,GRADUACAO,2018,0,0,0,1401,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,1,1,0,0,0
+João Pedro André Portezani,GRADUACAO,2014,0,0,0,2503,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Afonso Henrique Moraes Oliveira,GRADUACAO,2013,0,0,0,667,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,0,0,0,0
+Diego Henrique Ferreira Lima,GRADUACAO,2012,0,0,0,1961,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Camila Lopes de Carvalho,GRADUACAO,2011,0,0,0,2682,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Karyn de Mancilha Ferreira,MESTRADO,2013,2019,0,0,591,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Danielle Rabelo Henrique Pereira,GRADUACAO,2012,0,0,0,933,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Homailson Lopes Passos,GRADUACAO,2011,0,0,0,715,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Bruno Knevitz Hammerschmitt,GRADUACAO,2015,0,0,0,545,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,1
+Bruno Pires Dumas,GRADUACAO,2014,0,0,0,1979,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Leandro Lessa Candido Nascimento,GRADUACAO,2014,0,0,0,820,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Luciana Machado de Moura,MESTRADO,2012,2015,0,0,1003,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,0,1,0,0,0
+Vanessa Daniele Tome,GRADUACAO,2019,0,0,0,991,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Juliano Rafael Andrade,GRADUACAO,2014,0,0,0,604,0,0,1,0,0,1,1,1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Vítor Silva Lopes,MESTRADO,2014,2017,0,0,1263,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Charles Wendell Borges Monteiro,GRADUACAO,2015,0,0,0,593,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,1,0,0,0
+Marcelo Leme do Prado,GRADUACAO,2014,0,0,0,766,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Fernanda Rafaela Fernandes Carvalho,GRADUACAO,2015,0,0,0,751,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Bruna Karadi da Silva,GRADUACAO,2014,0,0,0,767,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Nathalia Raquel Domingues Pereira,GRADUACAO,2019,0,0,0,610,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Anna Carolina Moreira,GRADUACAO,2015,0,0,0,1601,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Janaina Pereira Silva,GRADUACAO,2015,0,0,0,749,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Melissa elizabeth de sousa,GRADUACAO,2014,0,0,0,2619,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Ana Luisa Souza Castanheira da Cruz,NÃO-INFORMADO,0,0,0,0,1958,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Belchior Elton Lima da Silva,GRADUACAO,2017,0,0,0,1222,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Davi das Neves de Araujo Lima,GRADUACAO,2010,0,0,0,2636,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Silas dos Santos Vergilio,GRADUACAO,2015,0,0,0,1679,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+William Diniz de Toledo,GRADUACAO,2014,0,0,0,1128,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Samira Marcela Roman,GRADUACAO,2018,0,0,0,1297,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Leandro Evaristo de Oliveira,GRADUACAO,2013,0,0,0,2645,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Juscelino Pereira de Araújo,MESTRADO,2018,2018,0,0,598,0,0,1,0,0,1,1,1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0
+Danilo Augusto Dias Carvalho,GRADUACAO,2015,0,0,0,1641,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Vanderson Samuel dos Santos,GRADUACAO,2015,0,0,0,976,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Tiago Rocha Gonçalves,GRADUACAO,2015,0,0,0,958,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Francisco Fortunato Magalhães Moraes Segundo,GRADUACAO,2015,0,0,0,877,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Fernando Rossato,MESTRADO,2012,2015,0,0,1095,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,1,0,0
+Anderson Rodrigo Barretto Teodoro,MESTRADO,2014,2016,0,0,662,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,0,0,0,0,0
+Bruna Fernanda Aparecida da Silva Lima,GRADUACAO,2018,0,0,0,835,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0
+Lucas Garofolo Lopes,MESTRADO,2013,2018,0,0,752,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Mário Salgado Ribeiro,GRADUACAO,2013,0,0,0,935,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+André Ferreira Sardinha,MESTRADO,2012,2014,0,0,795,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0
+Felipe Ferreira Alexandre,GRADUACAO,2012,0,0,0,758,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+Marcos Elias Martins Ribeiro,GRADUACAO,2014,0,0,0,2291,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Leandro dos Santos Lessa,GRADUACAO,2014,0,0,0,2270,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Natan Vanelli Garcia,GRADUACAO,2014,0,0,0,2343,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Otto Marques dos Santos Neves,GRADUACAO,2013,0,0,0,697,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,1,1,1,0,0
+Fernanda da Rocha Soares,GRADUACAO,2012,0,0,0,991,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Vinícius Duarte de Almeida,GRADUACAO,2016,0,0,0,555,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Leonardo Rodrigues da Silva,GRADUACAO,2013,0,0,0,2124,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Leandro Carvalho de Oliveira,GRADUACAO,2015,0,0,0,744,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,1,0,0
+Cleverson Fellipe Martins,NÃO-INFORMADO,0,0,0,0,2538,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Tamara Stefani Siqueira Bagattini,GRADUACAO,2014,0,0,0,2335,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Tábata Aira Ferreira,MESTRADO,2015,2018,0,0,861,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Matheus Pianassola,GRADUACAO,2015,0,0,0,1126,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Bruna Andressa Freire Rodrigues,MESTRADO,2013,2016,0,0,809,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Paulo Eduardo Pinto Burke,DOUTORADO,2014,2016,2021,0,617,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,1,1,0,0,0
+Luara Bernardes Esteves Moreira,GRADUACAO,2013,0,0,0,2336,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Helen Beatriz Ferreira,GRADUACAO,2019,0,0,0,834,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,1,0,0
+Cezar Augusto Contini Bernardi,GRADUACAO,2016,0,0,0,761,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Nicholas de Freitas Oliveira Matos,GRADUACAO,2015,0,0,0,1690,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Daniel de Freitas Amancio,GRADUACAO,2013,0,0,0,2640,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Cibele Fernandes,GRADUACAO,2014,0,0,0,1916,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Marlon do Vale Carvalho,GRADUACAO,2015,0,0,0,2039,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Lucas Lorena Guida,GRADUACAO,2020,0,0,0,753,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Pedro Pires Ferreira,GRADUACAO,2018,0,0,0,600,0,0,1,0,0,1,1,1,1,0,0,1,1,1,0,0,0,0,0,1,0,0,1,0,0,0,1
+Delosmar Fernandes da Rocha Junior,GRADUACAO,2013,0,0,0,990,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Elisa Machado,GRADUACAO,2016,0,0,0,892,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+André Mello Bepe,MESTRADO,2014,2017,0,0,551,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+Sony Su Chen,MESTRADO,2015,2019,0,0,523,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,1,1,0,0,0
+Peterson Augusto Ferreira,GRADUACAO,2019,0,0,0,1222,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Vanessa Fernandez Banhara,GRADUACAO,2013,0,0,0,894,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,1,0,0
+Rodolfo Batista Negri,MESTRADO,2016,2019,0,0,592,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Ricardo Luiz Paul,MESTRADO,2014,2017,0,0,540,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Douglas Willian Duarte de Vargas,MESTRADO,2015,2016,0,0,750,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Renan Borges Marques,GRADUACAO,2015,0,0,0,870,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,1,0,0
+Marco Aurélio Wobeto Meller,GRADUACAO,2014,0,0,0,1380,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,0,0,0,0
+Halph Macedo Fraulob,GRADUACAO,2012,0,0,0,1927,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Michelle Chizzolini Barbosa,MESTRADO,2014,2018,0,0,578,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,1,0,0,0,0
+Raffael Chielle Martins,GRADUACAO,2014,0,0,0,640,0,0,0,0,0,1,1,1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Lilian de Siqueira,DOUTORADO,2012,2015,2019,0,946,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,1,1,0,0,0
+Douglas Gin Felix,GRADUACAO,2014,0,0,0,947,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Tiago Bremm,GRADUACAO,2016,0,0,0,750,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,1,0,0
+Amanda Romão de Paiva,DOUTORADO,2012,2015,2019,0,543,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,1,1,0,0,0
+Larissa Vieira Fernandes dos Santos,GRADUACAO,2014,0,0,0,1390,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Virginia Antonioli,GRADUACAO,2013,0,0,0,2658,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Guilherme Baesso,GRADUACAO,2016,0,0,0,633,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Ana Luisa Kalantzopoulos Bretos,GRADUACAO,2013,0,0,0,789,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Felipe Ramon Silva Minerva,GRADUACAO,2017,0,0,0,1930,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Guilherme Paul Jaenisch,GRADUACAO,2016,0,0,0,733,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,1
+Felipe Moreira Ribeiro,GRADUACAO,2014,0,0,0,1113,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Giovanna de Souza Giuliani Barbosa,GRADUACAO,2013,0,0,0,1690,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Irailson Alves Martins,GRADUACAO,2014,0,0,0,1959,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Luiz Valerio de Castro Carvalho,MESTRADO,2014,2018,0,0,641,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Rebeca Fonseca de Oliveira Pereira,GRADUACAO,2015,0,0,0,767,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Maurício Ricardo Balestrin,GRADUACAO,2015,0,0,0,1098,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Bruna dos Santos Silva,MESTRADO,2013,2018,0,0,717,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,1
+Thales de Faria,GRADUACAO,2014,0,0,0,2295,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Caroline Kako Ostermann,GRADUACAO,2012,0,0,0,748,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,0,0,0,0
+Mariana de Almeida Souza,GRADUACAO,2012,0,0,0,528,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Wu Chun An,GRADUACAO,2016,0,0,0,759,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Pedro Henrique Meert Ferreira,MESTRADO,2015,2017,0,0,558,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Bianca Pinheiro de Sousa,MESTRADO,2014,2017,0,0,725,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,1,0,0,0,1,0,0,0
+Jessica Cristina dos Santos Souza,GRADUACAO,2018,0,0,0,637,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,1,1,0,0,1
+Eduardo Chaves do Nascimento,GRADUACAO,2015,0,0,0,1661,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Rodolfo Jordão,MESTRADO,2015,2018,0,0,809,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0
+Luiz Henrique Scavacini Leite,GRADUACAO,2014,0,0,0,2719,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Hugo Mitsuo Sakamoto,MESTRADO,2015,2019,0,0,593,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Bruna Claro Pajaki,GRADUACAO,2014,0,0,0,2291,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Raphael Minari da Costa,GRADUACAO,2017,0,0,0,1553,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Maria Fernanda Campanholo,GRADUACAO,2015,0,0,0,1917,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Manoela Sacchis Lopes,DOUTORADO,2012,2015,2019,0,606,0,0,0,0,0,1,1,1,1,0,0,1,1,1,0,0,0,1,0,1,0,0,1,1,0,0,0
+Alexandre Augusto Rocha de Carvalho Júnior,GRADUACAO,2014,0,0,0,545,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,1,1,0,0,0
+Marcos Gabriel Rosa Santos,GRADUACAO,2016,0,0,0,2336,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Giovanna Querido Marcondes de Assis,GRADUACAO,2016,0,0,0,1619,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Raphael Moura Rocha,GRADUACAO,2014,0,0,0,764,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Stênio Ribeiro Zimermann Nunes,GRADUACAO,2016,0,0,0,1945,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Luciano Homercher Dalsasso,GRADUACAO,2013,0,0,0,2990,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Aline Cristiane Monteiro,GRADUACAO,2012,0,0,0,2662,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Patrícia Cristiane Santana da Silva,DOUTORADO,2011,2014,2018,0,863,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+Arthur Deyna,MESTRADO,2016,2019,0,0,583,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Henrique Machado Gasparotto,GRADUACAO,2012,0,0,0,845,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Vanessa Priscila Camphora,MESTRADO,2012,2016,0,0,1269,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Paulo Bernard do Nascimento Lima,GRADUACAO,2013,0,0,0,2291,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Jéssica de Paula Gonçalves Rosa,GRADUACAO,2014,0,0,0,1327,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+Michel Baptistella Stefanello,MESTRADO,2014,2017,0,0,698,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,1,1,0,1
+Anderson Vestena Bilibio,MESTRADO,2015,2017,0,0,878,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,1
+Luane Carvalho Guimarães,GRADUACAO,2011,0,0,0,2663,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Andreos Vestena Bilibio,DOUTORADO,2015,2017,2021,0,549,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Thomas Goncalves Fortes,GRADUACAO,2013,0,0,0,1956,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Mayara Germano dos Santos Silva,GRADUACAO,2013,0,0,0,3025,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Artur Henrique Moura da Silva,GRADUACAO,2012,0,0,0,2269,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Joceli Augusto Gross,DOUTORADO,2017,2015,2019,0,1223,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,1,1,0,0,0
+Lavilson Braga Vieira Junior,GRADUACAO,2009,0,0,0,3126,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Verena Gonzaga Borges Novaes,GRADUACAO,2014,0,0,0,554,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Lia Camargo Corazza,MESTRADO,2012,2017,0,0,822,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Naiara Carolina Pontes Santos,GRADUACAO,2013,0,0,0,2095,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,1,1,0,0,1
+Ana Paula Vidal Fonseca,GRADUACAO,2012,0,0,0,1390,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Elias Francisco dos Santos,GRADUACAO,2015,0,0,0,572,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Tháygoro Minuzzi Leopoldino,GRADUACAO,2014,0,0,0,1556,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Mariany Ludgero Maia Gomes,MESTRADO,2011,2018,0,0,590,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,1
+Lia Braz,GRADUACAO,2011,0,0,0,1447,0,0,0,0,0,1,1,1,1,0,0,1,1,1,0,0,0,1,0,0,0,0,0,1,1,0,1
+Otávio Rodrigues Machado,GRADUACAO,2014,0,0,0,1739,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Marcela Dalprat Alegre,MESTRADO,2013,2016,0,0,1086,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,1,0,0,0
+Boris Dias Custódio Junior,GRADUACAO,2012,0,0,0,3029,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Samuel Borges Rodrigues,GRADUACAO,2012,0,0,0,2249,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Bruno Deprá,GRADUACAO,2013,0,0,0,1425,0,0,0,0,0,1,1,1,1,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,1
+Wagner Kameyama de Castro Leite,GRADUACAO,2012,0,0,0,1290,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Laís Emy Ishibashi,GRADUACAO,2013,0,0,0,2661,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Enio Faria de Toledo Moraes,GRADUACAO,2011,0,0,0,3202,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Elisângela Finotti,MESTRADO,2012,2015,0,0,894,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,1,0,0,1
+Carina Schumann,DOUTORADO,2010,2012,2016,0,709,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,0,0,1,0,1
+Geraldo Camara Miranda,GRADUACAO,2015,0,0,0,1009,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Rafael Henrique Barboza da Silva,GRADUACAO,2009,0,0,0,1131,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Rafael Afonso do Nascimento Reis,MESTRADO,2012,2016,0,0,555,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Nórton Franciscatto de Paula,DOUTORADO,2013,2015,2019,0,667,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,1,0,0
+Caroline Dambelle Barroso de Castro,MESTRADO,2012,2016,0,0,1628,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Luiz Felipe Nascimento Schleder,GRADUACAO,2014,0,0,0,1600,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Eduardo Plasti Melara,GRADUACAO,2011,0,0,0,2340,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Paulo Eduardo Camboim de Brito,GRADUACAO,2013,0,0,0,3277,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Guilherme Afonso Siqueli,DOUTORADO,2012,2016,2020,0,640,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,1,0,0
+Wilian Luís Campesato,MESTRADO,2012,2016,0,0,1219,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Iara Tosta e Melo,MESTRADO,2010,2013,0,0,1961,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Oreci Escobar da Silva,DOUTORADO,2010,2016,2020,0,618,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,1,1,0,0,1
+Thiago Lobão Cordeiro,MESTRADO,2009,2015,0,0,704,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,1,1,0,0,0
+Gabriela Mantegazza,GRADUACAO,2011,0,0,0,2209,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Juan Perez Junqueira,GRADUACAO,2016,0,0,0,681,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Sidiney Aparecido da Silva,GRADUACAO,2010,0,0,0,3215,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Jesus Bravo de Sousa da Fonseca,GRADUACAO,2012,0,0,0,1668,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Kelly Ribeiro,GRADUACAO,2011,0,0,0,1115,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,1,0,0,0,0,0,1,1,0,0
+Felipe Mendes Miranda,GRADUACAO,2012,0,0,0,2208,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Samantha Cristina Alves,GRADUACAO,2012,0,0,0,1749,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+José Lázaro de Siqueira Júnior,MESTRADO,2010,2016,0,0,702,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1
+Beatriz de Oliveira Ximenez,GRADUACAO,2010,0,0,0,2320,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Rodolfo Rafael Berino da Motta,GRADUACAO,2010,0,0,0,3439,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Luiz Henrique Gonçalves,GRADUACAO,2011,0,0,0,1873,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Clarissa Ferreira Pillon,MESTRADO,2011,2014,0,0,624,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Paulo Rizzo Filho,GRADUACAO,2013,0,0,0,3082,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Ruan Carlos Silvestre de Souza,GRADUACAO,2015,0,0,0,1657,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Suzana Maria Inacio de Carvalho,MESTRADO,2010,2018,0,0,638,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,1,1,0,0,0
+Dimas Irion Alves,DOUTORADO,2013,2015,2020,0,536,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,1,1,0,1
+Emily Ane Dionizio da Silva,DOUTORADO,2010,2015,2019,0,595,0,0,0,0,0,1,1,1,1,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Lucas de Lima Cechin,GRADUACAO,2009,0,0,0,538,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Danilo Eduardo Braga,GRADUACAO,2013,0,0,0,932,0,0,1,0,0,1,1,1,1,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Daniel Hagestedt Ferreira,GRADUACAO,2009,0,0,0,3435,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Leonardo Luís Rossetto,GRADUACAO,2010,0,0,0,2551,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,1,0,0
+Marcus Vinícius Gomes Vieira,GRADUACAO,2012,0,0,0,3419,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Everton Augusto Lima de Oliveira,GRADUACAO,2011,0,0,0,3124,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Fabiane Ferreira Silva,GRADUACAO,2012,0,0,0,1201,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Gislaine Fernandes de Matos,GRADUACAO,2011,0,0,0,3204,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,1,0,0
+Edgar Bueno dos Santos,MESTRADO,2014,2016,0,0,1567,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Shawana Stephanie Mayer,GRADUACAO,2013,0,0,0,1551,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Anielli Rosane de Souza,MESTRADO,2013,2016,0,0,640,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,1,0,0
+Maria Lívia Galhego Thibes Xavier da Costa,GRADUACAO,2016,0,0,0,598,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,1
+Raquel Aparecida Barros Marcondes,GRADUACAO,2014,0,0,0,2349,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Andirlei Claudir da Silva,GRADUACAO,2014,0,0,0,1474,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,0,0,0,0
+Wagner Frederico Cesar Mahler,MESTRADO,2013,2017,0,0,661,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Estevam Martins da Silva,GRADUACAO,2011,0,0,0,3281,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Lucas Vaz Peres,DOUTORADO,2007,2013,2016,0,548,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,1,0,0,0
+João Paulo de Abreu Cruz,GRADUACAO,2012,0,0,0,3082,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Lucas Lourencena Caldas Franke,DOUTORADO,2013,0,2019,0,1142,0,0,0,0,0,0,0,0,0,1,0,1,1,1,0,0,0,0,0,1,0,0,1,1,0,0,0
+Mariana Borba Trevisan,MESTRADO,2012,2015,0,0,948,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,1,0,0
+Diego Bezerra Lira,GRADUACAO,2014,0,0,0,1095,0,0,0,0,0,1,1,1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Elisa Glitzenhirn,MESTRADO,2012,2015,0,0,647,0,0,1,0,0,1,1,1,1,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Melissa Tami Makibara,GRADUACAO,2013,0,0,0,2334,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Ruan Carlos Rezende de Souza,GRADUACAO,2012,0,0,0,3055,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Braulio Pessoa Fernandes,GRADUACAO,2011,0,0,0,3290,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Alexandre Nascimento Gonçalves,GRADUACAO,2012,0,0,0,3421,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Samantha de Fátima Magalhães Mariano,DOUTORADO,2010,2013,2017,0,597,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Elton Alex Silva,GRADUACAO,2010,0,0,0,1115,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Cristiano Reis dos Santos,MESTRADO,2011,2014,0,0,2138,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,1
+José Lenival Gomes de França,MESTRADO,2007,2015,0,0,1832,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Lucas Ferreira Machado,GRADUACAO,2013,0,0,0,2012,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Viviane Queiroz da Silva,GRADUACAO,2012,0,0,0,960,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,1,1,0,0
+Tális Piovesan,DOUTORADO,2013,2017,2021,0,537,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Monique Bruna Silva do Carmo,MESTRADO,2012,2015,0,0,621,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,1,1,0,0
+Emanoel Raimundo Queiroz Chaves Junior,DOUTORADO,2012,2015,2019,0,563,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Bruno Crestani Calegaro,MESTRADO,2011,2013,0,0,597,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,0,1,1,0,0
+Lucas Chilelli da Silva,GRADUACAO,2014,0,0,0,614,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+Gustavo da Silva Carniato,GRADUACAO,2010,0,0,0,3512,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Yuri Carvalho Ferreira,GRADUACAO,2012,0,0,0,2661,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Jéssica Cristine da Costa Siqueira,GRADUACAO,2011,0,0,0,2817,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Vânia Heloise de Oliveira,GRADUACAO,2014,0,0,0,849,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Yanna Cruz Cavalcanti,DOUTORADO,2013,2013,2019,0,929,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+Aline Melo de Abreu,GRADUACAO,2010,0,0,0,2290,0,0,0,0,1,1,1,1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Muller Moreira Souza Lopes,DOUTORADO,2011,2014,2018,0,803,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Cedeia Vieira de Araujo,MESTRADO,2015,2018,0,0,1017,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,1,0,1
+Roberta Zecchini Cantinho,MESTRADO,2009,2012,0,0,569,0,0,1,0,0,1,1,1,1,0,0,1,1,1,0,0,0,0,0,0,0,0,1,1,0,0,0
+Erika Viana Sapucci,GRADUACAO,2014,0,0,0,2844,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Vagner Eduardo Caetano Marques,MESTRADO,2012,2015,0,0,547,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,0,1,1,0,0
+Hélia Maria Araujo Lopes,GRADUACAO,2014,0,0,0,1263,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Carlos Antonio Mendes da Costa Júnior,MESTRADO,2011,2014,0,0,1121,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Carlos Eduardo Nascimento Cardoso,GRADUACAO,2013,0,0,0,654,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Aline Seeger Santos,GRADUACAO,2019,0,0,0,1179,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Thalis José Girardi,MESTRADO,2013,2015,0,0,1724,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,1
+Andressa Zabaleta Alves Corrêa,GRADUACAO,2013,0,0,0,3022,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Luis Fernando Nicolini,DOUTORADO,2011,2016,2020,0,638,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Alcimoni Nelci Comin,POS-DOUTORADO,2010,2012,2016,2019,625,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,1,0,0,0
+Rodrigo Corrêa Barbosa,GRADUACAO,2012,0,0,0,3027,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Francine Lemes da Silva,GRADUACAO,2013,0,0,0,3307,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Mary Ellen Rodrigues,GRADUACAO,2014,0,0,0,690,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Carlos Pinto da Silva Neto,MESTRADO,2011,2014,0,0,1036,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+Mônica Cristina de Almeida,GRADUACAO,2012,0,0,0,3392,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Anderson Sene Gonçalves,GRADUACAO,2020,0,0,0,733,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,1
+Angélica Baumann Cardoso,GRADUACAO,2015,0,0,0,592,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,1,1,1,0,0
+Victor Araújo Abrantes de Andrade,GRADUACAO,2013,0,0,0,3089,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Victor Massad Ruiz Arena,GRADUACAO,2012,0,0,0,2020,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Victor Orui Saito,GRADUACAO,2014,0,0,0,858,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,1,1,0,1
+Filipe Marcus Mendes de Amorim,GRADUACAO,2011,0,0,0,2656,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Hugo Rafael Gonçalves Cavalcante,GRADUACAO,2013,0,0,0,1281,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,1,0,0
+Renan Emigdio Gonçalves,GRADUACAO,2013,0,0,0,3037,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Fabio Silveira Dalprat Sousa,GRADUACAO,2013,0,0,0,3013,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Josiane da Silva,GRADUACAO,2011,0,0,0,962,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Vanessa Silva Moreira,MESTRADO,2012,2015,0,0,1157,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,0,1,0,0,1
+Carlos Alexandre de Oliveira Rodrigues,GRADUACAO,2014,0,0,0,2827,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Ana Luiza Ferreira de Almeida,GRADUACAO,2013,0,0,0,1873,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Fernanda Cristina Reis,GRADUACAO,2012,0,0,0,2258,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+José Paulo Marchezi,DOUTORADO,2013,2016,2020,0,534,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,1,1,0,0,0
+Danilo Clemente Briante,GRADUACAO,2012,0,0,0,2284,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Aline Lanzillo Moreira,GRADUACAO,2012,0,0,0,3026,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Marcela Mayumi Ribeiro Kuroqui,GRADUACAO,2013,0,0,0,1152,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Evandro Faria Lins,GRADUACAO,2013,0,0,0,524,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Noemi dos Santos Araujo,GRADUACAO,2014,0,0,0,677,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,1,0,0
+Felipe Ferreira Villar Coelho,GRADUACAO,2013,0,0,0,3032,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Alex Machado da Silva,GRADUACAO,2012,0,0,0,3028,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Gabriel Mano Ribeiro,GRADUACAO,2011,0,0,0,2497,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Lauren Catherine Brum Göergen,GRADUACAO,2015,0,0,0,1070,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,1
+Bianca Alencar Bianchi,GRADUACAO,2010,0,0,0,3083,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Daniela Paula Faria,GRADUACAO,2015,0,0,0,1702,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Guilherme Cordeiro Skurczenski,GRADUACAO,2013,0,0,0,3096,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Vinícius dos Santos Pereira,MESTRADO,2010,2013,0,0,2626,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Luis Fernando Santos,GRADUACAO,2013,0,0,0,2271,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Paula Nascimento Rizzo,GRADUACAO,2014,0,0,0,3001,0,0,0,0,1,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,1,1,0,0,1
+Marcelo Motta Venchiarutti,GRADUACAO,2011,0,0,0,3264,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Gabriel Silva Dias,GRADUACAO,2016,0,0,0,656,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Paloma Sant Anna Dominguez,MESTRADO,2011,2015,0,0,1986,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Nathália Velloso Prado,DOUTORADO,2014,2017,2021,0,613,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,1
+Patrícia Lopes da Silva,GRADUACAO,2011,0,0,0,3389,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Hugo Sergio Tavares,GRADUACAO,2012,0,0,0,1123,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Fábio Cabral Silveira,MESTRADO,2012,2017,0,0,1137,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Giuliano Damião,MESTRADO,2015,2015,0,0,710,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+João Felipe Cardoso dos Santos,MESTRADO,2013,2016,0,0,555,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+Icaro José Assis Kume,GRADUACAO,2011,0,0,0,2915,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Mariana Rezende Moura,GRADUACAO,2011,0,0,0,1831,0,0,0,0,1,1,1,1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Lucas Antunes Tambara,DOUTORADO,2010,2013,2017,0,522,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1
+Priscila Ferreira Bianco de Castro,GRADUACAO,2014,0,0,0,820,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Francisco Jaime Oliveira Ferreira da Silva,GRADUACAO,2012,0,0,0,1493,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Tiago Caetano Edruziane,GRADUACAO,2014,0,0,0,1479,0,0,0,0,0,1,1,1,1,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,1,0,0
+Guilherme Rennó de Azeredo Freitas,GRADUACAO,2009,0,0,0,584,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Deivid Galdini Silva,MESTRADO,2012,2017,0,0,652,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,0,0,0,0
+Walkiria Lacerda Silveira de Melo,GRADUACAO,2012,0,0,0,596,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,0,0,0,0
+Rodrigo da Rosa Azambuja,DOUTORADO,2009,2013,2017,0,528,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,1,1,0,0,0
+Luete Amaral Guedes,GRADUACAO,2011,0,0,0,2525,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Raphael Bueno Guedes da Silva,GRADUACAO,2016,0,0,0,810,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,1,1,1,0,0
+Aylson dos Santos Mota Junior,GRADUACAO,2013,0,0,0,2629,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Felipe de Souza Nogueira Coelho,GRADUACAO,2014,0,0,0,636,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Marcelo Coleto Rola,MESTRADO,2014,2017,0,0,714,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,1,0,0,0
+Carla Cristina Doescher Fernandes,MESTRADO,2013,2018,0,0,773,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Gabriela Martins Pereira,MESTRADO,2015,2014,0,0,682,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,1,0,0
+Carla da Silva,MESTRADO,2014,2017,0,0,612,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,1,0,1
+Leonardo Zavareze da Costa,GRADUACAO,2017,0,0,0,782,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,1,0,0,0,0
+Thiago Sabóia Silva,GRADUACAO,2013,0,0,0,2408,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Shailine Fonseca Viegas,GRADUACAO,2013,0,0,0,953,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Crístofer Rovian Claro Pedrozo,GRADUACAO,2013,0,0,0,2789,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,1,0,0
+Gislene Rodrigues da Silva,MESTRADO,2014,2016,0,0,1080,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,0,1,1,0,0
+Ana Paula Pereira dos Santos,DOUTORADO,2009,2012,2016,0,2161,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,0,0,0,0
+William Gaida,MESTRADO,2012,2015,0,0,649,0,0,1,0,0,1,1,1,1,0,0,1,1,1,0,0,0,1,0,0,0,0,0,1,0,0,0
+Gabriella Reis Carrer Spedo,GRADUACAO,2008,0,0,0,774,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,1,0,0,0
+Fagner Chagas Rother,DOUTORADO,2011,2014,2018,0,659,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,1,0,0,0,1,0,0,0
+Fabio Nascimento de Melo,GRADUACAO,2012,0,0,0,1814,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,1,0,0
+Luis Thiago Lucci Corrêa Paolicchi,DOUTORADO,2007,2010,2017,0,641,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Rafael Silveira Peres,POS-DOUTORADO,2007,2010,2014,2017,554,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,1,1,0,0,0
+Caroline Bertagnolli,POS-DOUTORADO,2008,2010,2013,2014,1586,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,0,1,0,0,1
+Rodrigo de Freitas Amorim,DOUTORADO,2008,2010,2015,0,715,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,0,1,0,0,0
+Carmo Vinieri Filho,NÃO-INFORMADO,0,0,0,0,4555,1,0,1,0,1,N/A,N/A,N/A,N/A,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Thiago Almeida Ribeiro,GRADUACAO,2008,0,0,0,1261,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Leonardo Iusuti de Medeiros,MESTRADO,2007,2009,0,0,529,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,0,0,0,1,0,0,1
+Jaime Mizuguchi,MESTRADO,2006,2014,0,0,1543,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Thiago Costa Caetano,DOUTORADO,2007,2010,2014,0,631,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,0,1,0,0,1
+Daniel Carlos Reis,GRADUACAO,2006,0,0,0,581,0,0,0,0,0,1,1,1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Vanderlei Neias Junior,GRADUACAO,2006,0,0,0,942,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+Raquel Cristina Paiotti,GRADUACAO,2008,0,0,0,4735,1,0,1,0,1,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0
+Guilherme Soares e Silva,GRADUACAO,2008,0,0,0,629,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Thiago Alves de Moraes,GRADUACAO,2009,0,0,0,4520,1,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Iuri Neto Guimarães,GRADUACAO,2006,0,0,0,4847,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Daniela Cristina Rezende Damilano,GRADUACAO,2006,0,0,0,4744,1,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Érica Lemes da Silva,GRADUACAO,2008,0,0,0,4544,1,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,1,0,0
+André Chimati Fatini,GRADUACAO,2009,0,0,0,754,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Ezequiel Dionísio Vieira Filho,GRADUACAO,2006,0,0,0,4028,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,1,0,0
+Pedro Luis Cardoso da Cunha,GRADUACAO,2014,0,0,0,2815,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Pedro Daniel Santos Carvalho de Almeida,MESTRADO,2008,2011,0,0,2607,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Cristian Willian Saueressig da Silva,GRADUACAO,2008,0,0,0,4565,1,0,1,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,1
+Ramon Augusto Sousa Lins,DOUTORADO,2008,2015,2020,0,586,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+Márcio Fábio Raposo Rodrigues,GRADUACAO,2008,0,0,0,1118,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Germano Possani,DOUTORADO,2008,2011,2015,0,564,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Silvano Lucas Prochnow,MESTRADO,2008,2011,0,0,3409,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Camila Carneiro Rennó Pereira,GRADUACAO,2006,0,0,0,1354,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Rafael Fettermann Bertagnolli,GRADUACAO,2008,0,0,0,3729,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,1,0,0
+Thaisa Caviquioli Martins,GRADUACAO,2016,0,0,0,1236,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Fernando de Oliveira Lima,GRADUACAO,2016,0,0,0,806,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Paulo Paiva Oliveira Leite Dyer,MESTRADO,2013,2018,0,0,844,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,1,0,0
+Marcos Henrique Silvado Baldim Tristão,GRADUACAO,2016,0,0,0,1962,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Leonardo Morgan,GRADUACAO,2016,0,0,0,1628,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Julia Marques Figueiredo Mendonça Nunes,GRADUACAO,2015,0,0,0,2201,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Fabrício Iusuti de Medeiros,GRADUACAO,2008,0,0,0,1132,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Elisabete Weber Reckziegel,DOUTORADO,2008,2012,2017,0,765,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,1,0,0,0
+Felipe José Brito Pelegrini,GRADUACAO,2011,0,0,0,1920,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Lilian Piecha Moor,DOUTORADO,2009,2011,2016,0,611,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,1,0,0,0,1
+Carlos Ivo dos Reis Sales,GRADUACAO,2014,0,0,0,1297,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Dimitri Assumpção Scripnic,GRADUACAO,2019,0,0,0,1246,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Eduardo Rohde Eras,GRADUACAO,2020,0,0,0,577,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,1,1,0,0,1
+Mariana dos Santos Soares,GRADUACAO,2016,0,0,0,1005,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Gabriel Sousa Diniz,MESTRADO,2013,2016,0,0,652,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,1,0,0,1,0,0,0,0
+Luan Felipe Carneiro Rodrigues,GRADUACAO,2015,0,0,0,698,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Thales Ramos Mânica,GRADUACAO,2016,0,0,0,783,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,0,0,0,0
+Daniel Moura,GRADUACAO,2004,0,0,0,5113,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,1,1,1,0,0,1,1,0,0,1
+Rosciano Sousa de Andrade,GRADUACAO,2005,0,0,0,1229,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Gustavo De Souza Oliveira,GRADUACAO,2017,0,0,0,1744,0,0,0,0,0,1,1,1,1,0,0,1,1,1,0,0,1,0,0,0,0,0,1,0,0,0,0
+Denise Maria Paes Guisard Lopes,GRADUACAO,2006,0,0,0,1653,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0
+Régis Zorzo,GRADUACAO,2016,0,0,0,779,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,0,0,0,0
+Domingos Sávio dos Santos Rodrigues,MESTRADO,2005,2007,0,0,2622,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,1
+Andre Treno Ricarte,GRADUACAO,2006,0,0,0,4120,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Thiago Monfredini da Silva,POS-DOUTORADO,2006,2010,2015,2019,572,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,0,0,1,0,0,0,0
+Cleber Abrahão de Souza,DOUTORADO,2009,2011,2016,0,554,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0
+Juliana Guastali Linhares,GRADUACAO,2006,0,0,0,5204,1,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Bruno de Almeida Ferreira,GRADUACAO,2006,0,0,0,640,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Renilson Adriano da Silva,MESTRADO,2017,2009,0,0,1159,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,1,0,0,0,1
+Gustavo Henrique Dian,GRADUACAO,2007,0,0,0,3227,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0,1
+Daniel Michelon dos Santos,POS-DOUTORADO,2006,2010,2015,2017,724,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,1,1,0,0,0
+Luís Henrique de Camargo,GRADUACAO,2014,0,0,0,1027,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Elias Fernando Berra,DOUTORADO,2005,2013,2017,0,645,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,1,1,0,0,0
+Yusra Mohamad Mazloum,GRADUACAO,2006,0,0,0,5146,1,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Luiz Antônio Cintra,GRADUACAO,2007,0,0,0,4870,1,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Maressa Menezes de Freitas Oliveira,GRADUACAO,2006,0,0,0,864,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Anderson José Pereira,MESTRADO,2017,2011,0,0,570,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Mariana Franco Arruda,GRADUACAO,2006,0,0,0,4147,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Deise Mabel Berra,GRADUACAO,2005,0,0,0,4314,1,0,1,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,1,0,0
+Eduardo Bertoldi,GRADUACAO,2005,0,0,0,4030,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Vânia Fátima Andrioli,POS-DOUTORADO,2006,2008,2012,2015,564,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,0,0,1,0,0,0,1
+Shridhar Jayanthi,POS-DOUTORADO,2005,0,2012,2014,1657,0,0,0,0,0,0,0,0,0,1,0,1,1,1,0,0,0,1,0,1,0,0,0,0,0,0,0
+Virnei Silva Moreira,DOUTORADO,2005,2008,2012,0,571,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,1,0,0,0,0
+Cleomar Pereira da Silva,DOUTORADO,2008,2009,2015,0,618,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,1,1,0,0,0
+Lucas Junho Goulart,GRADUACAO,2005,0,0,0,5283,1,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Fernanda Tortosa Fernandes,DOUTORADO,2006,2009,2011,0,2469,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,0,0,0,0
+Valério Ramalho Nobre,GRADUACAO,2005,0,0,0,5135,1,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0
+Luciana Fagundes Braga Ferreira,MESTRADO,2014,2005,0,0,1755,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Luciene Vasconcelos Casado,MESTRADO,2009,2010,0,0,758,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,0,0,0,0
+Samuel Henrique Damas Marinelo,MESTRADO,2005,2014,0,0,541,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Felipe Bastos Gurgel Silva,GRADUACAO,2006,0,0,0,4302,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,1,0,0
+Nayla Guimarães Silva,GRADUACAO,2013,0,0,0,872,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Marilyn Menecucci Ibanez,DOUTORADO,2008,2016,2020,0,721,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Carlos Alberto Pires Junior,GRADUACAO,2005,0,0,0,4105,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,1,0,0,0,0
+Roberto de Oliveira Possidente,MESTRADO,2007,2016,0,0,709,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+Heloneyda Quintas Amaral,GRADUACAO,2006,0,0,0,4087,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Jairo Francisco Savian,POS-DOUTORADO,2007,2009,2013,2014,522,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,0,0,0,1
+Matheus de Arruda Pereira,GRADUACAO,2014,0,0,0,1277,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Vânia Aparecida da Costa,DOUTORADO,2001,2010,2015,0,604,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,1,0,0,0,0
+Cassiano Rodrigo Silva,GRADUACAO,2005,0,0,0,4940,1,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Lucas Barboza Sarno da Silva,DOUTORADO,2005,2008,2013,0,529,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,0,1,0,0,1
+Rodrigo Cassineli Palharini,POS-DOUTORADO,2007,2010,2014,2019,542,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,0,0,1,1,0,0,1
+Everton Frigo,DOUTORADO,2005,2008,2013,0,545,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,0,0,1,0,0,0,1
+Robinson Luciano Manfro,DOUTORADO,2005,2009,2013,0,563,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,0,0,0,0
+Eduardo Andrighetto,MESTRADO,2002,2008,0,0,743,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,0,0,0,1
+Tatiana Regina da Fonseca,MESTRADO,2007,2017,0,0,1005,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0,1
+Jean Paulo Guarnieri,MESTRADO,2006,2010,0,0,2823,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0
+Eduardo henrique Moretti Marques,GRADUACAO,2004,0,0,0,5279,1,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Lívia de Souza Ribeiro,MESTRADO,2005,2009,0,0,825,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,1,0,0,0,1
+Tatiana Rocha Amaro,MESTRADO,2007,2015,0,0,1100,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+Kurios Iuri Pinheiro de Melo Queiroz,DOUTORADO,2006,2008,2011,0,681,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,1,1,0,0,0
+Leandro Benedito dos Santos,GRADUACAO,2006,0,0,0,5432,1,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Marcel Wada,MESTRADO,2013,2011,0,0,2833,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,1
+Edgard de Freitas Diniz Evangelista,POS-DOUTORADO,2005,2008,2013,2016,545,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,0,0,1,1,0,0,0
+Luis Cesar Pereira de Moraes,GRADUACAO,2007,0,0,0,753,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0
+Alfredo de Carvalho Soares,GRADUACAO,2004,0,0,0,591,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,1,1,0,0,0
+Bruno Mohallem Paiva,MESTRADO,2005,2008,0,0,768,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,1,0,0
+Vandoir Bourscheidt,POS-DOUTORADO,2006,2008,2012,2013,531,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,0,1,0,0,1
+Lilian Hoshida,DOUTORADO,2005,2009,2018,0,724,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,1,1,0,0
+Pedro Herzilio Ottoni Viviani de Campos,POS-DOUTORADO,2005,2010,2015,2017,577,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,1,1,0,0,1
+Pedro Fernando Almeida Di Donato,DOUTORADO,2006,2012,2017,0,560,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,1,0,0,1
+Carlos Alberto Barbosa de Oliveira Filho,GRADUACAO,2006,0,0,0,5283,1,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Ubirajara Oliveira de Sá,GRADUACAO,2006,0,0,0,5163,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Henrique Carlotto Aveiro,POS-DOUTORADO,2007,2009,2012,2014,1942,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,0,0,0,0,0
+Ximena Celia Mendez Cubillos,DOUTORADO,2021,2008,2011,0,536,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,1,0,0,0,1
+Maiquel dos Santos Canabarro,POS-DOUTORADO,2006,2009,2016,2016,550,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,0,0,0,0
+Gustavo Ravanhani Matuck,DOUTORADO,2005,2009,2010,0,2650,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Magno Prudêncio de Almeida Filho,MESTRADO,2003,2016,0,0,862,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,0,0,0,0
+Juliana de Mattos Guerra,DOUTORADO,2005,2008,2013,0,1564,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+Nicolas Roussille,GRADUACAO,2005,0,0,0,5146,1,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Wallace Alves de Andrade Rocha,GRADUACAO,2003,0,0,0,4821,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Allan Tavares Anholetto,GRADUACAO,2005,0,0,0,5283,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,1,0,0
+Anne Karoline dos Santos Poli,MESTRADO,2014,2017,0,0,795,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Rafael Augusto Diniz dos Santos Reis,GRADUACAO,2015,0,0,0,1929,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Augusto César de Oliveira,GRADUACAO,2016,0,0,0,1269,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Bruna Henrique da Silva,GRADUACAO,2018,0,0,0,835,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Isaura Isabel Martins Koulikoff,GRADUACAO,2016,0,0,0,1927,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Dener Reis Gomes,GRADUACAO,2017,0,0,0,1859,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Samara Carbone,POS-DOUTORADO,2006,2008,2014,2016,550,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,0,1,0,0,1
+Ariádne Cristina de Arruda,GRADUACAO,2019,0,0,0,873,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Matheus Mascarenhas,DOUTORADO,2015,2005,2010,0,2053,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,1,1,1,0,0
+Fernanda Roberta Marciano,DOUTORADO,2005,2008,2011,0,578,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,0,0,0,0,0
+Bernardo Monteiro Rufino,GRADUACAO,2015,0,0,0,1969,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Bianca Daniela Costa,GRADUACAO,2015,0,0,0,747,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,0,0,1,1,1,0,1
+Marcelo Vinicius Bianco de Castro,GRADUACAO,2017,0,0,0,585,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Allan Douglas dos Santos Silva,GRADUACAO,2017,0,0,0,607,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,1,0,0,0
+Denis Angelo da Silva,GRADUACAO,2020,0,0,0,623,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Rosana Aparecida Nogueira de Araujo,POS-DOUTORADO,2004,2007,2011,2014,555,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,1,1,0,0,1
+Raphael Willian Peres,GRADUACAO,2015,0,0,0,865,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,0,0,0,1,0,0,1
+Yasmim Carvalho Guimarães,GRADUACAO,2016,0,0,0,1907,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Alexandre Mauricio Silvano,GRADUACAO,2015,0,0,0,1867,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Ellen Christine de Souza Galvão,GRADUACAO,2015,0,0,0,542,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Luis Fernando Nakamura,GRADUACAO,2015,0,0,0,2084,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Amanda Silva de Deus,GRADUACAO,2014,0,0,0,543,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Amanda Fernandes da Rocha Simonetti,GRADUACAO,2016,0,0,0,858,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Tiago Ferreira Barbosa,GRADUACAO,2016,0,0,0,1830,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+André Martins Tsuji,GRADUACAO,2016,0,0,0,835,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Lucas Barbosa Rocha,GRADUACAO,2017,0,0,0,548,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Monica Tatiane de Sousa,GRADUACAO,2016,0,0,0,740,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Fábio Marcelo Breunig,POS-DOUTORADO,2005,2008,2011,2017,528,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,1,0,0,0,0,0,0,1
+Fábio Fernandes de Oliveira,MESTRADO,2015,2018,0,0,702,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Daniel Kabata,GRADUACAO,2014,0,0,0,1971,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Pedro Henrique Alves Batista,GRADUACAO,2017,0,0,0,723,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Gustavo Hideki Itikawa,GRADUACAO,2015,0,0,0,1565,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0
+José Vieira da Silva Neto,MESTRADO,2015,2018,0,0,748,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0
+Bruna das Chagas Salvador,GRADUACAO,2013,0,0,0,1738,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Amanda Diniz Dias,GRADUACAO,2016,0,0,0,702,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Plínio Ivo Gama Tenório,MESTRADO,2015,2018,0,0,581,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,1
+Renan Carlos de Castro,GRADUACAO,2014,0,0,0,1950,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Lucas de Oliveira Cavalheiro,GRADUACAO,2016,0,0,0,990,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Jessika Caroline Decia Fratari,GRADUACAO,2015,0,0,0,1110,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Beatriz Carvalho da Silva,GRADUACAO,2015,0,0,0,998,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Lucas Campanari Simplicio dos Santos,GRADUACAO,2014,0,0,0,1517,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Carlos Henrique Antonelli,GRADUACAO,2014,0,0,0,1965,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Lucas Mateus Linares Pereira,GRADUACAO,2017,0,0,0,1928,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Stéfano Flávio de Oliveira,GRADUACAO,2016,0,0,0,1962,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Luis Eduardo de Oliveira Floriano,GRADUACAO,2014,0,0,0,1206,0,0,0,0,0,1,1,1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Emerson Moreira da Silva,GRADUACAO,2016,0,0,0,1929,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Tatiane Scarabel Pelosi,GRADUACAO,2017,0,0,0,1202,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0
+Lucas Sales Policarpo,GRADUACAO,2016,0,0,0,1926,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Maria Fernanda Gonçalves de Oliveira,GRADUACAO,2019,0,0,0,619,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Lucas Câmara Dantas Bezerra,GRADUACAO,2019,0,0,0,1011,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Welison Michael Guimarães Andrade,GRADUACAO,2017,0,0,0,871,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Patrícia Costa Pontes,GRADUACAO,2015,0,0,0,1962,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Fernanda Silva de Rezende,MESTRADO,2016,2019,0,0,586,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,1,1,0,0,1
+Pamela da Silva Bernardes,GRADUACAO,2017,0,0,0,1968,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Erik Buozi Fleming,GRADUACAO,2015,0,0,0,890,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Ana Júlia da Silva Trindade,GRADUACAO,2014,0,0,0,1348,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Raíssa Santos Horta,GRADUACAO,2016,0,0,0,931,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Gustavo Machado Domingues Caetano,GRADUACAO,2016,0,0,0,633,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Vinícius Martins Meireles,GRADUACAO,2016,0,0,0,642,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Victor Keichi Tsutsumiuchi,GRADUACAO,2016,0,0,0,2010,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Gleidson Sávio de Carvalho Benedito,GRADUACAO,2012,0,0,0,1138,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Pablo Santos Berthes da Silva,GRADUACAO,2014,0,0,0,1579,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Grégory Binkley Santos da Rosa,GRADUACAO,2015,0,0,0,620,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Verônica Maria da Silva,GRADUACAO,2016,0,0,0,673,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+José Paulo Rocha Pereira Pinto,GRADUACAO,2015,0,0,0,1956,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Bárbara Silva de Souza,GRADUACAO,2016,0,0,0,526,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Pedro Henrique Maia dos Santos,GRADUACAO,2017,0,0,0,1445,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Letícia Maiara de Araújo,GRADUACAO,2018,0,0,0,835,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Claudiele Andrade Pinheiro,GRADUACAO,2014,0,0,0,1047,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Alan Júnior Vergütz,GRADUACAO,2017,0,0,0,568,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Alessandro Garcia de Souza,GRADUACAO,2015,0,0,0,1601,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Danielle Silva de Paula,GRADUACAO,2019,0,0,0,547,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Junio Luiz Sendreto dos Santos,GRADUACAO,2016,0,0,0,754,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Antonio Gomes de Oliveira Junior,GRADUACAO,2018,0,0,0,760,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Gustavo Henrique Santos Silva,GRADUACAO,2017,0,0,0,1564,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Gabriela Carvalho de Oliveira,GRADUACAO,2017,0,0,0,705,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Hugo Alexandro Souza,GRADUACAO,2016,0,0,0,1709,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Marillia Pereira Costa,GRADUACAO,2017,0,0,0,1538,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Amanda Caroline de Souza,GRADUACAO,2017,0,0,0,1250,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Julia Maria Arantes Soares,GRADUACAO,2017,0,0,0,1521,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Amanda Smanio de Oliveira Mello,GRADUACAO,2014,0,0,0,1522,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Eric Matheus Soares Macedo,GRADUACAO,2015,0,0,0,634,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Ana Beatriz Mesquita,GRADUACAO,2015,0,0,0,1220,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Thallis de Lourenço Pessi,GRADUACAO,2018,0,0,0,696,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Vítor Vaz Schultz,GRADUACAO,2014,0,0,0,662,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Heclair José de Sousa Junior,GRADUACAO,2017,0,0,0,1528,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Thales Nunes Moreira,MESTRADO,2015,2017,0,0,535,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Renan Martins Pizzochero,GRADUACAO,2015,0,0,0,835,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Elias Oliveira Paulo da Silva,GRADUACAO,2017,0,0,0,835,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Sarah Villanova Borges,GRADUACAO,2016,0,0,0,829,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Godson Lucas Souza da Penha,GRADUACAO,2018,0,0,0,1601,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Jean Novaes Santos,GRADUACAO,2015,0,0,0,1198,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Pedro Tiago Bernabé Lomas,GRADUACAO,2016,0,0,0,750,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0
+Larissa Bianca Sousa de Almeida,GRADUACAO,2015,0,0,0,929,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+Carlos Vinicius Barbosa de Souza,GRADUACAO,2017,0,0,0,1258,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Luiz Guilherme Oliveira Santos,GRADUACAO,2015,0,0,0,675,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Fábio Rosindo Daher de Barros,GRADUACAO,2015,0,0,0,964,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Pedro Dousseau Guedes de Melo,GRADUACAO,2018,0,0,0,871,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Maria Carolina Barbosa Jurema,GRADUACAO,2017,0,0,0,592,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Evandro Bernardes,GRADUACAO,2015,0,0,0,1510,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Lucas David Noveline,GRADUACAO,2018,0,0,0,1650,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Priscilla Françoso,GRADUACAO,2018,0,0,0,837,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Karla Nayumi Mukai,GRADUACAO,2016,0,0,0,538,0,0,1,0,0,1,1,1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Eliélcio de Oliveira,GRADUACAO,2016,0,0,0,1552,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Fernanda Galhardo,GRADUACAO,2017,0,0,0,1194,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Raphael Barbosa Frederico,GRADUACAO,2021,0,0,0,621,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Ana Clara Rodrigues Alves,GRADUACAO,2016,0,0,0,1573,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Felipe Elias Costa da Silva,GRADUACAO,2018,0,0,0,871,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Guilherme Garcia de Souza,GRADUACAO,2015,0,0,0,1735,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Carina Souza,GRADUACAO,2020,0,0,0,608,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Davi Lima de Mesquita,GRADUACAO,2017,0,0,0,579,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Willian Braga Bernardes,GRADUACAO,2016,0,0,0,1545,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Thiago Alberto de Souza,GRADUACAO,2015,0,0,0,1114,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Marcos Paulo da Silva,GRADUACAO,2016,0,0,0,554,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+José Marcio da Silva Britto,GRADUACAO,2014,0,0,0,536,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,0,1,0,0,0
+Marcos Vinicius de Araujo Alves,GRADUACAO,2017,0,0,0,1544,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Fernanda de Almeida Toledo,GRADUACAO,2017,0,0,0,1593,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+João Batista Araujo Figueiredo,GRADUACAO,2015,0,0,0,747,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,1,1,0,0,1
+Christopher do Prado Sato,GRADUACAO,2018,0,0,0,1333,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Murilo da Costa Ruv Lemes,GRADUACAO,2019,0,0,0,529,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Vinicius Pereira da Silva,GRADUACAO,2017,0,0,0,753,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+João Francisco Nunes de Oliveira,GRADUACAO,2018,0,0,0,680,1,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,1,0,0,0,0
+Viktor Leon Bizarro Dutra,GRADUACAO,2021,0,0,0,626,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Joel Alves de Souza,GRADUACAO,2014,0,0,0,1374,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Marco Antonio Diniz dos Santos Reis,GRADUACAO,2017,0,0,0,1611,0,0,0,0,0,1,1,1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Natan Figueiredo,GRADUACAO,2017,0,0,0,1222,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Arildo Oliveira Silva,GRADUACAO,2014,0,0,0,1256,0,0,0,0,0,1,1,1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Gabriel Augusto Giongo,GRADUACAO,2018,0,0,0,1013,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Mauricio Matter Donato,GRADUACAO,2018,0,0,0,1335,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Julio Fábio Gurgel do Amaral Neto,GRADUACAO,2018,0,0,0,870,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Lana Letícia de Oliveira Silva,GRADUACAO,2016,0,0,0,1080,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Eduardo Lima da Silva,NÃO-INFORMADO,0,0,0,0,1115,0,0,0,0,0,1,1,1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Roberto Pansera,GRADUACAO,2020,0,0,0,605,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Débora Aparecida Cunha Gonçalo,GRADUACAO,2018,0,0,0,763,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+João Vitor Chagas,GRADUACAO,2016,0,0,0,756,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+William Müller Meyer,GRADUACAO,2018,0,0,0,836,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+André Winston Arruda Skeete,GRADUACAO,2018,0,0,0,1223,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Wellington Luis Teodoro da Cruz Junior,GRADUACAO,2019,0,0,0,836,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Ruan Fernandes Nogueira,GRADUACAO,2016,0,0,0,592,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Matheus Monteiro Mariano,MESTRADO,2016,2019,0,0,544,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Leonardo de Oliveira Ferreira,GRADUACAO,2018,0,0,0,739,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Isabella Rangel Manzanete,GRADUACAO,2019,0,0,0,827,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Thainá de Oliveira Bertollotto,GRADUACAO,2019,0,0,0,870,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Henrique Siqueira Mariano,GRADUACAO,2018,0,0,0,878,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Leonardo de Faria Antunes,GRADUACAO,2017,0,0,0,1171,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Gabriel Amboss Pinto,GRADUACAO,2017,0,0,0,1222,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Letícia Capucho Luiz,GRADUACAO,2018,0,0,0,724,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Daniela Ramos Lopes Aléssio,GRADUACAO,2017,0,0,0,1222,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Felipe Alves Blujos dos Santos,GRADUACAO,2019,0,0,0,612,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Rafael da Silva Mira Junior,GRADUACAO,2015,0,0,0,886,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Rafael Matias Meira,GRADUACAO,2019,0,0,0,835,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Amanda Soares Dorotea,GRADUACAO,2017,0,0,0,1202,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Roger Victor,GRADUACAO,2017,0,0,0,1485,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Julia Abrantes Rodrigues,MESTRADO,2016,2018,0,0,526,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0,1
+Elisa de Oliveira Giornes,GRADUACAO,2016,0,0,0,537,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Vinícius Rozante,GRADUACAO,2019,0,0,0,555,1,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,0,0,1,1,0,0,0
+Henrique Cortez da Silva,GRADUACAO,2019,0,0,0,1223,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Luiz Felipe de Carvalho Briedis,GRADUACAO,2016,0,0,0,835,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Dirceu Estevam Lupetti de Siqueira,GRADUACAO,2017,0,0,0,1200,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Petrea Miharu Hayashi Pereira,GRADUACAO,2017,0,0,0,1221,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Letícia Souza Nunes,GRADUACAO,2020,0,0,0,592,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,1,0,0
+Jonas Godoy Nepomuceno,GRADUACAO,2017,0,0,0,1461,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Camila Barata Quadros,GRADUACAO,2017,0,0,0,597,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Nathalia Dias Moises,GRADUACAO,2018,0,0,0,834,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Carla Fernanda Andrade Costa,GRADUACAO,2016,0,0,0,997,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Gislene aparecida berto,GRADUACAO,2013,0,0,0,835,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Emily Regina Siqueira Dias,GRADUACAO,2016,0,0,0,563,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Rita de Cássia de Moraes Franco,GRADUACAO,2015,0,0,0,606,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0
+Douglas Souza da Silva,GRADUACAO,2016,0,0,0,898,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Maria Gabriela Barbosa Glória da Silva,GRADUACAO,2015,0,0,0,546,0,0,1,0,0,1,1,1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Lucas Valerio de Oliveira,GRADUACAO,2017,0,0,0,1125,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Michelle dos Santos,GRADUACAO,2020,0,0,0,579,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,1
+Henrique Suetake,GRADUACAO,2016,0,0,0,1497,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Renata Auxiliadora dos Santos,GRADUACAO,2015,0,0,0,964,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Sandro Vianna Lobão,GRADUACAO,2017,0,0,0,617,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Vitor Matheus da Silva Freire,GRADUACAO,2017,0,0,0,617,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Milton Eiji Takamura,GRADUACAO,2016,0,0,0,1859,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Thauany Christiny Ferreira de Souza,GRADUACAO,2016,0,0,0,662,1,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0
+Arthur Bezerra Dantas Saraiva,GRADUACAO,2018,0,0,0,835,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Rodolfo Morais,GRADUACAO,2014,0,0,0,1563,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Juliana Marino Balera,DOUTORADO,2014,2017,2021,0,621,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,1,0,0,0
+Mário Raia Neto,GRADUACAO,2020,0,0,0,837,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
+Mariana Cavalcanti da Conceição,GRADUACAO,2017,0,0,0,741,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,1,0,0
+Andyara Oliveira Callegare,GRADUACAO,2015,0,0,0,819,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,1,0,0,0
+Ronaldo Xavier dos Santos,NÃO-INFORMADO,0,0,0,0,1207,0,0,0,0,0,1,1,1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Maria Gabriela Cursino dos Santos Conceição,GRADUACAO,2016,0,0,0,1402,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0
